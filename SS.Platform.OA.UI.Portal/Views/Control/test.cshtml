@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script> 
+	<script src="../../lib/ligerUI/js/core/inject.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/plugins/ligerPopupEdit.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script> 
+</head>
+<body style="padding:10px"> 
+ 
+   <input type="text" id="popTxt" class="liger-popupedit" onbuttonclick="f_buttonclick"/> 
+     
+        <script type="text/javascript">
+            function f_buttonclick() {
+                //parent.$.ligerDialog.open({
+                //    modal :false,
+                //    height: 340,
+                //    width: 345,modal:false ,
+                //    title: '增加控制器',
+                //    url: '/Control/test',
+                //    //isDrag:false,
+                //    showMax: true,
+                //    showToggle: true,
+                //    showMin: false,
+                //    isResize: false,
+                //    slide: false
+                //});
+                //alert('弹出框，然后选择项，调用setValue和setText方法');
+                //var pop = this;
+                //this.setValue('1');
+                //this.setText('弹出框选取的值');
+                var dialogOptions = {
+                    width: 100, height: 200, title: "请选择", url: "/Control/test", buttons: [
+                            {
+                                text: '保存', onclick: function (item, dialog) {
+                                    dialog.close();
+                                }
+                            },
+                            {
+                                text: '关闭', onclick: function (item, dialog) {
+                                    dialog.close();
+                                }
+                            }
+                    ], isResize: true, timeParmName: 'a'
+                };
+                activeDialog = top.jQuery.ligerDialog.open(dialogOptions);
+            }
+        </script>
+</body>
+</html>

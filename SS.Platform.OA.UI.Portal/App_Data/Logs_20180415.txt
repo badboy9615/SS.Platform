@@ -1,0 +1,1483 @@
+
+----------------------header--------------------------
+2018-04-15 14:40:15,833 [14] ERROR log4netlogger - System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参见“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 230
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 14:46:01,000 [6] ERROR log4netlogger - System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参见“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 233
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 15:15:31,100 [12] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 239
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 15:17:52,635 [12] ERROR log4netlogger - System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参见“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 241
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 15:23:58,223 [4] ERROR log4netlogger - System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参见“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 254
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 15:28:53,944 [14] ERROR log4netlogger - System.InvalidOperationException: 执行该命令需要打开的且可用的连接。连接的当前状态为 已断开。
+   在 System.Data.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   在 System.Data.Entity.Internal.Linq.InternalQuery`1.GetEnumerator()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   在 System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 226
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 15:31:37,308 [30] ERROR log4netlogger - System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参见“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 254
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 15:36:04,527 [14] ERROR log4netlogger - System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参见“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 258
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 15:39:19,870 [16] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 256
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 15:42:32,206 [6] ERROR log4netlogger - System.Data.Entity.Validation.DbEntityValidationException: 对一个或多个实体的验证失败。有关详细信息，请参见“EntityValidationErrors”属性。
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 255
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 16:02:21,717 [5] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 255
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 16:13:11,492 [6] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 255
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 17:19:20,806 [17] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 255
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 17:20:24,507 [12] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 255
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 17:23:32,432 [15] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 255
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 17:59:43,006 [11] ERROR log4netlogger - System.InvalidOperationException: 违反了引用完整性约束: 在此关系的主对象和依赖对象之间，定义引用约束的属性值不一致。
+   在 System.Data.Objects.DataClasses.RelationshipManager.CheckReferentialConstraintProperties(EntityEntry ownerEntry)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 253
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 18:00:39,748 [11] ERROR log4netlogger - System.InvalidOperationException: 违反了引用完整性约束: 在此关系的主对象和依赖对象之间，定义引用约束的属性值不一致。
+   在 System.Data.Objects.DataClasses.RelationshipManager.CheckReferentialConstraintProperties(EntityEntry ownerEntry)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 253
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 18:01:46,256 [11] ERROR log4netlogger - System.InvalidOperationException: 违反了引用完整性约束: 在此关系的主对象和依赖对象之间，定义引用约束的属性值不一致。
+   在 System.Data.Objects.DataClasses.RelationshipManager.CheckReferentialConstraintProperties(EntityEntry ownerEntry)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 253
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 19:51:46,750 [13] ERROR log4netlogger - System.InvalidOperationException: 违反了引用完整性约束: 在此关系的主对象和依赖对象之间，定义引用约束的属性值不一致。
+   在 System.Data.Objects.DataClasses.RelationshipManager.CheckReferentialConstraintProperties(EntityEntry ownerEntry)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 253
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 19:53:22,189 [11] ERROR log4netlogger - System.InvalidOperationException: 违反了引用完整性约束: 在此关系的主对象和依赖对象之间，定义引用约束的属性值不一致。
+   在 System.Data.Objects.DataClasses.RelationshipManager.CheckReferentialConstraintProperties(EntityEntry ownerEntry)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 253
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 19:53:50,703 [12] ERROR log4netlogger - System.InvalidOperationException: 违反了引用完整性约束: 在此关系的主对象和依赖对象之间，定义引用约束的属性值不一致。
+   在 System.Data.Objects.DataClasses.RelationshipManager.CheckReferentialConstraintProperties(EntityEntry ownerEntry)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 253
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 19:55:41,169 [18] ERROR log4netlogger - System.InvalidOperationException: 违反了引用完整性约束: 在此关系的主对象和依赖对象之间，定义引用约束的属性值不一致。
+   在 System.Data.Objects.DataClasses.RelationshipManager.CheckReferentialConstraintProperties(EntityEntry ownerEntry)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddEntityToObjectStateManager(IEntityWrapper wrappedEntity, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.AddGraphToObjectStateManager(IEntityWrapper wrappedEntity, Boolean relationshipAlreadyExists, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelatedEnd.IncludeEntity(IEntityWrapper wrappedEntity, Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.EntityCollection`1.Include(Boolean addRelationshipAsUnchanged, Boolean doAttach)
+   在 System.Data.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 253
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 21:14:28,133 [13] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 21:16:19,416 [14] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 21:16:52,637 [6] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 21:18:20,114 [6] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 21:19:35,165 [14] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 21:20:28,439 [16] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 21:22:10,534 [6] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 21:25:28,028 [6] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 21:26:46,779 [6] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 21:30:28,407 [6] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: UPDATE 语句与 FOREIGN KEY 约束"FK_EmployeeFamily"冲突。该冲突发生于数据库"EnterprisePlatform"，表"dbo.Employee", column 'ID'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 270
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 21:32:16,557 [5] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: UPDATE 语句与 FOREIGN KEY 约束"FK_EmployeeFamily"冲突。该冲突发生于数据库"EnterprisePlatform"，表"dbo.Employee", column 'ID'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 270
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 21:33:31,213 [15] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: UPDATE 语句与 FOREIGN KEY 约束"FK_EmployeeFamily"冲突。该冲突发生于数据库"EnterprisePlatform"，表"dbo.Employee", column 'ID'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 270
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 21:34:52,880 [11] ERROR log4netlogger - System.InvalidOperationException: 违反了引用完整性约束: 在此关系的主对象和依赖对象之间，定义引用约束的属性值不一致。
+   在 System.Data.Objects.DataClasses.RelationshipManager.CheckReferentialConstraintProperties(EntityEntry ownerEntry)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 21:35:44,934 [13] ERROR log4netlogger - System.InvalidOperationException: 违反了引用完整性约束: 在此关系的主对象和依赖对象之间，定义引用约束的属性值不一致。
+   在 System.Data.Objects.DataClasses.RelationshipManager.CheckReferentialConstraintProperties(EntityEntry ownerEntry)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 22:10:57,830 [5] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 22:11:49,087 [11] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 22:12:39,914 [11] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 22:41:06,943 [12] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 257
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 22:43:16,541 [5] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 257
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 22:49:20,490 [4] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 257
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 22:50:02,093 [11] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 257
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 22:53:46,388 [11] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 257
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-15 23:17:44,850 [6] ERROR log4netlogger - System.FormatException: /Date(1523801084400)/ 不是 DateTime 的有效值。 ---> System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AddItemToList(IList oldList, IList newList, Type elementType, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertListToObject(IList list, Type type, JavaScriptSerializer serializer, Boolean throwOnError, IList& convertedList)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 23:21:34,846 [14] ERROR log4netlogger - System.FormatException: /Date(1523801084400)/ 不是 DateTime 的有效值。 ---> System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AddItemToList(IList oldList, IList newList, Type elementType, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertListToObject(IList list, Type type, JavaScriptSerializer serializer, Boolean throwOnError, IList& convertedList)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 23:27:35,305 [25] ERROR log4netlogger - System.FormatException: /Date(1523801084400)/ 不是 DateTime 的有效值。 ---> System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AddItemToList(IList oldList, IList newList, Type elementType, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertListToObject(IList list, Type type, JavaScriptSerializer serializer, Boolean throwOnError, IList& convertedList)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 23:32:09,495 [29] ERROR log4netlogger - System.FormatException: /Date(1523801084400)/ 不是 DateTime 的有效值。 ---> System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AddItemToList(IList oldList, IList newList, Type elementType, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertListToObject(IList list, Type type, JavaScriptSerializer serializer, Boolean throwOnError, IList& convertedList)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 23:36:32,432 [21] ERROR log4netlogger - System.FormatException: /Date(1523801084400)/ 不是 DateTime 的有效值。 ---> System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AddItemToList(IList oldList, IList newList, Type elementType, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertListToObject(IList list, Type type, JavaScriptSerializer serializer, Boolean throwOnError, IList& convertedList)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 23:37:34,541 [18] ERROR log4netlogger - System.FormatException: /Date(1523801084400)/ 不是 DateTime 的有效值。 ---> System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AddItemToList(IList oldList, IList newList, Type elementType, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertListToObject(IList list, Type type, JavaScriptSerializer serializer, Boolean throwOnError, IList& convertedList)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 23:38:26,754 [18] ERROR log4netlogger - System.FormatException: /Date(1523801084400)/ 不是 DateTime 的有效值。 ---> System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AddItemToList(IList oldList, IList newList, Type elementType, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertListToObject(IList list, Type type, JavaScriptSerializer serializer, Boolean throwOnError, IList& convertedList)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-15 23:39:54,168 [23] ERROR log4netlogger - System.FormatException: /Date(1523801084400)/ 不是 DateTime 的有效值。 ---> System.FormatException: 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.AddItemToList(IList oldList, IList newList, Type elementType, JavaScriptSerializer serializer, Boolean throwOnError)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertListToObject(IList list, Type type, JavaScriptSerializer serializer, Boolean throwOnError, IList& convertedList)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 232
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------

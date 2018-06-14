@@ -1,0 +1,9 @@
+D:\SS.Platform\SS.Platform.OA.Model\bin\Release\SS.Platform.OA.Model.dll.config
+D:\SS.Platform\SS.Platform.OA.Model\bin\Release\SS.Platform.OA.Model.dll
+D:\SS.Platform\SS.Platform.OA.Model\bin\Release\SS.Platform.OA.Model.pdb
+D:\SS.Platform\SS.Platform.OA.Model\bin\Release\EntityFramework.dll
+D:\SS.Platform\SS.Platform.OA.Model\bin\Release\EntityFramework.xml
+D:\SS.Platform\SS.Platform.OA.Model\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\SS.Platform\SS.Platform.OA.Model\obj\Release\SS.Platform.OA.Model.dll
+D:\SS.Platform\SS.Platform.OA.Model\obj\Release\SS.Platform.OA.Model.pdb
+D:\SS.Platform\SS.Platform.OA.Model\obj\Release\SS.Platform.OA.Model.csprojResolveAssemblyReference.cache

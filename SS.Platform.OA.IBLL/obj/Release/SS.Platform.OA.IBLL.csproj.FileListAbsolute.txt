@@ -1,0 +1,10 @@
+D:\SS.Platform\SS.Platform.OA.IBLL\bin\Release\SS.Platform.OA.IBLL.dll
+D:\SS.Platform\SS.Platform.OA.IBLL\bin\Release\SS.Platform.OA.IBLL.pdb
+D:\SS.Platform\SS.Platform.OA.IBLL\bin\Release\SS.Platform.OA.Model.dll
+D:\SS.Platform\SS.Platform.OA.IBLL\bin\Release\EntityFramework.dll
+D:\SS.Platform\SS.Platform.OA.IBLL\bin\Release\SS.Platform.OA.Model.pdb
+D:\SS.Platform\SS.Platform.OA.IBLL\bin\Release\EntityFramework.xml
+D:\SS.Platform\SS.Platform.OA.IBLL\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\SS.Platform\SS.Platform.OA.IBLL\obj\Release\SS.Platform.OA.IBLL.dll
+D:\SS.Platform\SS.Platform.OA.IBLL\obj\Release\SS.Platform.OA.IBLL.pdb
+D:\SS.Platform\SS.Platform.OA.IBLL\obj\Release\SS.Platform.OA.IBLL.csprojResolveAssemblyReference.cache

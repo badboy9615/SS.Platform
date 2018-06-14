@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfo" EntityType="DataModel.UserInfo" />
+    <EntitySet Name="BaseEntity" EntityType="DataModel.BaseEntity" />
+    <EntitySet Name="Department" EntityType="DataModel.Department" />
+    <EntitySet Name="Role" EntityType="DataModel.Role" />
+    <EntitySet Name="ActionInfo" EntityType="DataModel.ActionInfo" />
+    <AssociationSet Name="UserInfoRole" Association="DataModel.UserInfoRole">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Role" EntitySet="Role" />
+    </AssociationSet>
+    <AssociationSet Name="ActionInfoRole" Association="DataModel.ActionInfoRole">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="Role" EntitySet="Role" />
+    </AssociationSet>
+    <EntitySet Name="R_User_ActionInfo" EntityType="DataModel.R_User_ActionInfo" />
+    <AssociationSet Name="DepartmentRole" Association="DataModel.DepartmentRole">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Role" EntitySet="Role" />
+    </AssociationSet>
+    <EntitySet Name="UserGroup" EntityType="DataModel.UserGroup" />
+    <AssociationSet Name="UserGroupUserInfo" Association="DataModel.UserGroupUserInfo">
+      <End Role="UserGroup" EntitySet="UserGroup" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentDepartment" Association="DataModel.DepartmentDepartment">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Department1" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentUserInfo" Association="DataModel.DepartmentUserInfo">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <EntitySet Name="Module" EntityType="DataModel.Module" />
+    <EntitySet Name="Control" EntityType="DataModel.Control" />
+    <AssociationSet Name="ModuleControl" Association="DataModel.ModuleControl">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="Control" EntitySet="Control" />
+    </AssociationSet>
+    <AssociationSet Name="ControlActionInfo" Association="DataModel.ControlActionInfo">
+      <End Role="Control" EntitySet="Control" />
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+    </AssociationSet>
+    <EntitySet Name="Master" EntityType="DataModel.Master" />
+    <AssociationSet Name="UserInfoMaster" Association="DataModel.UserInfoMaster">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Master" EntitySet="Master" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentMaster" Association="DataModel.DepartmentMaster">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Master" EntitySet="Master" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoR_User_ActionInfo" Association="DataModel.UserInfoR_User_ActionInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="R_User_ActionInfo" EntitySet="R_User_ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="ActionInfoR_User_ActionInfo" Association="DataModel.ActionInfoR_User_ActionInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="R_User_ActionInfo" EntitySet="R_User_ActionInfo" />
+    </AssociationSet>
+    <EntitySet Name="MenuInfo" EntityType="DataModel.MenuInfo" />
+    <AssociationSet Name="MenuInfoActionInfo" Association="DataModel.MenuInfoActionInfo">
+      <End Role="MenuInfo" EntitySet="MenuInfo" />
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="None">
+      <Documentation>
+        <LongDescription>登陆名</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>显示名</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Pwd" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Mail" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QQNum" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Role" Relationship="DataModel.UserInfoRole" FromRole="UserInfo" ToRole="Role" />
+    <NavigationProperty Name="UserGroup" Relationship="DataModel.UserGroupUserInfo" FromRole="UserInfo" ToRole="UserGroup" />
+    <Property Type="Int32" Name="UserGroupID" Nullable="true" />
+    <NavigationProperty Name="Department" Relationship="DataModel.DepartmentUserInfo" FromRole="UserInfo" ToRole="Department" />
+    <Property Type="Int32" Name="DepartmentID" Nullable="true" />
+  </EntityType>
+  <EntityType Name="BaseEntity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="DepLevel" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Role" Relationship="DataModel.DepartmentRole" FromRole="Department" ToRole="Role" />
+    <NavigationProperty Name="ParentDep" Relationship="DataModel.DepartmentDepartment" FromRole="Department1" ToRole="Department" />
+    <Property Type="Int32" Name="ParDept" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" />
+    <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoRole" FromRole="Role" ToRole="UserInfo" />
+    <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoRole" FromRole="Role" ToRole="ActionInfo" />
+    <NavigationProperty Name="Department" Relationship="DataModel.DepartmentRole" FromRole="Role" ToRole="Department" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="None" />
+  </EntityType>
+  <EntityType Name="ActionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Role" Relationship="DataModel.ActionInfoRole" FromRole="ActionInfo" ToRole="Role" />
+    <Property Type="String" Name="Url" Nullable="true" MaxLength="512" Unicode="true" />
+    <Property Type="String" Name="HttpMethod" Nullable="true" MaxLength="32" Unicode="false" />
+    <Property Type="String" Name="ActionMethod" Nullable="false" MaxLength="64" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Control" Relationship="DataModel.ControlActionInfo" FromRole="ActionInfo" ToRole="Control" />
+    <Property Type="Int32" Name="ControlID" Nullable="false" />
+  </EntityType>
+  <Association Name="UserInfoRole">
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <End Type="DataModel.Role" Role="Role" Multiplicity="*" />
+  </Association>
+  <Association Name="ActionInfoRole">
+    <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
+    <End Type="DataModel.Role" Role="Role" Multiplicity="*" />
+  </Association>
+  <EntityType Name="R_User_ActionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Boolean" Name="IsPass" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoR_User_ActionInfo" FromRole="R_User_ActionInfo" ToRole="UserInfo" />
+    <Property Type="Int32" Name="UserInfoID" Nullable="false" />
+    <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoR_User_ActionInfo" FromRole="R_User_ActionInfo" ToRole="ActionInfo" />
+    <Property Type="Int32" Name="ActionInfoID" Nullable="false" />
+  </EntityType>
+  <Association Name="DepartmentRole">
+    <End Type="DataModel.Department" Role="Department" Multiplicity="*" />
+    <End Type="DataModel.Role" Role="Role" Multiplicity="*" />
+  </Association>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="UserGroupUserInfo">
+    <End Type="DataModel.UserGroup" Role="UserGroup" Multiplicity="0..1" />
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentDepartment">
+    <End Type="DataModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="DataModel.Department" Role="Department1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Department1">
+        <PropertyRef Name="ParDept" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentUserInfo">
+    <End Type="DataModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" Nullable="true" MaxLength="512" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Control">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Module" Relationship="DataModel.ModuleControl" FromRole="Control" ToRole="Module" />
+    <Property Type="Int32" Name="ModuleID" Nullable="false" />
+  </EntityType>
+  <Association Name="ModuleControl">
+    <End Type="DataModel.Module" Role="Module" Multiplicity="1" />
+    <End Type="DataModel.Control" Role="Control" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Control">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ControlActionInfo">
+    <End Type="DataModel.Control" Role="Control" Multiplicity="1" />
+    <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Control">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActionInfo">
+        <PropertyRef Name="ControlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Master">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoMaster" FromRole="Master" ToRole="UserInfo" />
+    <Property Type="Int32" Name="UserInfoID" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="DataModel.DepartmentMaster" FromRole="Master" ToRole="Department" />
+    <Property Type="Int32" Name="DepartmentID" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+  </EntityType>
+  <Association Name="UserInfoMaster">
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="DataModel.Master" Role="Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Master">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentMaster">
+    <End Type="DataModel.Department" Role="Department" Multiplicity="1" />
+    <End Type="DataModel.Master" Role="Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Master">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInfoR_User_ActionInfo">
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="DataModel.R_User_ActionInfo" Role="R_User_ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="R_User_ActionInfo">
+        <PropertyRef Name="UserInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ActionInfoR_User_ActionInfo">
+    <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="1" />
+    <End Type="DataModel.R_User_ActionInfo" Role="R_User_ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="R_User_ActionInfo">
+        <PropertyRef Name="ActionInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MenuInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Sort" Nullable="false" />
+    <Property Type="Boolean" Name="IsVisable" Nullable="false" />
+    <NavigationProperty Name="ActionInfo" Relationship="DataModel.MenuInfoActionInfo" FromRole="MenuInfo" ToRole="ActionInfo" />
+    <Property Type="Int32" Name="Height" Nullable="false" />
+    <Property Type="Int32" Name="Width" Nullable="false" />
+    <Property Type="String" Name="IconUrl" Nullable="false" MaxLength="512" />
+    <Property Type="Int32" Name="ParentId" Nullable="false" />
+  </EntityType>
+  <Association Name="MenuInfoActionInfo">
+    <End Type="DataModel.MenuInfo" Role="MenuInfo" Multiplicity="0..1" />
+    <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="1" />
+  </Association>
+</Schema>

@@ -1,0 +1,1164 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>修改家政员</title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../Lib/Ajax/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+    <script src="../../lib/json2.js" type="text/javascript"></script>
+    
+    <script src="../../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var dialog; //= frameElement.dialog; //调用页面的dialog对象(ligerui对象)
+        var id; //= dialog.get('id');//获取id参数
+        var jtcy,pxjl,gzjl;
+        var pxlxData = [
+            { Pxlx: 1, text: '月嫂' }
+            , { Pxlx: 2, text: '育儿嫂' }
+            , { Pxlx: 3, text: '看小孩' }
+            , { Pxlx: 4, text: '看老人' }
+            , { Pxlx: 5, text: '保洁' }
+            , { Pxlx: 6, text: '做饭' }
+            , { Pxlx: 7, text: '做家务' }
+            , { Pxlx: 8, text: '医院护理' }
+            , { Pxlx: 9, text: '家庭护理' }
+            , { Pxlx: 10, text: '育婴师' }
+            , { Pxlx: 11, text: '夜班' }
+            , { Pxlx: 12, text: '单位做饭' }
+            , { Pxlx: 13, text: '看自理老人' }
+            , { Pxlx: 14, text: '医院' }
+            , { Pxlx: 15, text: '看不自理老人' }
+            , { Pxlx: 16, text: '看自理男老人' }
+            , { Pxlx: 17, text: '不自理男老人' }
+            , { Pxlx: 18, text: '钟点工' }
+        ];
+        var navtab = null;
+        $(function () {
+            dialog = frameElement.dialog; //调用页面的dialog对象(ligerui对象)
+            id = dialog.get('data').id;//获取id参数
+
+            $("#tab1").ligerTab({
+                onAfterSelectTabItem: function (tabid) {
+                    navtab = $("#tab1").ligerGetTabManager();
+                    navtab.reload(navtab.getSelectedTabItemID());
+                    //Jtg.set({ data: data });
+                    $(f_initGrid);
+                    //if (tabid == "tabitem5") {
+                    //    Jtg.set({ data: jtcy });
+                    //}
+                    //else {
+                    //    jtcy.Rows = Jtg.getData();
+                    //    jtcy.Total = jtcy.Rows.length;
+                    //}
+                    switch (tabid) {
+                        case "tabitem4":
+                            Gzg.set({ data: gzjl });
+
+                            jtcy.Rows = Jtg.getData();
+                            jtcy.Total = jtcy.Rows.length;
+
+                            pxjl.Rows = Pxg.getData();
+                            pxjl.Total = pxjl.Rows.length;
+                            break;
+                        case "tabitem5":
+                            Jtg.set({ data: jtcy });
+
+                            gzjl.Rows = Gzg.getData();
+                            gzjl.Total = gzjl.Rows.length;
+
+                            pxjl.Rows = Pxg.getData();
+                            pxjl.Total = pxjl.Rows.length;
+                            break;
+                        case "tabitem6":
+                            Pxg.set({ data: pxjl });
+
+                            gzjl.Rows = Gzg.getData();
+                            gzjl.Total = gzjl.Rows.length;
+
+                            jtcy.Rows = Jtg.getData();
+                            jtcy.Total = jtcy.Rows.length;
+                            break;
+                        default:
+                            gzjl.Rows = Gzg.getData();
+                            gzjl.Total = gzjl.Rows.length;
+
+                            jtcy.Rows = Jtg.getData();
+                            jtcy.Total = jtcy.Rows.length;
+
+                            pxjl.Rows = Pxg.getData();
+                            pxjl.Total = pxjl.Rows.length;
+                            break;
+                    }
+                }
+            });
+            navtab = $("#tab1").ligerGetTabManager();
+
+            var curDate = new Date();
+            var curMonty = curDate.getMonth();
+            curMonty = curMonty + 1;
+
+            $("#nl").ligerSpinner({ height: 20, width: 50, type: 'int', isNegative: false });
+            $("#csrq").ligerDateEditor(
+                {
+                    readonly :true,
+                    initValue: curDate.getFullYear() + '-' + curMonty + '-' + curDate.getDate(),
+                    label: '',
+                    labelWidth: 0,
+                    labelAlign: 'center',
+                    cancelable: false
+                });
+            $("#yxqz").ligerDateEditor(
+                {
+                    initValue: curDate.getFullYear() + '-' + curMonty + '-' + curDate.getDate(),
+                    label: '',
+                    labelWidth: 0,
+                    labelAlign: 'center',
+                    cancelable: false
+                });
+            $("#lrsj").ligerDateEditor(
+                {
+                    initValue: curDate.getFullYear() + '-' + curMonty + '-' + curDate.getDate(),
+                    label: '',
+                    labelWidth: 0,
+                    labelAlign: 'center',
+                    cancelable: false
+                });
+            //启动异步请求到后台，查询修改数据
+            $.post("/Employee/GetEmployeeByID", { id: id }, function (data) {
+                $("#ID").val(data.model.ID);
+                $("#Code").val(data.model.Code);
+                $("#SubBy").val(data.model.SubBy);
+                var dateSubtime = eval('new ' + data.model.SubTime.substr(1, data.model.SubTime.length - 2));
+                $("#SubTime").val(dateSubtime.getFullYear().toString() + "-" + (dateSubtime.getMonth() + 1).toString() + "-" + dateSubtime.getDate().toString());
+                $("#ModifiedBy").val(data.model.ModifiedBy);
+                $("#TakeEffect").val(data.model.TakeEffect);
+                var dateTaketime = eval('new ' + data.model.TakeEffectTime.substr(1, data.model.TakeEffectTime.length - 2));
+                $("#TakeEffectTime").val(dateTaketime.getFullYear().toString() + "-" + (dateTaketime.getMonth() + 1).toString() + "-" + dateTaketime.getDate().toString());
+                var dateLosetime = eval('new ' + data.model.LoseEffectTime.substr(1, data.model.LoseEffectTime.length - 2));
+                $("#LoseEffectTime").val(dateLosetime.getFullYear().toString() + "-" + (dateLosetime.getMonth() + 1).toString() + "-" + dateLosetime.getDate().toString());
+                $("#Name").val(data.model.Name);//.attr("value", data.model.Name);
+                $("#xb").val(data.model.xb);
+                $("#nl").val(data.model.nl);
+                $("#csrq").ligerGetDateEditorManager().setValue(data.model.csrq);
+                $("#preview").attr("src", "../../Upload/" + data.model.zp);
+                $("#strZp").val(data.model.zp);
+                $("#sg").val(data.model.sg);
+                $("#xyd").val(data.model.xyd);
+                $("#hyzk").val(data.model.hyzk);
+                $("#tz").val(data.model.tz);
+                $("#dj").val(data.model.dj);
+                $("#wh").val(data.model.wh);
+                $("#zzmm").val(data.model.zzmm);
+                $("#sx").val(data.model.sx);
+                $("#qwgz").val(data.model.qwgz);
+                $("#grxy").val(data.model.grxy);
+                $("#jkzk").val(data.model.jkzk);
+                if (data.model.sfzj) {
+                    $("#sfzj").val('true');
+                } else {
+                    $("#sfzj").val('false');
+                }
+                $("#xm").val(data.model.xm);
+                $("#yx").val(data.model.yx);
+                $("#jtzz").val(data.model.jtzz);
+                $("#sfzh").val(data.model.sfzh);
+                $("#previewsfzt").attr("src", "../../Upload/" + data.model.sfzt);
+                $("#strSfzt").val(data.model.sfzt);
+                $("#xzzz").val(data.model.xzzz);
+                $("#gznx").val(data.model.gznx);
+                $("#wxh").val(data.model.wxh);
+                $("#xxly").val(data.model.xxly);
+                if (data.model.jkzs) {
+                    $("#jkzs").val('true');
+                } else {
+                    $("#jkzs").val('false');
+                }
+                $("#sjhm").val(data.model.sjhm);
+                $("#zxsj").val(data.model.zxsj);
+                $("#yxqz").ligerGetDateEditorManager().setValue(data.model.yxqz);
+                $("#zzqy").val(data.model.zzqy);
+                $("#gzzt").val(data.model.gzzt);
+                $("#lrsj").ligerGetDateEditorManager().setValue(data.model.lrsj);
+                $("#bz").val(data.model.bz);
+                $("#gzfw").val(data.model.gzfw);
+                if (data.model.yyszgz) {
+                    $("#yyszgz").attr("checked", true);
+                }
+                else {
+                    $("#yyszgz").attr("checked", false);
+                }
+                if (data.model.myhlz) {
+                    $("#myhlz").attr("checked", true);
+                }
+                else {
+                    $("#myhlz").attr("checked", false);
+                }
+                var jbkhs = data.model.jbkh.split(",");
+                for (var i = 0; i < jbkhs.length; i++) {
+                    switch(jbkhs[i])
+                    {
+                        case "1":
+                            $("#pth").attr("checked", true);
+                            break;
+                        case "2":
+                            $("#bdh").attr("checked", true);
+                            break;
+                        case "3":
+                            $("#jdyy").attr("checked", true);
+                            break;
+                        case "4":
+                            $("#bdc").attr("checked", true);
+                            break;
+                        case "5":
+                            $("#nfc").attr("checked", true);
+                            break;
+                        case "6":
+                            $("#ptc").attr("checked", true);
+                            break;
+                        case "7":
+                            $("#zfh").attr("checked", true);
+                            break;
+                        case "8":
+                            $("#dsws").attr("checked", true);
+                            break;
+                        case "9":
+                            $("#xyf").attr("checked", true);
+                            break;
+                        case "10":
+                            $("#tyf").attr("checked", true);
+                            break;
+                        case "11":
+                            $("#zxhyf").attr("checked", true);
+                            break;
+                        case "12":
+                            $("#dfb").attr("checked", true);
+                            break;
+                        case "13":
+                            $("#mqz").attr("checked", true);
+                            break;
+                        case "14":
+                            $("#cyjd").attr("checked", true);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                var qwJobs = data.model.qwjob.split(",");
+                for (var i = 0; i < qwJobs.length; i++) {
+                    switch (qwJobs[i]) {
+                        case "1":
+                            $("#zf").attr("checked", true);
+                            break;
+                        case "2":
+                            $("#bzl").attr("checked", true);
+                            break;
+                        case "3":
+                            $("#zlbzllr").attr("checked", true);
+                            break;
+                        case "4":
+                            $("#yy").attr("checked", true);
+                            break;
+                        case "5":
+                            $("#zllr").attr("checked", true);
+                            break;
+                        case "6":
+                            $("#ys").attr("checked", true);
+                            break;
+                        case "7":
+                            $("#jw").attr("checked", true);
+                            break;
+                        case "8":
+                            $("#kxh").attr("checked", true);
+                            break;
+                        case "9":
+                            $("#khz").attr("checked", true);
+                            break;
+                        case "10":
+                            $("#bj").attr("checked", true);
+                            break;
+                        case "11":
+                            $("#kbzllr").attr("checked", true);
+                            break;
+                        case "12":
+                            $("#klr").attr("checked", true);
+                            break;
+                        case "13":
+                            $("#dwzf").attr("checked", true);
+                            break;
+                        case "14":
+                            $("#yes").attr("checked", true);
+                            break;
+                        case "15":
+                            $("#yys").attr("checked", true);
+                            break;
+                        case "16":
+                            $("#yyhl").attr("checked", true);
+                            break;
+                        case "17":
+                            $("#jthl").attr("checked", true);
+                            break;
+                        case "18":
+                            $("#gj").attr("checked", true);
+                            break;
+                        case "19":
+                            $("#yb").attr("checked", true);
+                            break;
+                        case "20":
+                            $("#yd").attr("checked", true);
+                            break;
+                        case "21":
+                            $("#kzlnlr").attr("checked", true);
+                            break;
+                        case "22":
+                            $("#bzlnlr").attr("checked", true);
+                            break;
+                        case "23":
+                            $("#jtfd").attr("checked", true);
+                            break;
+                        case "24":
+                            $("#zdg").attr("checked", true);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                
+            });
+            
+            f_initGrid();
+            //启动异步请求到后台，查询修改数据
+            $.post("/Employee/GetAllEpTrain", { eid: id }, function (data) {
+                $("#pxStr").val(JSON.stringify(data));
+                Pxg.set({ data: data });
+                pxjl = data;
+            });
+
+            $.post("/Employee/GetAllEpFamily", { eid: id }, function (data) {
+                $("#jtStr").val(JSON.stringify(data));
+                Jtg.set({ data: data });
+                jtcy = data;
+            });
+
+            $.post("/Employee/GetAllEpGzjl", { eid: id }, function (data) {
+                $("#gzStr").val(JSON.stringify(data));
+                Gzg.set({ data: data });
+                gzjl = data;
+            });
+        });
+        function f_save() {
+            alert('保存');
+        }
+        function f_close() {
+            alert('关闭');
+        }
+        function getXb() {
+            return [
+             { Code: '1', Name: '男' },
+             { Code: '2', Name: '女' }
+            ];
+        }
+        //图片在线上传及预览
+        function setImagePreview() {
+            var docObj = document.getElementById("zp");
+
+            var imgObjPreview = document.getElementById("preview");
+            if (docObj.files && docObj.files[0]) {
+                //火狐下，直接设img属性
+                imgObjPreview.style.display = 'block';
+                imgObjPreview.style.width = '160px';
+                imgObjPreview.style.height = '200px';
+                //imgObjPreview.src = docObj.files[0].getAsDataURL();
+
+                //火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式  
+                imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+
+            } else {
+                //IE下，使用滤镜
+                docObj.select();
+                var imgSrc = document.selection.createRange().text;
+                var localImagId = document.getElementById("localImag");
+                //必须设置初始大小
+                localImagId.style.width = "300px";
+                localImagId.style.height = "120px";
+                //图片异常的捕捉，防止用户修改后缀来伪造图片
+                try {
+                    localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                    localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+                } catch (e) {
+                    alert("您上传的图片格式不正确，请重新选择!");
+                    return false;
+                }
+                imgObjPreview.style.display = 'none';
+                document.selection.empty();
+            }
+            return true;
+        }
+        //身份证图片在线上传及预览
+        function setsfztPreview() {
+            var docObj = document.getElementById("sfzt");
+
+            var imgObjPreview = document.getElementById("previewsfzt");
+            if (docObj.files && docObj.files[0]) {
+                //火狐下，直接设img属性
+                imgObjPreview.style.display = 'block';
+                imgObjPreview.style.width = '240px';
+                imgObjPreview.style.height = '165px';
+                //imgObjPreview.src = docObj.files[0].getAsDataURL();
+
+                //火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式  
+                imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+
+            } else {
+                //IE下，使用滤镜
+                docObj.select();
+                var imgSrc = document.selection.createRange().text;
+                var localImagId = document.getElementById("localImag");
+                //必须设置初始大小
+                localImagId.style.width = "300px";
+                localImagId.style.height = "120px";
+                //图片异常的捕捉，防止用户修改后缀来伪造图片
+                try {
+                    localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                    localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+                } catch (e) {
+                    alert("您上传的图片格式不正确，请重新选择!");
+                    return false;
+                }
+                imgObjPreview.style.display = 'none';
+                document.selection.empty();
+            }
+            return true;
+        }
+
+        //$(f_initGrid);
+        var managerGz, Gzg;
+        var managerJt, Jtg;
+        var managerPx, Pxg;
+
+        function f_initGrid() {
+            Gzg = managerGz = $("#gzjlgrid").ligerGrid({
+                //url: '/Employee/GetAllEpGzjl',
+                //parms: { eid: id },
+                columns: [
+                { display: '主键', name: 'ID', width: 0, type: 'int', frozen: false, hide: 'hide' },
+                { display: '起始时间', name: 'Qssj', type: 'date', format: 'yyyy-MM-dd', width: '18%', editor: { type: 'date' } },
+                { display: '结束时间', name: 'Jssj', type: 'date', format: 'yyyy-MM-dd', width: '18%', editor: { type: 'date' } },
+                { display: '客户姓名', name: 'Khxm', editor: { type: 'text' }, width: '16%' },
+                { display: '服务内容', name: 'Name', editor: { type: 'text' }, width: '16%' },
+                { display: '工作地点', name: 'Gzdd', editor: { type: 'text' }, width: '16%' },
+                { display: '工作评定', name: 'Gzpd', editor: { type: 'text' }, width: '15%' }
+                , { display: '创建人', name: 'SubBy', width: 0, type: 'text', frozen: false, hide: 'hide' }
+                , { display: '创建时间', name: 'SubTime', width: 0, type: 'date', format: 'yyyy-MM-dd', editor: { type: 'date' }, hide: 'hide' }
+                , { display: '生效时间', name: 'TakeEffectTime', width: 0, type: 'date', format: 'yyyy-MM-dd', editor: { type: 'date' }, hide: 'hide' }
+                , { display: '失效时间', name: 'LoseEffectTime', width: 0, type: 'date', format: 'yyyy-MM-dd', editor: { type: 'date' }, hide: 'hide' }
+                ],
+                onSelectRow: function (rowdata, rowindex) {
+                    $("#txtrowindex").val(rowindex);
+                },
+                enabledEdit: true, isScroll: false, checkbox: true, rownumbers: true, pageSize: 8, pageSizeOptions: [5, 8, 10],
+                //data: EmployeeData,
+                width: '100%'
+            });
+
+            Jtg = managerJt = $("#Jtcygrid").ligerGrid({
+                
+                //url: '/Employee/GetAllEpFamily',
+                //parms: { eid: id },
+                columns: [
+                { display: '主键', name: 'ID', width: 0, type: 'int', frozen: false, hide: 'hide' },
+                { display: '关系', name: 'Relation', editor: { type: 'text' }, width: '33%' },
+                { display: '姓名', name: 'Name', editor: { type: 'text' }, width: '33%' },
+                { display: '联系电话', name: 'Phone', editor: { type: 'text' }, width: '34%' }
+                , { display: '创建人', name: 'SubBy', width: 0, type: 'text', frozen: false, hide: 'hide' }
+                //, { display: '创建时间', name: 'SubTime', width: 0, type: 'date', format: 'yyyy-MM-dd', editor: { type: 'date' }, hide: 'hide' }
+                , { display: '创建时间', name: 'SubTime', width: 0, type: 'date', format: 'yyyy-MM-dd', editor: { type: 'date' }, hide: 'hide' }
+                , { display: '生效时间', name: 'TakeEffectTime', width: 0, type: 'date', format: 'yyyy-MM-dd', editor: { type: 'date' }, hide: 'hide' }
+                , { display: '失效时间', name: 'LoseEffectTime', width: 0, type: 'date', format: 'yyyy-MM-dd', editor: { type: 'date' }, hide: 'hide' }
+                ],
+                onSelectRow: function (rowdata, rowindex) {
+                    $("#txtrowindex").val(rowindex);
+                },
+                enabledEdit: true, isScroll: false, checkbox: true, rownumbers: true, pageSize: 8, pageSizeOptions: [5, 8, 10],
+                //data: $("#jtStr").val(),
+                width: '100%'
+            });
+            Pxg = managerPx = $("#Pxjlgrid").ligerGrid({
+
+                //url: '/Employee/GetAllEpTrain',
+                //parms: { eid: id },
+                columns: [
+                { display: '主键', name: 'ID', width: 0, type: 'int', frozen: false, hide: 'hide' },
+                { display: '培训时间', name: 'Pxsj', type: 'date', format: 'yyyy-MM-dd', width: '25%', editor: { type: 'date' } },
+                { display: '培训期限', name: 'Pxqx', editor: { type: 'text' }, width: '25%' },
+                {
+                    display: '培训类型', width: '25%', name: 'Pxlx',
+                    editor: { type: 'select', data: pxlxData, valueField: 'Pxlx' },
+                    render: function (item) {
+                        if (parseInt(item.Pxlx) == 1) return '月嫂';
+                        if (parseInt(item.Pxlx) == 2) return '育儿嫂';
+                        if (parseInt(item.Pxlx) == 3) return '看小孩';
+                        if (parseInt(item.Pxlx) == 4) return '看老人';
+                        if (parseInt(item.Pxlx) == 5) return '保洁';
+                        if (parseInt(item.Pxlx) == 6) return '做饭';
+                        if (parseInt(item.Pxlx) == 7) return '做家务';
+                        if (parseInt(item.Pxlx) == 8) return '医院护理';
+                        if (parseInt(item.Pxlx) == 9) return '家庭护理';
+                        if (parseInt(item.Pxlx) == 10) return '育婴师';
+                        if (parseInt(item.Pxlx) == 11) return '夜班';
+                        if (parseInt(item.Pxlx) == 12) return '单位做饭';
+                        if (parseInt(item.Pxlx) == 13) return '看自理老人';
+                        if (parseInt(item.Pxlx) == 14) return '医院';
+                        if (parseInt(item.Pxlx) == 15) return '看不自理老人';
+                        if (parseInt(item.Pxlx) == 16) return '看自理男老人';
+                        if (parseInt(item.Pxlx) == 17) return '不自理男老人';
+                        if (parseInt(item.Pxlx) == 18) return '钟点工';
+                        //return '月嫂';
+                    }
+                },
+                { display: '培训内容', name: 'Name', editor: { type: 'text' }, width: '24%' }
+                , { display: '创建人', name: 'SubBy', width: 0, type: 'text', frozen: false, hide: 'hide' }
+                , { display: '创建时间', name: 'SubTime', width: 0, type: 'date', format: 'yyyy-MM-dd', editor: { type: 'date' }, hide: 'hide' }
+                ],
+                onSelectRow: function (rowdata, rowindex) {
+                    $("#txtrowindex").val(rowindex);
+                },
+                enabledEdit: true, isScroll: false, checkbox: true, rownumbers: true, pageSize: 8, pageSizeOptions: [5, 8, 10],
+                //data: EmployeeData,
+                width: '100%'
+            });
+        }
+
+        function deleteJtcyRow() {
+            managerJt.deleteSelectedRow();
+        }
+        var newrowid = 100;
+        function addJtcyNewRow() {
+            var row = managerJt.getSelectedRow();
+            //参数1:rowdata(非必填)
+            //参数2:插入的位置 Row Data 
+            //参数3:之前或者之后(非必填)
+            managerJt.addRow({
+                Relation: "",
+                Name: "",
+                Phone: ""
+            });
+        }
+
+        function deleteGzjlRow() {
+            managerGz.deleteSelectedRow();
+        }
+        var newrowid = 100;
+        function addGzjlNewRow() {
+            var row = managerGz.getSelectedRow();
+            //参数1:rowdata(非必填)
+            //参数2:插入的位置 Row Data 
+            //参数3:之前或者之后(非必填)
+            managerGz.addRow({
+                Qssj: new Date(1306108800000),
+                Jssj: new Date(1306108800000),
+                Khxm: "",
+                Name: "",
+                Gzdd: "",
+                Gzpd: ""
+            });
+        }
+
+        function deletePxjlRow() {
+            managerPx.deleteSelectedRow();
+        }
+        var newrowid = 100;
+        function addPxjlNewRow() {
+            var row = managerPx.getSelectedRow();
+            //参数1:rowdata(非必填)
+            //参数2:插入的位置 Row Data 
+            //参数3:之前或者之后(非必填)
+            managerPx.addRow({
+                Pxsj: new Date(1306108800000),
+                Pxqx: "",
+                Name: ""
+            });
+        }
+        function doSave() {
+            var familys = Jtg.getData();
+            //处理日期格式
+            //alert(JSON.stringify(familys));
+            //for (var i = 0; i < familys.length; i++) {
+            //    //familys[i].SubTime=
+            //    var dateSubtime = eval('new ' + familys[i].SubTime.substr(1, familys[i].SubTime.length - 2));
+            //    familys[i].SubTime = (dateSubtime.getFullYear().toString() + "-" + (dateSubtime.getMonth() + 1).toString() + "-" + dateSubtime.getDate().toString());
+            //    var dateTaketime = eval('new ' + familys[i].TakeEffectTime.substr(1, familys[i].TakeEffectTime.length - 2));
+            //    familys[i].TakeEffectTime = (dateTaketime.getFullYear().toString() + "-" + (dateTaketime.getMonth() + 1).toString() + "-" + dateTaketime.getDate().toString());
+            //    var dateLosetime = eval('new ' + familys[i].LoseEffectTime.substr(1, familys[i].LoseEffectTime.length - 2));
+            //    familys[i].LoseEffectTime = (dateLosetime.getFullYear().toString() + "-" + (dateLosetime.getMonth() + 1).toString() + "-" + dateLosetime.getDate().toString());
+            //}
+            var experiences = Gzg.getData();
+            //处理日期格式
+            //for (var i = 0; i < experiences.length; i++) {
+            //    var dateQssj = eval('new ' + experiences[i].Qssj.substr(1, experiences[i].Qssj.length - 2));
+            //    experiences[i].Qssj = (dateQssj.getFullYear().toString() + "-" + (dateQssj.getMonth() + 1).toString() + "-" + dateQssj.getDate().toString());
+            //    var dateJssj = eval('new ' + experiences[i].Jssj.substr(1, experiences[i].Jssj.length - 2));
+            //    experiences[i].Jssj = (dateJssj.getFullYear().toString() + "-" + (dateJssj.getMonth() + 1).toString() + "-" + dateJssj.getDate().toString());
+
+            //    var dateSubtime = eval('new ' + experiences[i].SubTime.substr(1, experiences[i].SubTime.length - 2));
+            //    experiences[i].SubTime = (dateSubtime.getFullYear().toString() + "-" + (dateSubtime.getMonth() + 1).toString() + "-" + dateSubtime.getDate().toString());
+            //    var dateTaketime = eval('new ' + experiences[i].TakeEffectTime.substr(1, experiences[i].TakeEffectTime.length - 2));
+            //    experiences[i].TakeEffectTime = (dateTaketime.getFullYear().toString() + "-" + (dateTaketime.getMonth() + 1).toString() + "-" + dateTaketime.getDate().toString());
+            //    var dateLosetime = eval('new ' + experiences[i].LoseEffectTime.substr(1, experiences[i].LoseEffectTime.length - 2));
+            //    experiences[i].LoseEffectTime = (dateLosetime.getFullYear().toString() + "-" + (dateLosetime.getMonth() + 1).toString() + "-" + dateLosetime.getDate().toString());
+            //}
+            var Trains = Pxg.getData();
+            //处理日期格式
+            //for (var i = 0; i < Trains.length; i++) {
+            //    var datePxsj = eval('new ' + Trains[i].Pxsj.substr(1, Trains[i].Pxsj.length - 2));
+            //    Trains[i].Pxsj = (datePxsj.getFullYear().toString() + "-" + (datePxsj.getMonth() + 1).toString() + "-" + datePxsj.getDate().toString());
+
+            //    var dateSubtime = eval('new ' + Trains[i].SubTime.substr(1, Trains[i].SubTime.length - 2));
+            //    Trains[i].SubTime = (dateSubtime.getFullYear().toString() + "-" + (dateSubtime.getMonth() + 1).toString() + "-" + dateSubtime.getDate().toString());
+            //}
+            var jbkh = document.getElementsByName("jbkh1");
+            var jbkhValue = new Array();
+            for (var i = 0; i < jbkh.length; i++) {
+                if (jbkh[i].checked) {
+                    jbkhValue.push(jbkh[i].value);
+                }
+            }
+            var qwjob = document.getElementsByName("qwjob1");
+            var qwjobValue = new Array();
+            for (var i = 0; i < qwjob.length; i++) {
+                if (qwjob[i].checked) {
+                    qwjobValue.push(qwjob[i].value);
+                }
+            }
+            $("#jbkh").val(jbkhValue.toString());
+            $("#qwjob").val(qwjobValue.toString());
+
+
+            $("#jtStr").val(JSON.stringify(familys));
+            $("#gzStr").val(JSON.stringify(experiences));
+            $("#pxStr").val(JSON.stringify(Trains));
+            //触发  添加表单提交
+            $("#addDiv form").submit();
+            window.parent.$("#maingrid").ligerGrid().reload();
+            parent.$.ligerDialog.hide();
+        }
+        function doClose() {
+            parent.$.ligerDialog.hide();
+        }
+
+        function afterAdd(data) {
+            if (data == "ok") {
+                //添加成功过了
+                //$('#addDiv').dialog('close');
+                //关闭对话框
+                //initTable();
+            } else {
+                $.messager.alert("错误消息", data);
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            font-size: 11px;
+        }
+
+        .l-table-edit {
+        }
+
+        .l-table-edit-td {
+            padding: 4px;
+        }
+
+        .l-button-submit, .l-button-reset {
+            width: 80px;
+            float: left;
+            margin-left: 10px;
+            padding-bottom: 2px;
+        }
+
+        table.gridtable {
+            font-family: verdana,arial,sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+            table.gridtable th {
+                border-width: 1px;
+                padding: 8px;
+                border-style: none;
+                border-color: #666666;
+                background-color: #dedede;
+            }
+
+            table.gridtable td {
+                border-width: 1px;
+                padding: 8px;
+                border-style: none;
+                border-color: #666666;
+                background-color: #ffffff;
+            }
+
+        table.gridtable {
+            border: none;
+        }
+    </style>
+</head>
+<body style="padding: 10px">
+    @* tab页签*@
+    <div id="tab1" style="width: auto; height: auto; overflow: hidden; border: 1px solid #A3C0E8;">
+        <div title="基本信息" style="height: 410px">
+            @* ****************表单开始********************** *@
+            @*<form name="form" id="form" action="/Employee/AddSave" method="post" enctype = "multipart/form-data">*@
+            <div id="addDiv">
+                @{
+                    using (Ajax.BeginForm("EditSave", "Employee", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "afterAdd" }, new { enctype = "multipart/form-data",id="form1" }))
+                    {
+                    <input name="jtStr" type="hidden" id="jtStr" />
+                    <input name="gzStr" type="hidden" id="gzStr" />
+                    <input name="pxStr" type="hidden" id="pxStr" />
+                    <input name="jbkh" type="hidden" id="jbkh" />
+                    <input name="qwjob" type="hidden" id="qwjob" />
+                    <input name="strSfzt" type="hidden" id="strSfzt" />
+                    <input name="strZp" type="hidden" id="strZp" />
+
+                    <table class="gridtable">
+                        <tr style="height: 20px;">
+                            <td width="60px">姓名:</td>
+                            <td width="100px">
+                                <input id="Name" type="text" name="Name" value=" " size="10" readonly="readonly"/>
+                                <input id="ID" type="hidden" name="ID" value=" "/>
+                                <input id="Code" type="hidden" name="Code" value=" "/>
+                                <input id="SubBy" type="hidden" name="SubBy" value=" "/>
+                                <input id="SubTime" type="hidden" name="SubTime" value=" "/>
+                                <input id="ModifiedBy" type="hidden" name="ModifiedBy" value=" "/>
+                                <input id="TakeEffect" type="hidden" name="TakeEffect" value=" "/>
+                                <input id="TakeEffectTime" type="hidden" name="TakeEffectTime" value=" "/>
+                                <input id="LoseEffectTime" type="hidden" name="LoseEffectTime" value=" "/>
+                            </td>
+                            <td width="60px" align="left">性别：</td>
+                            <td width="60px">
+                                <select name="xb" id="xb" ltype="select" style="width: 50px" disabled="true">
+                                    <option value="1">男</option>
+                                    <option value="2">女</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">年龄:</td>
+                            <td>
+                                <input id="nl" data-type="int" data-label="年龄" name="nl" data-newline="false" />
+                            </td>
+                            <td width="60px" align="left">出生日期:</td>
+                            <td>
+                                <input type="text" id="csrq" name="csrq" size="10"/>
+                            </td>
+                            <td rowspan="7" colspan="2">
+                                <input type="file" name="zp" id="zp" style="width: 66px" onchange="javascript:setImagePreview();" />
+                                <p>
+                                    <div id="localImag">
+                                        <img id="preview" width="160" height="200" style="diplay: none" />
+                                    </div>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td width="60px">身高:</td>
+                            <td width="100px">
+                                <input id="sg" type="text" name="sg" value=" " size="10" />&nbspm
+                            </td>
+                            <td width="60px" align="left">信誉度:</td>
+                            <td width="60px">
+                                <select name="xyd" id="xyd" ltype="select" style="width: 50px">
+                                    <option value="1">一星</option>
+                                    <option value="2">二星</option>
+                                    <option value="3">三星</option>
+                                    <option value="4">四星</option>
+                                    <option value="5">五星</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">婚姻状况：</td>
+                            <td width="60px">
+                                <select name="hyzk" id="hyzk" ltype="select" style="width: 50px">
+                                    <option value="1">已婚</option>
+                                    <option value="2">未婚</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">体重：</td>
+                            <td width="60px">
+                                <input id="tz" type="text" name="tz" value=" " size="10" />&nbspkg
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td width="60px">等级:</td>
+                            <td width="60px">
+                                <select name="dj" id="dj" ltype="select" style="width: 85px">
+                                    <option value="1">一般</option>
+                                    <option value="2">中端</option>
+                                    <option value="2">高端</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">文化:</td>
+                            <td width="60px">
+                                <select name="wh" id="wh" ltype="select" style="width: 50px">
+                                    <option value="1">小学</option>
+                                    <option value="2">初中</option>
+                                    <option value="3">高中</option>
+                                    <option value="4">专科</option>
+                                    <option value="5">本科</option>
+                                    <option value="6">无</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">政治面貌：</td>
+                            <td width="60px">
+                                <select name="zzmm" id="zzmm" ltype="select" style="width: 50px">
+                                    <option value="1">群众</option>
+                                    <option value="2">团员</option>
+                                    <option value="3">党员</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">属相：</td>
+                            <td width="60px">
+                                <select name="sx" id="sx" ltype="select" style="width: 85px">
+                                    <option value="1">鼠</option>
+                                    <option value="2">牛</option>
+                                    <option value="3">虎</option>
+                                    <option value="4">兔</option>
+                                    <option value="5">龙</option>
+                                    <option value="6">蛇</option>
+                                    <option value="7">马</option>
+                                    <option value="8">羊</option>
+                                    <option value="9">猴</option>
+                                    <option value="10">鸡</option>
+                                    <option value="11">狗</option>
+                                    <option value="12">猪</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td width="60px">期望工资:</td>
+                            <td width="60px">
+                                <select name="qwgz" id="qwgz" ltype="select" style="width: 85px">
+                                    <option value="1">3000-4000</option>
+                                    <option value="2">2000-3000</option>
+                                    <option value="3">6000以上</option>
+                                    <option value="4">5000以上</option>
+                                    <option value="5">6000以上</option>
+                                    <option value="6">3000</option>
+                                    <option value="7">2000</option>
+                                    <option value="8">大于4000</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">个人信仰:</td>
+                            <td width="60px">
+                                <select name="grxy" id="grxy" ltype="select" style="width: 50px">
+                                    <option value="1">佛教</option>
+                                    <option value="2">道教</option>
+                                    <option value="3">基督</option>
+                                    <option value="4">天主</option>
+                                    <option value="5">无</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">健康状况：</td>
+                            <td width="60px">
+                                <select name="jkzk" id="jkzk" ltype="select" style="width: 50px">
+                                    <option value="1">优</option>
+                                    <option value="2">良</option>
+                                    <option value="3">一般</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">是否住家：</td>
+                            <td width="60px">
+                                <select name="sfzj" id="sfzj" ltype="select" style="width: 85px">
+                                    <option value="true">是</option>
+                                    <option value="false">否</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td width="60px">相貌:</td>
+                            <td width="60px">
+                                <select name="xm" id="xm" ltype="select" style="width: 85px">
+                                    <option value="1">A级</option>
+                                    <option value="2">B级</option>
+                                    <option value="3">C级</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">印象:</td>
+                            <td width="60px">
+                                <select name="yx" id="yx" ltype="select" style="width: 50px">
+                                    <option value="1">较好</option>
+                                    <option value="2">中等</option>
+                                    <option value="3">一般</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">家庭住址：</td>
+                            <td width="100px" colspan="3">
+                                <input id="jtzz" type="text" name="jtzz" value=" " size="35" />
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td width="60px">身份证号:</td>
+                            <td width="100px" colspan="3">
+                                <input id="sfzh" type="text" name="sfzh" value=" " size="37" />
+                            </td>
+
+                            <td width="60px" align="left">现在住址：</td>
+                            <td width="100px" colspan="3">
+                                <input id="xzzz" type="text" name="xzzz" value=" " size="35" />
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td width="60px">工作年限:</td>
+                            <td width="100px">
+                                <input id="gznx" type="text" name="gznx" value=" " size="10" />
+                            </td>
+                            <td width="60px" align="left" colspan="4" rowspan="5">
+                            <input type="file" name="sfzt" id="sfzt" style="width: 266px" onchange="javascript:setsfztPreview();" />
+                                <p>
+                                    <div id="localImag">
+                                        <img id="previewsfzt" width="240" height="165" style="diplay: none" />
+                                    </div>
+                                </p>
+                            </td>
+                            <td width="60px" align="left">微信号：</td>
+                            <td width="100px">
+                                <input id="wxh" type="text" name="wxh" value=" " size="10" />
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td width="60px">信息来源:</td>
+                            <td width="100px">
+                                <input id="xxly" type="text" name="xxly" value=" " size="10" />
+                            </td>
+                            <td width="60px">健康证书:</td>
+                            <td width="100px">
+                                <select name="jkzs" id="jkzs" ltype="select" style="width: 85px">
+                                    <option value="true">有</option>
+                                    <option value="false">无</option>
+                                </select>
+                            </td>
+
+                            <td width="60px" align="left">手机号码：</td>
+                            <td width="100px">
+                                <input id="sjhm" type="text" name="sjhm" value=" " size="13" />
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td width="60px">作息时间:</td>
+                            <td width="100px">
+                                <select name="zxsj" id="zxsj" ltype="select" style="width: 85px">
+                                    <option value="1">全天</option>
+                                    <option value="2">上午</option>
+                                    <option value="3">下午</option>
+                                </select>
+                            </td>
+                            <td width="60px">有效期至:</td>
+                            <td>
+                                <input type="text" id="yxqz" name="yxqz" size="10" />
+                            </td>
+                            <td width="60px" align="left">住址区域：</td>
+                            <td width="60px">
+                                <select id="zzqy" name="zzqy" id="zzqy" ltype="select" style="width: 85px">
+                                    <option value="1">城区</option>
+                                    <option value="2">南麻</option>
+                                    <option value="3">悦庄</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+                            <td width="60px">工作状态:</td>
+                            <td width="60px">
+                                <select name="gzzt" id="gzzt" ltype="select" style="width: 85px">
+                                    <option value="1">待岗</option>
+                                    <option value="2">在岗</option>
+                                    <option value="3">外岗</option>
+                                    <option value="4">暂停求职</option>
+                                    <option value="5">停用</option>
+                                </select>
+                            </td>
+                            <td width="60px" align="left">录入时间：</td>
+                            <td>
+                                <input type="text" id="lrsj" name="lrsj" size="10" />
+                            </td>
+                            <td width="60px" align="left">备注：</td>
+                            <td width="100px" rowspan="2">
+                                <textarea id="bz" name="bz" style="width: 100px; height: 80px;"></textarea>
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;">
+
+                            <td width="60px" align="left">工作范围：</td>
+                            <td width="100px">
+                                <input id="gzfw" type="text" name="gzfw" value=" " size="3" />&nbsp公里之内
+                            </td>
+                            <td width="60px" align="left">
+                                <input type="checkbox" id="yyszgz" name="yyszgz" value="true" />育婴师</td>
+                            <td width="100px">
+                                <input type="checkbox" id="myhlz" name="myhlz" value="true" />母婴
+                            </td>
+                        </tr>
+                    </table>
+                    }
+                }
+            </div>
+
+            @*</form>*@
+            @* ****************表单结束********************** *@
+        </div>
+        <div title="基本考核" style="height: 410px">
+            <table class="jbkh" border="1" style="border-color: #A3C0E8;" width="100%">
+                <tr style="height: 90px;">
+                    <td width="20%" align="center">语言种类:</td>
+                    <td width="80%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<input id="pth" type="checkbox" name="jbkh1" name="qwjob1" value="1" />
+                        <label for="pth">&nbsp;&nbsp;普通话</label><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="bdh" type="checkbox" name="jbkh1" value="2" />
+                        <label for="bdh">&nbsp;&nbsp;本地话</label>
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="jdyy" type="checkbox" name="jbkh1" value="3" />
+                        <label for="jdyy">&nbsp;&nbsp;简单英语</label>
+                    </td>
+                </tr>
+                <tr style="height: 90px;">
+                    <td width="20%" align="center">烹饪水平:</td>
+                    <td width="80%">&nbsp;&nbsp;&nbsp;&nbsp;<input id="bdc" type="checkbox" name="jbkh1" name="qwjob1" value="4" />
+                        <label for="bdc">&nbsp;&nbsp;本地菜</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="nfc" type="checkbox" name="jbkh1" value="5" />
+                        <label for="nfc">&nbsp;&nbsp;南方菜</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="ptc" type="checkbox" name="jbkh1" value="6" />
+                        <label for="ptc">&nbsp;&nbsp;普通菜</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="zfh" type="checkbox" name="jbkh1" value="7" />
+                        <label for="zfh">&nbsp;&nbsp;做饭好</label>
+                    </td>
+                </tr>
+                <tr style="height: 90px;">
+                    <td width="20%" align="center">基本技能:</td>
+                    <td width="80%">&nbsp;&nbsp;&nbsp;&nbsp;<input id="dsws" type="checkbox" name="jbkh1" name="qwjob1" value="8" />
+                        <label for="dsws">&nbsp;&nbsp;打扫卫生</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="xyf" type="checkbox" name="jbkh1" value="9" />
+                        <label for="xyf">&nbsp;&nbsp;洗衣服</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="tyf" type="checkbox" name="jbkh1" value="10" />
+                        <label for="tyf">&nbsp;&nbsp;烫衣服</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="zxhyf" type="checkbox" name="jbkh1" value="11" />
+                        <label for="zxhyf">&nbsp;&nbsp;做小孩棉衣服</label>
+                    </td>
+                </tr>
+                <tr style="height: 90px;">
+                    <td width="20%" align="center">家用电器:</td>
+                    <td width="80%">&nbsp;&nbsp;&nbsp;&nbsp;<input id="dfb" type="checkbox" name="jbkh1" name="qwjob1" value="12" />
+                        <label for="dfb">&nbsp;&nbsp;电饭煲</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="mqz" type="checkbox" name="jbkh1" value="13" />
+                        <label for="mqz">&nbsp;&nbsp;煤气灶</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input id="cyjd" type="checkbox" name="jbkh1" value="14" />
+                        <label for="cyjd">&nbsp;&nbsp;常用家电</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div title="期望工作" style="height: 410px">
+
+            <table class="jbkh" border="0" style="border-color: #A3C0E8;" width="100%">
+                <tr style="height: 90px;">
+                    <td width="100%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="zf" type="checkbox" name="qwjob1" value="1" />
+                        <label for="zf">&nbsp;&nbsp;做饭</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="bzl" type="checkbox" name="qwjob1" value="2" />
+                        <label for="bzl">&nbsp;&nbsp;不自理</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="zlbzllr" type="checkbox" name="qwjob1" value="3" />
+                        <label for="zlbzllr">&nbsp;&nbsp;自理不自理老人</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="yy" type="checkbox" name="qwjob1" value="4" />
+                        <label for="yy">&nbsp;&nbsp;医院</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="zllr" type="checkbox" name="qwjob1" value="5" />
+                        <label for="zllr">&nbsp;&nbsp;自理老人</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="ys" type="checkbox" name="qwjob1" value="6" />
+                        <label for="ys">&nbsp;&nbsp;月嫂</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="jw" type="checkbox" name="qwjob1" value="7" />
+                        <label for="jdyy">&nbsp;&nbsp;家务</label>
+                    </td>
+                </tr>
+                <tr style="height: 90px;">
+                    <td width="100%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="kxh" type="checkbox" name="qwjob1" value="8" />
+                        <label for="kxh">&nbsp;&nbsp;看小孩</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="khz" type="checkbox" name="qwjob1" value="9" />
+                        <label for="khz">&nbsp;&nbsp;看孩子</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="bj" type="checkbox" name="qwjob1" value="10" />
+                        <label for="bj">&nbsp;&nbsp;保洁</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="kbzllr" type="checkbox" name="qwjob1" value="11" />
+                        <label for="kbzllr">&nbsp;&nbsp;看不自理老人</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="klr" type="checkbox" name="qwjob1" value="12" />
+                        <label for="klr">&nbsp;&nbsp;看老人</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="dwzf" type="checkbox" name="qwjob1" value="13" />
+                        <label for="dwzf">&nbsp;&nbsp;单位做饭</label>
+                    </td>
+                </tr>
+                <tr style="height: 90px;">
+                    <td width="100%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="yes" type="checkbox" name="qwjob1" value="14" />
+                        <label for="yes">&nbsp;&nbsp;育儿嫂</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="yys" type="checkbox" name="qwjob1" value="15" />
+                        <label for="yys">&nbsp;&nbsp;育婴师</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="yyhl" type="checkbox" name="qwjob1" value="16" />
+                        <label for="yyhl">&nbsp;&nbsp;医院护理</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="jthl" type="checkbox" name="qwjob1" value="17" />
+                        <label for="jthl">&nbsp;&nbsp;家庭护理</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="gj" type="checkbox" name="qwjob1" value="18" />
+                        <label for="gj">&nbsp;&nbsp;高级</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="yb" type="checkbox" name="qwjob1" value="19" />
+                        <label for="yb">&nbsp;&nbsp;夜班</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="yd" type="checkbox" name="qwjob1" value="20" />
+                        <label for="yd">&nbsp;&nbsp;异地</label>
+                    </td>
+                </tr>
+                <tr style="height: 90px;">
+                    <td width="100%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="kzlnlr" type="checkbox" name="qwjob1" value="21" />
+                        <label for="kzlnlr">&nbsp;&nbsp;看自理男老人</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="bzlnlr" type="checkbox" name="qwjob1" value="22" />
+                        <label for="bzlnlr">&nbsp;&nbsp;不自理男老人</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="jtfd" type="checkbox" name="qwjob1" value="23" />
+                        <label for="jtfd">&nbsp;&nbsp;家教辅导</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="zdg" type="checkbox" name="qwjob1" value="24" />
+                        <label for="zdg">&nbsp;&nbsp;钟点工</label>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div title="工作经历" style="height: 410px">
+            <br />
+            <a class="l-button" style="width: 120px; float: left; margin-left: 10px;" onclick="deleteGzjlRow()">删除工作经历</a>
+
+            <a class="l-button" style="width: 100px; float: left; margin-left: 10px;" onclick="addGzjlNewRow()">添加工作经历</a>
+
+            <div class="l-clear"></div>
+            <div id="gzjlgrid" style="margin-top: 20px"></div>
+        </div>
+        <div title="家庭成员" style="height: 410px">
+            <br />
+            <a class="l-button" style="width: 120px; float: left; margin-left: 10px;" onclick="deleteJtcyRow()">删除家庭成员</a>
+
+            <a class="l-button" style="width: 100px; float: left; margin-left: 10px;" onclick="addJtcyNewRow()">添加家庭成员</a>
+            <div class="l-clear"></div>
+            <div id="Jtcygrid" style="margin-top: 20px"></div>
+        </div>
+        <div title="培训情况" style="height: 410px">
+            <br />
+            <a class="l-button" style="width: 120px; float: left; margin-left: 10px;" onclick="deletePxjlRow()">删除培训记录</a>
+
+            <a class="l-button" style="width: 100px; float: left; margin-left: 10px;" onclick="addPxjlNewRow()">添加培训记录</a>
+            <div class="l-clear"></div>
+            <div id="Pxjlgrid" style="margin-top: 20px"></div>
+        </div>
+    </div>
+    @* tab页签*@
+    <br />
+    <input type="button" name="button_save" value="保存" id="Button1" class="l-button l-button-submit" onclick="javascript: doSave();" />
+    <input type="button" name="button_close" value="关闭" class="l-button l-button-reset" onclick="javascript: doClose();" />
+</body>
+</html>
+

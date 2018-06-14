@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B7319DD-0F0D-4A22-9DD9-3505262D4B39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.Platform.OA.BLL</RootNamespace>
+    <AssemblyName>SS.Platform.OA.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Library\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Services.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SS.Platform.Common\SS.Platform.Common.csproj">
+      <Project>{98f46772-6b74-433c-af8e-0217ba688525}</Project>
+      <Name>SS.Platform.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.DalFactory\SS.Platform.OA.DalFactory.csproj">
+      <Project>{cc99297b-f428-4a7a-a5c6-84616ec6dc72}</Project>
+      <Name>SS.Platform.OA.DalFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.Dal\SS.Platform.OA.Dal.csproj">
+      <Project>{68205fcd-d043-41e1-a0b2-e3ccf9a55c32}</Project>
+      <Name>SS.Platform.OA.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.IBLL\SS.Platform.OA.IBLL.csproj">
+      <Project>{d8f33798-1420-4245-b6df-0d7ff990ca6f}</Project>
+      <Name>SS.Platform.OA.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.IDal\SS.Platform.OA.IDal.csproj">
+      <Project>{4f5c9866-3629-4213-9fb9-633c20c0adc2}</Project>
+      <Name>SS.Platform.OA.IDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.Model\SS.Platform.OA.Model.csproj">
+      <Project>{e4bae940-ae2e-459f-af5f-4f111faaa261}</Project>
+      <Name>SS.Platform.OA.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Services.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Services.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

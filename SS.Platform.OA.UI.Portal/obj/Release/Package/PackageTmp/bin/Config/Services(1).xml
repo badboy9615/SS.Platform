@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <!--<object id="ContactObjectService" type="SS.Platform.OA.BLL.ContactObjectService, SS.Platform.OA.BLL" singleton="false" >
+  </object>
+
+  <object id="UserGroupService" type="SS.Platform.OA.BLL.UserGroupService, SS.Platform.OA.BLL" singleton="false" >
+  </object>-->
+
+  <object id="UserInfoService" type="SS.Platform.OA.BLL.UserInfoService, SS.Platform.OA.BLL" singleton="false" >
+  </object>
+
+  <!--<object id="DepartmentService" type="SS.Platform.OA.BLL.DepartmentService, SS.Platform.OA.BLL" singleton="false" >
+  </object>
+
+  <object id="RoleInfoService" type="SS.Platform.OA.BLL.RoleInfoService, SS.Platform.OA.BLL" singleton="false" >
+  </object>
+
+  <object id="ActionInfoService" type="SS.Platform.OA.BLL.ActionInfoService, SS.Platform.OA.BLL" singleton="false" >
+  </object>
+
+  <object id="ModuleService" type="SS.Platform.OA.BLL.ModuleService, SS.Platform.OA.BLL" singleton="false" >
+  </object>
+
+  <object id="ControlService" type="SS.Platform.OA.BLL.ControlService, SS.Platform.OA.BLL" singleton="false" >
+  </object>-->
+
+</objects>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"> 
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.ActionInfoController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="ActionInfoService" ref="ActionInfoService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.BaseEntityController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="BaseEntityService" ref="BaseEntityService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.ControlController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="ControlService" ref="ControlService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.EmployeeController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="EmployeeService" ref="EmployeeService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.ExperienceController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="ExperienceService" ref="ExperienceService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.FamilyController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="FamilyService" ref="FamilyService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.MenuInfoController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="MenuInfoService" ref="MenuInfoService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.ModuleController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="ModuleService" ref="ModuleService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.TrainController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="TrainService" ref="TrainService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.UserInfoController, SS.Platform.OA.UI.Portal" singleton="false" >
+	  <property name="UserInfoService" ref="UserInfoService" />
+  </object>
+
+  
+</objects>

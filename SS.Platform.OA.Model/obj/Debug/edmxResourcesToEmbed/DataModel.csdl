@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfo" EntityType="DataModel.UserInfo" />
+    <EntitySet Name="BaseEntity" EntityType="DataModel.BaseEntity" />
+    <EntitySet Name="Employee" EntityType="DataModel.Employee" />
+    <EntitySet Name="Family" EntityType="DataModel.Family" />
+    <AssociationSet Name="EmployeeFamily" Association="DataModel.EmployeeFamily">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Family" EntitySet="Family" />
+    </AssociationSet>
+    <EntitySet Name="Train" EntityType="DataModel.Train" />
+    <AssociationSet Name="EmployeeTrain" Association="DataModel.EmployeeTrain">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Train" EntitySet="Train" />
+    </AssociationSet>
+    <EntitySet Name="Experience" EntityType="DataModel.Experience" />
+    <AssociationSet Name="EmployeeExperience" Association="DataModel.EmployeeExperience">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Experience" EntitySet="Experience" />
+    </AssociationSet>
+    <EntitySet Name="Module" EntityType="DataModel.Module" />
+    <EntitySet Name="Control" EntityType="DataModel.Control" />
+    <AssociationSet Name="ModuleControl" Association="DataModel.ModuleControl">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="Control" EntitySet="Control" />
+    </AssociationSet>
+    <EntitySet Name="ActionInfo" EntityType="DataModel.ActionInfo" />
+    <AssociationSet Name="ControlActionInfo" Association="DataModel.ControlActionInfo">
+      <End Role="Control" EntitySet="Control" />
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+    </AssociationSet>
+    <EntitySet Name="MenuInfo" EntityType="DataModel.MenuInfo" />
+    <AssociationSet Name="ActionInfoMenuInfo" Association="DataModel.ActionInfoMenuInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="MenuInfo" EntitySet="MenuInfo" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="None">
+      <Documentation>
+        <LongDescription>登陆名</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>显示名</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Pwd" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Mail" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="QQNum" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BaseEntity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>编号</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>姓名</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="xyd" Nullable="false">
+      <Documentation>
+        <LongDescription>信誉度</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="dj" Nullable="true">
+      <Documentation>
+        <LongDescription>等级</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="xb" Nullable="false">
+      <Documentation>
+        <LongDescription>性别</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="wh">
+      <Documentation>
+        <LongDescription>文化</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="zzmm">
+      <Documentation>
+        <LongDescription>政治面貌</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="zp" Nullable="true">
+      <Documentation>
+        <LongDescription>照片图片地址</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="nl" Nullable="false">
+      <Documentation>
+        <LongDescription>年龄</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="sx" Nullable="true">
+      <Documentation>
+        <LongDescription>属相</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="DateTime" Name="csrq" Nullable="true">
+      <Documentation>
+        <LongDescription>出生日期</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="hyzk" Nullable="true">
+      <Documentation>
+        <LongDescription>婚姻状况</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="sg" Nullable="true">
+      <Documentation>
+        <LongDescription>身高</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="qwgz" Nullable="true">
+      <Documentation>
+        <LongDescription>期望工作</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="grxy" Nullable="true">
+      <Documentation>
+        <LongDescription>个人信仰</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="jkzk" Nullable="true">
+      <Documentation>
+        <LongDescription>健康状况</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="tz" Nullable="true">
+      <Documentation>
+        <LongDescription>体重</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Boolean" Name="sfzj" Nullable="true">
+      <Documentation>
+        <LongDescription>是否住家</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="xm" Nullable="true">
+      <Documentation>
+        <LongDescription>相貌</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="yx" Nullable="true">
+      <Documentation>
+        <LongDescription>印象</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="zzqy" Nullable="true">
+      <Documentation>
+        <LongDescription>住址区域</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="zxsj" Nullable="true">
+      <Documentation>
+        <LongDescription>作息时间</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="gzfw" Nullable="true">
+      <Documentation>
+        <LongDescription>工作范围</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="gznx" Nullable="true">
+      <Documentation>
+        <LongDescription>工作年限</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="sfzh" Nullable="true">
+      <Documentation>
+        <LongDescription>身份证号码</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="sfzt" Nullable="true">
+      <Documentation>
+        <LongDescription>身份证图片地址</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="xxly" Nullable="true">
+      <Documentation>
+        <LongDescription>信息来源</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="sjhm" Nullable="true">
+      <Documentation>
+        <LongDescription>手机号码</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="jtzz" Nullable="true">
+      <Documentation>
+        <LongDescription>家庭住址</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="wxh" Nullable="true">
+      <Documentation>
+        <LongDescription>微信号</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="xzzz" Nullable="true">
+      <Documentation>
+        <LongDescription>现在住址</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="bz" Nullable="true">
+      <Documentation>
+        <LongDescription>备注</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Boolean" Name="jkzs" Nullable="false">
+      <Documentation>
+        <LongDescription>健康证书</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="DateTime" Name="yxqz" Nullable="true">
+      <Documentation>
+        <LongDescription>有效期至</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Boolean" Name="myhlz" Nullable="false">
+      <Documentation>
+        <LongDescription>母婴护理证</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Boolean" Name="yyszgz" Nullable="false">
+      <Documentation>
+        <LongDescription>育婴师资格证</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="DateTime" Name="lrsj" Nullable="false">
+      <Documentation>
+        <LongDescription>录入时间</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="gzzt" Nullable="true">
+      <Documentation>
+        <LongDescription>工作状态</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="jbkh" Nullable="true">
+      <Documentation>
+        <LongDescription>基本考核</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="qwjob" Nullable="true">
+      <Documentation>
+        <LongDescription>威望工作</LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="Family" Relationship="DataModel.EmployeeFamily" FromRole="Employee" ToRole="Family" />
+    <NavigationProperty Name="Train" Relationship="DataModel.EmployeeTrain" FromRole="Employee" ToRole="Train" />
+    <NavigationProperty Name="Experience" Relationship="DataModel.EmployeeExperience" FromRole="Employee" ToRole="Experience" />
+  </EntityType>
+  <EntityType Name="Family">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Relation" Nullable="false" />
+    <Property Type="String" Name="Phone" Nullable="true" />
+    <NavigationProperty Name="Employee" Relationship="DataModel.EmployeeFamily" FromRole="Family" ToRole="Employee" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+  </EntityType>
+  <Association Name="EmployeeFamily">
+    <End Type="DataModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="DataModel.Family" Role="Family" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Family">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Train">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>培训内容</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="DateTime" Name="Pxsj" Nullable="false">
+      <Documentation>
+        <LongDescription>培训时间</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Pxqx" Nullable="true">
+      <Documentation>
+        <LongDescription>培训期限</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="Int32" Name="Pxlx" Nullable="false">
+      <Documentation>
+        <LongDescription>培训类型</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>编号</LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="Employee" Relationship="DataModel.EmployeeTrain" FromRole="Train" ToRole="Employee" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+  </EntityType>
+  <Association Name="EmployeeTrain">
+    <End Type="DataModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="DataModel.Train" Role="Train" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Train">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Experience">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>编号</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>服务内容</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="DateTime" Name="Qssj" Nullable="false">
+      <Documentation>
+        <LongDescription>起始时间</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="DateTime" Name="Jssj" Nullable="false">
+      <Documentation>
+        <LongDescription>结束时间</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Khxm" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>客户姓名</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Gzdd" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>工作地点</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Type="String" Name="Gzpd" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true">
+      <Documentation>
+        <LongDescription>工作评定</LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="Employee" Relationship="DataModel.EmployeeExperience" FromRole="Experience" ToRole="Employee" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+  </EntityType>
+  <Association Name="EmployeeExperience">
+    <End Type="DataModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="DataModel.Experience" Role="Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" Nullable="true" MaxLength="512" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Control">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Module" Relationship="DataModel.ModuleControl" FromRole="Control" ToRole="Module" />
+    <Property Type="Int32" Name="ModuleID" Nullable="false" />
+  </EntityType>
+  <Association Name="ModuleControl">
+    <End Type="DataModel.Module" Role="Module" Multiplicity="1" />
+    <End Type="DataModel.Control" Role="Control" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Control">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ActionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" Nullable="true" MaxLength="512" Unicode="true" />
+    <Property Type="String" Name="HttpMethod" Nullable="true" MaxLength="32" Unicode="false" />
+    <Property Type="String" Name="ActionMethod" Nullable="false" MaxLength="64" />
+    <NavigationProperty Name="Control" Relationship="DataModel.ControlActionInfo" FromRole="ActionInfo" ToRole="Control" />
+    <Property Type="Int32" Name="ControlID" Nullable="false" />
+  </EntityType>
+  <Association Name="ControlActionInfo">
+    <End Type="DataModel.Control" Role="Control" Multiplicity="1" />
+    <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Control">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActionInfo">
+        <PropertyRef Name="ControlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MenuInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubBy" Nullable="false" />
+    <Property Type="DateTime" Name="SubTime" Nullable="false" />
+    <Property Type="Int32" Name="ModifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifiedTIme" Nullable="false" />
+    <Property Type="Int16" Name="DelFlag" Nullable="false" />
+    <Property Type="Boolean" Name="TakeEffect" Nullable="false" />
+    <Property Type="DateTime" Name="TakeEffectTime" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LoseEffectTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Sort" Nullable="true" />
+    <Property Type="Boolean" Name="IsVisable" Nullable="false" />
+    <Property Type="Int32" Name="Height" Nullable="true" />
+    <Property Type="Int32" Name="Width" Nullable="true" />
+    <Property Type="String" Name="IconUrl" Nullable="true" MaxLength="512" />
+    <Property Type="Int32" Name="ParentId" Nullable="false" />
+    <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoMenuInfo" FromRole="MenuInfo" ToRole="ActionInfo" />
+  </EntityType>
+  <Association Name="ActionInfoMenuInfo">
+    <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="1" />
+    <End Type="DataModel.MenuInfo" Role="MenuInfo" Multiplicity="0..1" />
+  </Association>
+</Schema>

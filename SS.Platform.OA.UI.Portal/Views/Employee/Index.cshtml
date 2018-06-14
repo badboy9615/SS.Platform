@@ -1,0 +1,282 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../Lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../Lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link href="../../Lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../Lib/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="../../Lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+
+    <script src="../../Lib/jquery-validation/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../../Lib/jquery-validation/jquery.metadata.js" type="text/javascript"></script>
+    <script src="../../Lib/jquery-validation/messages_cn.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var CustomersData =
+        {
+            Rows:
+            [
+            { "CustomerID": "phb", "Name": "蒲海兵", "ContactName": "姚波", "ContactTitle": "沂源" }
+            , { "CustomerID": "tzr", "Name": "投资人", "ContactName": "123 Trujillo", "ContactTitle": "123" }
+            , { "CustomerID": "tzr", "Name": "投资人", "ContactName": "123 Trujillo", "ContactTitle": "123" }
+            ]
+        , Total: 2
+        };
+        var manager;
+        //new { u.ID, u.Code, u.Name,u.zp,u.xb,u.nl,u.wh,u.hyzk,u.sg,u.tz,u.lrsj,u.qwgz,u.gzzt,u.ModifiedTIme,u.qwjob,u.jtzz,u.myhlz,u.yyszgz, u.Remark }).ToList()
+        $(function () {
+            var grid = manager=
+            $("#maingrid").ligerGrid({
+                height: '100%',
+                url: '/Employee/GetAllEmployee',
+                //data: CustomersData, 
+
+                columns: [
+                { display: '编号', name: 'Code', align: 'left', width: 80, minWidth: 60 },
+                { display: '姓名', name: 'Name', align: 'left', width: 80, minWidth: 60 },
+                {
+                    display: '性别', name: 'xb', align: 'left', width: 60, minWidth: 60 ,
+                    render: function (item) {
+                        if (parseInt(item.xb) == 1) return '男';
+                        if (parseInt(item.xb) == 2) return '女';
+                    }
+                },
+                { display: '年龄', name: 'nl', align: 'left', width: 60, minWidth: 60 },
+                {
+                    display: '婚姻状况', name: 'hyzk', align: 'left', width: 60, minWidth: 60
+                    ,render: function (item) {
+                        if (parseInt(item.hyzk) == 1) return '已婚';
+                        if (parseInt(item.hyzk) == 2) return '未婚';
+                    }
+                },
+                {
+                    display: '学历', name: 'wh', align: 'left', width: 60, minWidth: 60
+                    , render: function (item) {
+                        if (parseInt(item.wh) == 1) return '小学';
+                        if (parseInt(item.wh) == 2) return '初中';
+                        if (parseInt(item.wh) == 3) return '高中';
+                        if (parseInt(item.wh) == 4) return '专科';
+                        if (parseInt(item.wh) == 5) return '本科';
+                        if (parseInt(item.wh) == 6) return '无';
+                    }
+                },
+                {
+                    display: '照片', name: 'zp', align: 'left', width: 80, minWidth: 60
+            , validate: { required: true }
+                , editor: {
+                    type: 'select',
+                    ext:
+                    function (rowdata) {
+                        return {
+                            onBeforeOpen: function () {
+                                currentComboBox = this;
+                                f_openIconsWin();
+                                return false;
+                            },
+                            render: function () {
+                                return rowdata.zp || defaulticon;
+                            }
+                        };
+                    }
+                }//EXT
+                , render: function (item) {
+                    return "<div style='width:100%;height:100%;'><img height='32' width='32' src='../../Upload/" + item.zp + "' /></div>";
+
+
+                } //render
+                },
+                { display: '身高', name: 'sg', align: 'left', width: 80, minWidth: 60 },
+                { display: '体重', name: 'tz', align: 'left', width: 60, minWidth: 60 },
+                { display: '登记时间', name: 'lrsj', align: 'left', width: 80, minWidth: 60, type: 'date' },
+                {
+                    display: '期望工资', name: 'qwgz', align: 'left', width: 80, minWidth: 60
+                    , render: function (item) {
+                        if (parseInt(item.qwgz) == 1) return '3000-4000';
+                        if (parseInt(item.qwgz) == 2) return '2000-3000';
+                        if (parseInt(item.qwgz) == 3) return '6000以上';
+                        if (parseInt(item.qwgz) == 4) return '5000以上';
+                        if (parseInt(item.qwgz) == 5) return '6000以上';
+                        if (parseInt(item.qwgz) == 6) return '3000';
+                        if (parseInt(item.qwgz) == 7) return '2000';
+                        if (parseInt(item.qwgz) == 8) return '大于4000';
+                    }
+                },
+                {
+                    display: '工作状态', name: 'gzzt', align: 'left', width: 80, minWidth: 60
+                    , render: function (item) {
+                        if (parseInt(item.gzzt) == 1) return '待岗';
+                        if (parseInt(item.gzzt) == 2) return '在岗';
+                        if (parseInt(item.gzzt) == 3) return '外岗';
+                        if (parseInt(item.gzzt) == 4) return '暂停求职';
+                        if (parseInt(item.gzzt) == 5) return '停用';
+                    }
+                },
+                { display: '更新时间', name: 'ModifiedTIme', align: 'left', width: 80, minWidth: 60, type: 'date' },
+                { display: '期望工作', name: 'qwjob', align: 'left', width: 80, minWidth: 60 },
+                { display: '家庭住址', name: 'jtzz', align: 'left', width: 80, minWidth: 60 },
+                {
+                    display: '母婴护理证', name: 'myhlz', align: 'left', width: 80, minWidth: 60
+                    , render: function (item) {
+                        if (item.myhlz) {
+                            return '有';
+                        }
+                        else {
+                            return '无'
+                        }
+                    }
+                },
+                {
+                    display: '育婴师资格证', name: 'yyszgz', align: 'left', width: 80, minWidth: 60
+                    , render: function (item) {
+                        if (item.yyszgz) {
+                            return '有';
+                        }
+                        else {
+                            return '无'
+                        }
+                    }
+                }
+
+                ], pageSize: 10, rownumbers: true,
+                autoFilter: false, rowHeight: 40,
+                checkbox: true
+            });
+
+
+
+
+            $("#toptoolbar").ligerToolBar({
+                items: [
+                            {
+                                text: '增加', click: 
+                                    function (item) {
+                                    $.ligerDialog.open({
+                                        height: 586,
+                                        width: 970,
+                                        title: '增加家政员',
+                                        url: '/Employee/Add',
+                                        //isDrag:false,
+                                        showMax: true,
+                                        showToggle: true,
+                                        showMin: false,
+                                        isResize: false,
+                                        slide: false,
+                                        data: {
+                                            name: $("#txtValue").val()
+                                        },
+                                        //自定义参数
+                                        myDataName: $("#txtValue").val()
+                                        //,onclick: function (item, dialog) {
+                                        //    grid.reload();
+                                        //}
+                                    });
+                                }, icon: 'add'
+                            },
+                            { line: true },
+                            {
+                                text: '修改', click: function (item) {
+                                    var row = manager.getSelectedRow();
+                                    if (row==null) {
+                                        $.ligerDialog.warn('请选中要修改的家政员信息!');
+                                        return;
+                                    }
+                                    var id = row.ID;
+
+                                    $.ligerDialog.open({
+                                        height: 586,
+                                        width: 970,
+                                        title: '修改家政员',
+                                        url: '/Employee/Edit',
+                                        //isDrag:false,
+                                        showMax: true,
+                                        showToggle: true,
+                                        showMin: false,
+                                        isResize: false,
+                                        slide: false,
+                                        data: {
+                                            id:id
+                                        },
+                                        //自定义参数
+                                        myDataName: $("#txtValue").val()
+                                        //,onclick: function (item, dialog) {
+                                        //    grid.reload();
+                                        //}
+                                    });
+                                }, icon: 'edit'
+                            },
+                            { line: true },
+                            {
+                                text: '删除', click: function (item) {
+                                    grid.reload();
+                                }, icon: 'delete'
+                            }
+                ]
+            });
+
+            $("#pageloading").hide();
+
+            var form = $("#form1").ligerForm({
+                validate: true,
+                fields: [
+    	            { type: 'text', label: '标题', name: 'Title', validate: { required: true, minlength: 5 } },
+    	            { type: 'date', label: '入职日期', name: 'addDate', validate: { required: true }, newline: false },
+    	            { type: 'select', label: '国家', name: 'Country', textField: "Country", validate: { required: true }, editor: { data: getCountryData(), textField: "Name", valueField: "Code" }, newline: false }
+                ], buttons: [
+                             { text: '查询', width: 80, click: f_query }
+                ]
+            });
+            function getCountryData() {
+                return [
+                { Name: '中国', Code: 'ZG' },
+                { Name: '德国', Code: 'DG' },
+                { Name: '美国', Code: 'MG' },
+                { Name: '澳大利亚', Code: 'ADLY' },
+                { Name: '加拿大', Code: 'JND' }
+                ];
+            }
+            function f_validate() {
+                var form = liger.get('form1');
+                if (form.valid()) {
+                    alert('验证通过');
+                }
+                else {
+                    form.showInvalid();
+                }
+            }
+            function itemclick(item) {
+                alert(item.text);
+            }
+        });
+
+        function deleteRow() {
+            g.deleteSelectedRow();
+        }
+
+        function f_query() {
+            alert('查询');
+        }
+    </script>
+</head>
+<body style="overflow-x: hidden; padding: 2px;">
+    <div class="l-loading" style="display: block" id="pageloading"></div>
+    <a class="l-button" style="width: 120px; float: left; margin-left: 10px; display: none;" onclick="deleteRow()">删除选择的行</a>
+
+
+    <div class="l-clear"></div>
+    <div id="toptoolbar"></div>
+    <div id="searchbar">
+    </div>
+    <form id="form1">
+    </form>
+
+    <div id="maingrid"></div>
+
+    <div style="display: none;">
+    </div>
+
+</body>
+</html>

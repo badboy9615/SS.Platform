@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"> 
+	<object id="ActionInfoService" type="SS.Platform.OA.BLL.ActionInfoService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="BaseEntityService" type="SS.Platform.OA.BLL.BaseEntityService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="ControlService" type="SS.Platform.OA.BLL.ControlService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="EmployeeService" type="SS.Platform.OA.BLL.EmployeeService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="ExperienceService" type="SS.Platform.OA.BLL.ExperienceService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="FamilyService" type="SS.Platform.OA.BLL.FamilyService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="MenuInfoService" type="SS.Platform.OA.BLL.MenuInfoService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="ModuleService" type="SS.Platform.OA.BLL.ModuleService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="TrainService" type="SS.Platform.OA.BLL.TrainService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="UserInfoService" type="SS.Platform.OA.BLL.UserInfoService, SS.Platform.OA.BLL" >
+
+  </object>
+  
+</objects>

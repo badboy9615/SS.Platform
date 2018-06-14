@@ -1,0 +1,350 @@
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-19 11:28:52,460 [3] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 j:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-19 13:59:26,980 [14] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 j:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-19 14:02:22,470 [5] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 j:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-19 14:04:45,861 [10] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 j:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-19 14:06:45,127 [10] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 j:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-19 14:35:37,777 [20] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 j:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-19 15:12:44,541 [12] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 j:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 252
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-19 16:26:45,975 [10] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 j:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 261
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-19 17:07:14,808 [18] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 j:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 261
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-19 22:28:13,217 [22] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 258
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2018-04-19 22:28:18,590 [22] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 258
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-19 22:30:40,851 [13] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 259
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-19 22:33:36,336 [6] ERROR log4netlogger - System.InvalidOperationException: ObjectStateManager 中已存在具有同一键的对象。ObjectStateManager 无法跟踪具有相同键的多个对象。
+   在 System.Data.Objects.ObjectContext.VerifyRootForAdd(Boolean doAttach, String entitySetName, IEntityWrapper wrappedEntity, EntityEntry existingEntry, EntitySet& entitySet, Boolean& isNoOperation)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 47
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 j:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 264
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2018-04-19 22:44:38,269 [14] ERROR log4netlogger - System.Data.Entity.Infrastructure.DbUpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.UpdateException: 更新条目时出错。有关详细信息，请参见内部异常。 ---> System.Data.SqlClient.SqlException: 从 datetime2 数据类型到 datetime 数据类型的转换产生一个超出范围的值。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Mapping.Update.Internal.DynamicUpdateCommand.Execute(UpdateTranslator translator, EntityConnection connection, Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Mapping.Update.Internal.UpdateTranslator.Update(IEntityStateManager stateManager, IEntityAdapter adapter)
+   在 System.Data.EntityClient.EntityAdapter.Update(IEntityStateManager entityCache)
+   在 System.Data.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 SS.Platform.OA.DalFactory.DbSession.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.DalFactory\DbSession.cs:行号 45
+   在 SS.Platform.OA.BLL.BaseService`1.SaveChanges() 位置 f:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 15
+   在 SS.Platform.OA.UI.Portal.Controllers.EmployeeController.EditSave(Employee employee) 位置 f:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\EmployeeController.cs:行号 266
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------

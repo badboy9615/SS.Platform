@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"> 
+	<object id="BaseEntityService" type="SS.Platform.OA.BLL.BaseEntityService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="DepartmentService" type="SS.Platform.OA.BLL.DepartmentService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="RoleService" type="SS.Platform.OA.BLL.RoleService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="UserInfoService" type="SS.Platform.OA.BLL.UserInfoService, SS.Platform.OA.BLL" >
+
+  </object>
+  
+</objects>

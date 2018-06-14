@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+	<description>An example that demonstrates simple IOC features.</description>
+	<object name="UserInfoService" type="SpingNetDemo.UserInfoService,SpingNetDemo">
+		<constructor-arg name="age" value="18"/>
+		<property name="ServerName" value="老马"></property>
+		<property name="UserInfoDal" ref="UserInfoDal"></property>
+	</object>
+	<object name="UserInfoDal" type="SpingNetDemo.UserInfoDal,SpingNetDemo">
+		<property name="UName" value="杨"></property>
+	</object>
+</objects>

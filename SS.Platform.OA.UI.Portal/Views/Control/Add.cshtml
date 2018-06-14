@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>添加控制器信息</title>
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../lib/ligerUI/skins/Gray/css/all.css" rel="stylesheet" />
+    <script src="../../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="../../Lib/jquery.form.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerPopupEdit.js"></script>
+    <script src="../../js/ControllerViewScript/Control_Add.js" type="text/javascript"></script>
+    <script src="../../Lib/CustomersData.js" type="text/javascript"></script>
+</head>
+<body>
+    <!----------------------------添加部分------开始---------------------->
+    <div id="addDiv">
+        <form id="Add" class="liger-form" action="/Control/AddSave">
+                @*<input type="text" name="Module" id="Module"/>*@
+            <div class="fields">
+                @*<input data-type="text" data-label="模块"  name="Module" id="Module"/>*@
+                <input data-type="text" data-label="编码" name="Code" validate="{required:true}"/>
+                <input data-type="text" data-label="名称" name="Name" validate="{required:true}" />
+                <input data-type="text" data-label="url" name="url" />
+                <input data-type="textarea" data-label="备注" name="Remark" />
+            </div>
+            <div class="buttons">
+                <input data-text="保存" class="l-button l-button-submit" data-click="doSave" data-width="80" />
+                <input data-text="关闭" class="l-button l-button-reset" data-click="doClose" data-width="80" />
+            </div>
+        </form>
+    </div>
+    <input type="text" id="popTxt"/> 
+    <!----------------------------添加部分------结束---------------------->
+</body>
+</html>

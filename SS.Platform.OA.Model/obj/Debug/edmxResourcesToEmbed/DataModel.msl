@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataModelContainer">
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="QQNum" ColumnName="QQNum" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="TakeEffect" ColumnName="TakeEffect" />
+          <ScalarProperty Name="TakeEffectTime" ColumnName="TakeEffectTime" />
+          <ScalarProperty Name="LoseEffectTime" ColumnName="LoseEffectTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaseEntity">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.BaseEntity)">
+        <MappingFragment StoreEntitySet="BaseEntity">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="TakeEffect" ColumnName="TakeEffect" />
+          <ScalarProperty Name="TakeEffectTime" ColumnName="TakeEffectTime" />
+          <ScalarProperty Name="LoseEffectTime" ColumnName="LoseEffectTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Employee)">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="TakeEffect" ColumnName="TakeEffect" />
+          <ScalarProperty Name="TakeEffectTime" ColumnName="TakeEffectTime" />
+          <ScalarProperty Name="LoseEffectTime" ColumnName="LoseEffectTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="xyd" ColumnName="xyd" />
+          <ScalarProperty Name="dj" ColumnName="dj" />
+          <ScalarProperty Name="xb" ColumnName="xb" />
+          <ScalarProperty Name="wh" ColumnName="wh" />
+          <ScalarProperty Name="zzmm" ColumnName="zzmm" />
+          <ScalarProperty Name="zp" ColumnName="zp" />
+          <ScalarProperty Name="nl" ColumnName="nl" />
+          <ScalarProperty Name="sx" ColumnName="sx" />
+          <ScalarProperty Name="csrq" ColumnName="csrq" />
+          <ScalarProperty Name="hyzk" ColumnName="hyzk" />
+          <ScalarProperty Name="sg" ColumnName="sg" />
+          <ScalarProperty Name="qwgz" ColumnName="qwgz" />
+          <ScalarProperty Name="grxy" ColumnName="grxy" />
+          <ScalarProperty Name="jkzk" ColumnName="jkzk" />
+          <ScalarProperty Name="tz" ColumnName="tz" />
+          <ScalarProperty Name="sfzj" ColumnName="sfzj" />
+          <ScalarProperty Name="xm" ColumnName="xm" />
+          <ScalarProperty Name="yx" ColumnName="yx" />
+          <ScalarProperty Name="zzqy" ColumnName="zzqy" />
+          <ScalarProperty Name="zxsj" ColumnName="zxsj" />
+          <ScalarProperty Name="gzfw" ColumnName="gzfw" />
+          <ScalarProperty Name="gznx" ColumnName="gznx" />
+          <ScalarProperty Name="sfzh" ColumnName="sfzh" />
+          <ScalarProperty Name="sfzt" ColumnName="sfzt" />
+          <ScalarProperty Name="xxly" ColumnName="xxly" />
+          <ScalarProperty Name="sjhm" ColumnName="sjhm" />
+          <ScalarProperty Name="jtzz" ColumnName="jtzz" />
+          <ScalarProperty Name="wxh" ColumnName="wxh" />
+          <ScalarProperty Name="xzzz" ColumnName="xzzz" />
+          <ScalarProperty Name="bz" ColumnName="bz" />
+          <ScalarProperty Name="jkzs" ColumnName="jkzs" />
+          <ScalarProperty Name="yxqz" ColumnName="yxqz" />
+          <ScalarProperty Name="myhlz" ColumnName="myhlz" />
+          <ScalarProperty Name="yyszgz" ColumnName="yyszgz" />
+          <ScalarProperty Name="lrsj" ColumnName="lrsj" />
+          <ScalarProperty Name="gzzt" ColumnName="gzzt" />
+          <ScalarProperty Name="jbkh" ColumnName="jbkh" />
+          <ScalarProperty Name="qwjob" ColumnName="qwjob" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Family">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Family)">
+        <MappingFragment StoreEntitySet="Family">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="TakeEffect" ColumnName="TakeEffect" />
+          <ScalarProperty Name="TakeEffectTime" ColumnName="TakeEffectTime" />
+          <ScalarProperty Name="LoseEffectTime" ColumnName="LoseEffectTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Relation" ColumnName="Relation" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Train">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Train)">
+        <MappingFragment StoreEntitySet="Train">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Pxsj" ColumnName="Pxsj" />
+          <ScalarProperty Name="Pxqx" ColumnName="Pxqx" />
+          <ScalarProperty Name="Pxlx" ColumnName="Pxlx" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experience">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Experience)">
+        <MappingFragment StoreEntitySet="Experience">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="TakeEffect" ColumnName="TakeEffect" />
+          <ScalarProperty Name="TakeEffectTime" ColumnName="TakeEffectTime" />
+          <ScalarProperty Name="LoseEffectTime" ColumnName="LoseEffectTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Qssj" ColumnName="Qssj" />
+          <ScalarProperty Name="Jssj" ColumnName="Jssj" />
+          <ScalarProperty Name="Khxm" ColumnName="Khxm" />
+          <ScalarProperty Name="Gzdd" ColumnName="Gzdd" />
+          <ScalarProperty Name="Gzpd" ColumnName="Gzpd" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Module">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Module)">
+        <MappingFragment StoreEntitySet="Module">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="TakeEffect" ColumnName="TakeEffect" />
+          <ScalarProperty Name="TakeEffectTime" ColumnName="TakeEffectTime" />
+          <ScalarProperty Name="LoseEffectTime" ColumnName="LoseEffectTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Control">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Control)">
+        <MappingFragment StoreEntitySet="Control">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="TakeEffect" ColumnName="TakeEffect" />
+          <ScalarProperty Name="TakeEffectTime" ColumnName="TakeEffectTime" />
+          <ScalarProperty Name="LoseEffectTime" ColumnName="LoseEffectTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActionInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.ActionInfo)">
+        <MappingFragment StoreEntitySet="ActionInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="TakeEffect" ColumnName="TakeEffect" />
+          <ScalarProperty Name="TakeEffectTime" ColumnName="TakeEffectTime" />
+          <ScalarProperty Name="LoseEffectTime" ColumnName="LoseEffectTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="HttpMethod" ColumnName="HttpMethod" />
+          <ScalarProperty Name="ActionMethod" ColumnName="ActionMethod" />
+          <ScalarProperty Name="ControlID" ColumnName="ControlID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.MenuInfo)">
+        <MappingFragment StoreEntitySet="MenuInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedTIme" ColumnName="ModifiedTIme" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="TakeEffect" ColumnName="TakeEffect" />
+          <ScalarProperty Name="TakeEffectTime" ColumnName="TakeEffectTime" />
+          <ScalarProperty Name="LoseEffectTime" ColumnName="LoseEffectTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="IsVisable" ColumnName="IsVisable" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="IconUrl" ColumnName="IconUrl" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ActionInfoMenuInfo" TypeName="DataModel.ActionInfoMenuInfo" StoreEntitySet="MenuInfo">
+      <EndProperty Name="ActionInfo">
+        <ScalarProperty Name="ID" ColumnName="ActionInfo_ID" />
+      </EndProperty>
+      <EndProperty Name="MenuInfo">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

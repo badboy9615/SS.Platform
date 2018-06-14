@@ -1,0 +1,145 @@
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+2016-05-24 08:28:20,069 [7] ERROR log4netlogger - System.Web.HttpException (0x80070057): 远程主机关闭了连接。错误代码是 0x80070057。
+   在 System.Web.Hosting.IIS7WorkerRequest.RaiseCommunicationError(Int32 result, Boolean throwOnDisconnect)
+   在 System.Web.Hosting.IIS7WorkerRequest.ExplicitFlush()
+   在 System.Web.HttpResponse.Flush(Boolean finalFlush, Boolean async)
+   在 System.Web.HttpResponse.Flush()
+   在 System.Web.HttpResponse.End()
+   在 System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   在 System.Web.HttpResponseWrapper.Redirect(String url)
+   在 SS.Platform.OA.UI.Portal.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) 位置 d:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\BaseController.cs:行号 27
+   在 System.Web.Mvc.Controller.System.Web.Mvc.IActionFilter.OnActionExecuting(ActionExecutingContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------header--------------------------
+2016-05-24 08:28:28,698 [7] ERROR log4netlogger - System.Web.HttpException (0x80070057): 远程主机关闭了连接。错误代码是 0x80070057。
+   在 System.Web.Hosting.IIS7WorkerRequest.RaiseCommunicationError(Int32 result, Boolean throwOnDisconnect)
+   在 System.Web.Hosting.IIS7WorkerRequest.ExplicitFlush()
+   在 System.Web.HttpResponse.Flush(Boolean finalFlush, Boolean async)
+   在 System.Web.HttpResponse.Flush()
+   在 System.Web.HttpResponse.End()
+   在 System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   在 System.Web.HttpResponseWrapper.Redirect(String url)
+   在 SS.Platform.OA.UI.Portal.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) 位置 d:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\BaseController.cs:行号 27
+   在 System.Web.Mvc.Controller.System.Web.Mvc.IActionFilter.OnActionExecuting(ActionExecutingContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------header--------------------------
+2016-05-24 08:54:15,890 [9] ERROR log4netlogger - System.Web.HttpException (0x80070057): 远程主机关闭了连接。错误代码是 0x80070057。
+   在 System.Web.Hosting.IIS7WorkerRequest.RaiseCommunicationError(Int32 result, Boolean throwOnDisconnect)
+   在 System.Web.Hosting.IIS7WorkerRequest.ExplicitFlush()
+   在 System.Web.HttpResponse.Flush(Boolean finalFlush, Boolean async)
+   在 System.Web.HttpResponse.Flush()
+   在 System.Web.HttpResponse.End()
+   在 System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   在 System.Web.HttpResponseWrapper.Redirect(String url)
+   在 SS.Platform.OA.UI.Portal.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) 位置 d:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\BaseController.cs:行号 27
+   在 System.Web.Mvc.Controller.System.Web.Mvc.IActionFilter.OnActionExecuting(ActionExecutingContext filterContext)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------header--------------------------
+2016-05-24 09:12:10,913 [5] ERROR log4netlogger - System.InvalidOperationException: 一个实体对象不能由多个 IEntityChangeTracker 实例引用。
+   在 System.Data.Objects.ObjectContext.VerifyContextForAddOrAttach(IEntityWrapper wrappedEntity)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 d:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 d:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.UserInfoController.EditPassword(String OldPass, String NewPass, String ConfPass) 位置 d:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\UserInfoController.cs:行号 170
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+2016-05-24 09:12:39,464 [10] ERROR log4netlogger - System.InvalidOperationException: 一个实体对象不能由多个 IEntityChangeTracker 实例引用。
+   在 System.Data.Objects.ObjectContext.VerifyContextForAddOrAttach(IEntityWrapper wrappedEntity)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 d:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 d:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.UserInfoController.EditPassword(String OldPass, String NewPass, String ConfPass) 位置 d:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\UserInfoController.cs:行号 170
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------header--------------------------
+2016-05-24 09:35:44,173 [9] ERROR log4netlogger - System.InvalidOperationException: 一个实体对象不能由多个 IEntityChangeTracker 实例引用。
+   在 System.Data.Objects.ObjectContext.VerifyContextForAddOrAttach(IEntityWrapper wrappedEntity)
+   在 System.Data.Objects.ObjectContext.AttachSingleObject(IEntityWrapper wrappedEntity, EntitySet entitySet, String argumentName)
+   在 System.Data.Objects.ObjectContext.AttachTo(String entitySetName, Object entity)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass2.<Attach>b__1()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Attach(Object entity)
+   在 System.Data.Entity.Internal.InternalEntityEntry.set_State(EntityState value)
+   在 System.Data.Entity.Infrastructure.DbEntityEntry`1.set_State(EntityState value)
+   在 SS.Platform.OA.Dal.BaseDal`1.Update(T entity) 位置 d:\SS.Platform\SS.Platform.OA.Dal\BaseDal.cs:行号 42
+   在 SS.Platform.OA.BLL.BaseService`1.Update(T entity) 位置 d:\SS.Platform\SS.Platform.OA.BLL\BaseService.cs:行号 36
+   在 SS.Platform.OA.UI.Portal.Controllers.UserInfoController.EditPassword(String OldPass, String NewPass, String ConfPass) 位置 d:\SS.Platform\SS.Platform.OA.UI.Portal\Controllers\UserInfoController.cs:行号 170
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<InvokeActionMethodWithFilters>b__12()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodFilter(IActionFilter filter, ActionExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass15.<>c__DisplayClass17.<InvokeActionMethodWithFilters>b__14()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------
+
+----------------------header--------------------------
+
+----------------------footer--------------------------

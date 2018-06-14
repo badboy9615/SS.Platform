@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ad265a99a34e4d1b8b14132024bb5923" Name="关系图1" ZoomLevel="93" >
+        <EntityTypeShape EntityType="DataModel.UserInfo" Width="1.5" PointX="2.25" PointY="0.5" />
+        <EntityTypeShape EntityType="DataModel.BaseEntity" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="DataModel.Employee" Width="1.5" PointX="4" PointY="0.5" />
+        <EntityTypeShape EntityType="DataModel.Family" Width="1.5" PointX="5.75" PointY="0.5" />
+        <AssociationConnector Association="DataModel.EmployeeFamily" />
+        <EntityTypeShape EntityType="DataModel.Train" Width="1.5" PointX="5.75" PointY="4.75" />
+        <AssociationConnector Association="DataModel.EmployeeTrain" />
+        <EntityTypeShape EntityType="DataModel.Experience" Width="1.5" PointX="5.75" PointY="8.625" />
+        <AssociationConnector Association="DataModel.EmployeeExperience" />
+        <EntityTypeShape EntityType="DataModel.Module" Width="1.5" PointX="0.5" PointY="4.25" />
+        <EntityTypeShape EntityType="DataModel.Control" Width="1.5" PointX="2.375" PointY="4.75" />
+        <AssociationConnector Association="DataModel.ModuleControl" />
+        <EntityTypeShape EntityType="DataModel.ActionInfo" Width="1.5" PointX="0.5" PointY="8.125" />
+        <AssociationConnector Association="DataModel.ControlActionInfo" />
+        <EntityTypeShape EntityType="DataModel.MenuInfo" Width="1.5" PointX="2.25" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="DataModel.ActionInfoMenuInfo" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

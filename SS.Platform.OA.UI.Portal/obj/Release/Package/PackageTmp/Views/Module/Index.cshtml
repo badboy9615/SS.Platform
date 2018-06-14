@@ -1,0 +1,96 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>模块维护</title>
+    <link href="../../Lib/jquery-easyui/themes/default/easyui.css" rel="stylesheet" />
+    <link href="../../Lib/jquery-easyui/themes/icon.css" rel="stylesheet" />
+    <link href="../../Lib/Content/themes/Site.css" rel="stylesheet" />
+
+    <script src="../../Lib/jquery/jquery-1.8.0.min.js"></script>
+    <script src="../../Lib/Ajax/jquery.unobtrusive-ajax.js"></script>
+    <script src="../../Lib/jquery-easyui/jquery.easyui.min.js"></script>
+    <script src="../../Lib/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../../Lib/Other/datapattern.js"></script>
+    <script src="../../Scripts/CommonTools.js"></script>
+    <script src="../../Scripts/ControllerViewScript/Module.js" type="text/javascript"></script>
+</head>
+<body>
+        <!----------------------------搜索部分------开始---------------------->
+        <div>
+            名称：<input type="text" name="searchName" id="searchName"/>  &nbsp;
+            &nbsp;
+            
+            <a id="linkSearch" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">搜索</a>
+            <hr/>
+        </div>
+        <!----------------------------搜索部分------结束---------------------->
+        <!----------------------------表格部分------开始---------------------->
+        <div>
+            <table id="tt" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
+            </table>
+        </div>
+        <!----------------------------表格部分-----结束----------------------->
+        
+        <!----------------------------添加部分------开始---------------------->
+        <div id="addDiv">
+            @{
+                using (Ajax.BeginForm("Add", "Module", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "afterAdd" }))
+                {
+                    <table>
+                        <tr>
+                            <td>模块编码：</td><td><input type="text" id= "Code" name="Code" value="自动生成" disabled="disabled"/><span style="color:red;">&nbsp;*</span></td>
+                        </tr>
+                        <tr>
+                            <td>模块名称：</td><td><input type="text" id= "Name" name="Name"/><span style="color:red;">&nbsp;*</span></td>
+                        </tr>
+                        <tr>
+                            <td>URL：</td><td><input type="text" id= "Url" name="Url"/><span style="color:red;">&nbsp;*</span></td>
+                        </tr>
+                        <tr>
+                            <td>备注：</td><td><textarea id="Remark" name="Remark" cols="20" rows="4" class="l-textarea" id="Remark" style="width:150px"></textarea></td>
+                        </tr>
+                    </table>
+                }
+            }
+        </div>
+        <!----------------------------添加部分------结束---------------------->
+        
+        <!----------------------------修改部分------开始---------------------->
+        <div id="editDiv">
+            @{
+                using (Ajax.BeginForm("EditSave", "Module", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "afterEdit" }))
+                {
+                    <table>
+                        <tr>
+                            <td>模块编码：</td><td><input type="text" id= "EdCode" name="Code" disabled="disabled"/><span style="color:red;">&nbsp;*</span></td>
+                        </tr>
+                        <tr>
+                            <td>模块名称：</td><td><input type="text" id= "EdName" name="Name"/><span style="color:red;">&nbsp;*</span>
+                                                     <input type="hidden" name="ID" id="EdID"/>
+                                                     @*<input type="hidden" name="In_Id" id="EdIn_Id"/>*@
+                                                     <input type="hidden" name="SubBy" id="EdSubBy"/>
+                                                     <input type="hidden" name="SubTime" id="EdSubTime"/>
+                                                     <input type="hidden" name="DelFlag" id="EdDelFlag"/>
+                                                     <input type="hidden" name="TakeEffect" id="EdTakeEffect"/>
+                                                     <input type="hidden" name="TakeEffectTime" id="EdTakeEffectTime"/>
+                                                     <input type="hidden" name="LoseEffectTime" id="EdLoseEffectTime"/>
+                                           </td>
+                        </tr>
+                        <tr>
+                            <td>URL：</td><td><input type="text" id= "EdUrl" name="Url" disabled="disabled"/><span style="color:red;">&nbsp;*</span></td>
+                        </tr>
+                        <tr>
+                            <td>备注：</td><td><textarea name="Remark" cols="20" rows="4" class="l-textarea" id="EdRemark" style="width:150px"></textarea></td>
+                        </tr>
+                    </table>
+                }
+            }
+        </div>
+        <!----------------------------修改部分------结束---------------------->
+</body>
+</html>

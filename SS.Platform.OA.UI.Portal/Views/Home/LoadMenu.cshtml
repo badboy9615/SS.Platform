@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/zTreeStyle/zTreeStyle.css">
+	<link rel="stylesheet" type="text/css" href="../../css/skin_/nav.css" />
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/global.js"></script>
+<title>底部内容页</title>
+</head>
+
+  <body>
+    <div id="container">
+		<div id="bd">
+	    	<div class="sidebar">
+	        	<div class="sidebar-bg"></div>
+	            <i class="sidebar-hide"></i>
+	            <h2><a href="javascript:;"><i class="h2-icon" title="切换到树型结构"></i><span>家政管理</span></a></h2>
+	            <ul class="nav">
+	                <li class="nav-li">
+	                	<a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">系统管理</span></a>
+	                    <ul class="subnav">
+	                    	<li class="subnav-li" href="/Employee/Index" data-id="1"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">家政员管理</span></a></li>
+	                        <li class="subnav-li" href="/UserInfo/Index" data-id="2"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">用户管理</span></a></li>
+	                        <li class="subnav-li" href="/Module/Index" data-id="3"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">模块管理</span></a></li>
+	                        <li class="subnav-li" href="/Control/Index" data-id="4"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">控制器管理</span></a></li>
+	                    </ul>
+	                </li>
+	                <li class="nav-li current">
+	                	<a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">业务处理</span></a>
+	                    <ul class="subnav">
+	                    	<li class="subnav-li  current" href="table.html" data-id="21"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">订单管理</span></a></li>
+	                        <li class="subnav-li" href="table.html" data-id="22"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">财务管理</span></a></li>
+	                    </ul>
+	                </li>
+	                <li class="nav-li">
+	                	<a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">用户组权限管理</span></a>
+	                    <ul class="subnav">
+	                    	<li class="subnav-li" href="table.html" data-id="31"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">用户组管理</span></a></li>
+	                        <li class="subnav-li" href="table.html" data-id="32"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">后台用户管理</span></a></li>
+	                    </ul>
+	                </li>
+	                <li class="nav-li">
+	                	<a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">个人中心</span></a>
+	                    <ul class="subnav">
+	                    	<li class="subnav-li" href="table.html" data-id="41"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">个人资料</span></a></li>
+	                        <li class="subnav-li" href="table.html" data-id="42"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">退出</span></a></li>
+	                    </ul>
+	                </li>
+	                <li class="nav-li last-nav-li">
+	                	<a href="javascript:;" class="ue-clear"><i class="nav-ivon"></i><span class="nav-text">系统设置</span></a>
+	                    <ul class="subnav">
+	                    	<li class="subnav-li" href="table.html" data-id="51"><a href="javascript:;" class="ue-clear"><i class="subnav-icon"></i><span class="subnav-text">分类管理</span></a></li>
+	                    </ul>
+	                </li>
+	            
+	            </ul>
+	            <div class="tree-list outwindow">
+	            	<div class="tree ztree"></div>
+	            </div>
+	        </div>
+	        <div class="main">
+	        	<div class="title">
+	                <i class="sidebar-show"></i>
+	                <ul class="tab ue-clear">
+	                   
+	                </ul>
+	                <i class="tab-more"></i>
+	                <i class="tab-close"></i>
+	            </div>
+	            <div class="content">
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	<div class="more-bab-list">
+		<ul></ul>
+	    <div class="opt-panel-ml"></div>
+	    <div class="opt-panel-mr"></div>
+	    <div class="opt-panel-bc"></div>
+	    <div class="opt-panel-br"></div>
+	    <div class="opt-panel-bl"></div>
+	</div>
+  </body>
+	<script type="text/javascript" src="../../js/nav.js"></script>
+	<script type="text/javascript" src="../../js/Menu.js"></script>
+	<script type="text/javascript" src="../../js/jquery.ztree.core-3.5.js"></script>
+	<script type="text/javascript" src="../../js/ControllerViewScript/nav.js"></script>
+</html>

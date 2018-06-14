@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.ActionInfoController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="ActionInfoService" ref="ActionInfoService" />
+    <property name="ModuleService" ref="ModuleService" />
+    <property name="ControlService" ref="ControlService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.BaseEntityController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="BaseEntityService" ref="BaseEntityService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.ControlController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="ControlService" ref="ControlService" />
+    <property name="ModuleService" ref="ModuleService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.DepartmentController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="DepartmentService" ref="DepartmentService" />
+    <property name="UserInfoService" ref="UserInfoService" />
+    <property name="MasterService" ref="MasterService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.MasterController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="MasterService" ref="MasterService" />
+    <property name="DepartmentService" ref="DepartmentService" />
+    <property name="UserInfoService" ref="UserInfoService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.MenuInfoController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="MenuInfoService" ref="MenuInfoService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.ModuleController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="ModuleService" ref="ModuleService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.R_User_ActionInfoController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="R_User_ActionInfoService" ref="R_User_ActionInfoService" />
+    <property name="UserInfoService" ref="UserInfoService" />
+    <property name="ActionInfoService" ref="ActionInfoService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.RoleController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="RoleService" ref="RoleService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.UserGroupController, SS.Platform.OA.UI.Portal" singleton="false" >
+    <property name="UserGroupService" ref="UserGroupService" />
+  </object>
+
+  <object  type="SS.Platform.OA.UI.Portal.Controllers.UserInfoController, SS.Platform.OA.UI.Portal"  singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService" />
+    <property name="UserGroupService" ref="UserGroupService" />
+    <property name="RoleService" ref="RoleService" />
+    <property name="R_User_ActionInfoService" ref="R_User_ActionInfoService" />
+    <property name="ActionInfoService" ref="ActionInfoService" />
+  </object>
+
+
+</objects>

@@ -1,0 +1,1876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3152858-B88D-4E22-BE5E-A9378E5525EF}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.Platform.OA.UI.Portal</RootNamespace>
+    <AssemblyName>SS.Platform.OA.UI.Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\Library\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Log4Net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\Library\Spring\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web">
+      <HintPath>..\Library\Spring\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web.Extensions">
+      <HintPath>..\Library\Spring\Spring.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web.Mvc3">
+      <HintPath>..\Library\Spring\Spring.Web.Mvc3.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.20105.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\ActionDistributeController.cs" />
+    <Compile Include="Controllers\ActionInfoController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BaseEntityController.cs" />
+    <Compile Include="Controllers\ControlController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DepartmentUserinfoController.cs" />
+    <Compile Include="Controllers\DocumentInfoController.cs" />
+    <Compile Include="Controllers\EditPassController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Controllers\MenuInfoController.cs" />
+    <Compile Include="Controllers\ModuleController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\RoleDistributeController.cs" />
+    <Compile Include="Controllers\R_Document_UserController.cs" />
+    <Compile Include="Controllers\R_User_ActionInfoController.cs" />
+    <Compile Include="Controllers\UserGroupController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyExceptionFilterAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\Controllers.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Services%281%29.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Content\ControllerViewStyle\ActionDistribute.css" />
+    <Content Include="Content\ControllerViewStyle\DepartmentUserinfo.css" />
+    <Content Include="Content\ControllerViewStyle\DocumentInfo.css" />
+    <Content Include="Content\ControllerViewStyle\Home.css" />
+    <Content Include="Content\ControllerViewStyle\RoleDistribute.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <EmbeddedResource Include="Controllers.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controllers.tt</DependentUpon>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Error.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Config\vssver2.scc" />
+    <Content Include="Controllers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Controllers.xml</LastGenOutput>
+    </Content>
+    <Content Include="Lib\Ajax\jquery.unobtrusive-ajax.js" />
+    <Content Include="Lib\Ajax\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Lib\Ajax\MicrosoftAjax.debug.js" />
+    <Content Include="Lib\Ajax\MicrosoftAjax.js" />
+    <Content Include="Lib\Ajax\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Lib\Ajax\MicrosoftMvcAjax.js" />
+    <Content Include="Lib\Ajax\MyAjaxForm.js" />
+    <Content Include="Lib\Content\images\vssver2.scc" />
+    <Content Include="Lib\Content\themes\base\images\vssver2.scc" />
+    <Content Include="Lib\Content\themes\base\minified\images\vssver2.scc" />
+    <Content Include="Lib\Content\themes\base\minified\vssver2.scc" />
+    <Content Include="Lib\Content\themes\base\vssver2.scc" />
+    <Content Include="Lib\Content\themes\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\demo\combobox_data.json" />
+    <Content Include="Lib\jquery-easyui\demo\datagrid_data.json" />
+    <Content Include="Lib\jquery-easyui\demo\datagrid_data2.json" />
+    <Content Include="Lib\jquery-easyui\demo\datagrid_data3.json" />
+    <Content Include="Lib\jquery-easyui\demo\form_data.json" />
+    <Content Include="Lib\jquery-easyui\demo\propertygrid_data.json" />
+    <Content Include="Lib\jquery-easyui\demo\treegrid_data.json" />
+    <Content Include="Lib\jquery-easyui\demo\treegrid_data2.json" />
+    <Content Include="Lib\jquery-easyui\demo\treegrid_data3.json" />
+    <Content Include="Lib\jquery-easyui\demo\treegrid_subdata.json" />
+    <Content Include="Lib\jquery-easyui\demo\tree_data.json" />
+    <Content Include="Lib\jquery-easyui\demo\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\locale\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\plugins\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\src\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\themes\default\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\themes\gray\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\themes\icons\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\themes\metro\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\themes\vssver2.scc" />
+    <Content Include="Lib\jquery-easyui\vssver2.scc" />
+    <Content Include="Lib\Ajax\vssver2.scc" />
+    <Content Include="Content\ControllerViewStyle\vssver2.scc" />
+    <None Include="Lib\jquery\jquery-1.7.1.intellisense.js" />
+    <Content Include="Lib\jquery\jquery-1.8.0.min.js" />
+    <Content Include="Lib\jquery\jquery-ui-1.8.20.js" />
+    <Content Include="Lib\jquery\jquery-ui-1.8.20.min.js" />
+    <None Include="Lib\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Lib\jquery\jquery.validate.js" />
+    <Content Include="Lib\jquery\jquery.validate.min.js" />
+    <Content Include="Lib\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Lib\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\bin\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\file_manager_json.ashx" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\upload_json.ashx" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20130504\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\demo.jsp" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\file_manager_json.jsp" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\lib\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\upload_json.jsp" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\php\demo.php" />
+    <Content Include="Lib\kindeditor-4.0.5\php\file_manager_json.php" />
+    <Content Include="Lib\kindeditor-4.0.5\php\JSON.php" />
+    <Content Include="Lib\kindeditor-4.0.5\php\upload_json.php" />
+    <Content Include="Lib\kindeditor-4.0.5\php\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\anchor\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\clearhtml\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\code\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\flash\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\insertfile\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\lineheight\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\link\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\map\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\media\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\pagebreak\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\plainpaste\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\preview\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\quickformat\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\table\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\html\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\wordpaste\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\default\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\simple\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\vssver2.scc" />
+    <Content Include="Lib\ligerUI1\skins\icons\新建 Microsoft Office Excel 工作表.xlsx" />
+    <Content Include="Lib\ligerUI\images\vssver2.scc" />
+    <Content Include="Lib\ligerUI\js\core\inject.js" />
+    <Content Include="Lib\ligerUI\js\core\vssver2.scc" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerCheckBoxList.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerListBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerPanel.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerPopupEdit.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerPortal.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerRadioList.js" />
+    <Content Include="Lib\ligerUI\js\plugins\vssver2.scc" />
+    <Content Include="Lib\ligerUI\js\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\button-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\button.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\toggle.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\date.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\form\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-select.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-unselect.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\spr_icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\panel-header2.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\nodeloading.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\nodeloading2.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\nodeloading3.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\nodeloading4.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialogbtn.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\all.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\common.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\dialog.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\form.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\grid.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\layout.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\tab.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\gridheader.png" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\accordion-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\icon-close-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\icon-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\layout-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-left-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-right-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\togglebar.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\tab_arrow_spr.png" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\tab_close.png" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button1.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\date.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\dateeditor-bar.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\dateeditor-btn-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\dateeditor-btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\dateeditor-thead.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\grid-detail-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\grid-detail-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\gridalt.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\gridbar.jpg" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\grideditor.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-select.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-select2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-unselect.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\input.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\inputdisabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loading2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loading3.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loading4.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loadingl.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\spr_icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\trigger.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\win\dialog-winbtns.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\win\dialogbtn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\win\dialogicon.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\icon-select.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\icon-unselect.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\loading3.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\loading4.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\win\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\icons\down.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\icons\新建 Microsoft Office Excel 工作表.xlsx" />
+    <Content Include="Lib\ligerUI\skins\Silvery\css\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\grid\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\all.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\dialog.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\form.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\grid.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\tab.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\gridheader.png" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\accordion-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\icon-close-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\icon-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\layout-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-left-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-right-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\togglebar.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\tab_arrow_spr.png" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\tab_close.png" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button1.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button2.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\date.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\dateeditor-bar.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\dateeditor-btn-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\dateeditor-btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\dateeditor-thead.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\grid-detail-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\grid-detail-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\gridalt.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\gridbar.jpg" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\grideditor.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-select.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-select2.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-unselect.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\input.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\inputdisabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loading2.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loading3.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loading4.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loadingl.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\spr_icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\trigger.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\win\dialog-winbtns.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\win\dialogbtn.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\win\dialogicon.gif" />
+    <Content Include="Lib\ligerUI\skins\vssver2.scc" />
+    <Content Include="Lib\Other\datapattern.js" />
+    <Content Include="Lib\Other\login1.6.1.min.js" />
+    <Content Include="Lib\Other\modernizr-2.5.3.js" />
+    <Content Include="Lib\Other\passport.2013v1.js" />
+    <Content Include="Lib\Other\thickbox.js" />
+    <Content Include="Lib\Scripts\vssver2.scc" />
+    <Content Include="Lib\vssver2.scc" />
+    <Content Include="Lib\ZTree\js\vssver2.scc" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\vssver2.scc" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\vssver2.scc" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\vssver2.scc" />
+    <Content Include="Lib\ZTree\zTreeStyle\vssver2.scc" />
+    <Content Include="Scripts\CommonTools.js" />
+    <Content Include="Scripts\ControllerViewScript\DocumentInfo.js" />
+    <Content Include="Scripts\ControllerViewScript\EditPass.js" />
+    <Content Include="Scripts\ControllerViewScript\Login.js" />
+    <Content Include="Scripts\ControllerViewScript\Master.js" />
+    <Content Include="Scripts\ControllerViewScript\R_User_ActionInfo.js" />
+    <Content Include="Scripts\ControllerViewScript\vssver2.scc" />
+    <Content Include="Lib\Content1\images\android.jpg" />
+    <Content Include="Lib\Content1\images\apple.jpg" />
+    <Content Include="Lib\Content1\images\bg_bg.jpg" />
+    <Content Include="Lib\Content1\images\btn_submit.jpg" />
+    <Content Include="Lib\Content1\images\index_bg.jpg" />
+    <Content Include="Lib\Content1\images\login_title.png" />
+    <Content Include="Lib\Content1\images\logo.jpg" />
+    <Content Include="Lib\Content1\images\logo11.jpg" />
+    <Content Include="Lib\Content1\images\messager.jpg" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\jquery-ui.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.all.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.base.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.button.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.core.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.slider.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.theme.css" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Lib\Content1\themes\Site.css" />
+    <Content Include="Lib\Content1\themes\thickbox.css" />
+    <Content Include="Lib\Content\images\3DSMAX.png" />
+    <Content Include="Lib\Content\images\7_7.jpg" />
+    <Content Include="Lib\Content\images\Alien Folder.png" />
+    <Content Include="Lib\Content\images\android.jpg" />
+    <Content Include="Lib\Content\images\apple.jpg" />
+    <Content Include="Lib\Content\images\applebg.jpg" />
+    <Content Include="Lib\Content\images\bg.png" />
+    <Content Include="Lib\Content\images\bg3.png" />
+    <Content Include="Lib\Content\images\bg_bg.jpg" />
+    <Content Include="Lib\Content\images\big.png" />
+    <Content Include="Lib\Content\images\blue_glow.jpg" />
+    <Content Include="Lib\Content\images\btn_submit.jpg" />
+    <Content Include="Lib\Content\images\index_bg.jpg" />
+    <Content Include="Lib\Content\images\lg.jpg" />
+    <Content Include="Lib\Content\images\login_title.png" />
+    <Content Include="Lib\Content\images\logo.gif" />
+    <Content Include="Lib\Content\images\logo.jpg" />
+    <Content Include="Lib\Content\images\logo11.gif" />
+    <Content Include="Lib\Content\images\messager.jpg" />
+    <Content Include="Lib\Content\images\Program Files Folder.png" />
+    <Content Include="Lib\Content\images\Xp-G5 006.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Lib\Content\themes\base\jquery-ui.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Lib\Content\themes\Site.css" />
+    <Content Include="Lib\Content\themes\thickbox.css" />
+    <Content Include="Lib\jquery-easyui\changelog.txt" />
+    <Content Include="Lib\jquery-easyui\demo\accordion.html" />
+    <Content Include="Lib\jquery-easyui\demo\calendar.html" />
+    <Content Include="Lib\jquery-easyui\demo\combo.html" />
+    <Content Include="Lib\jquery-easyui\demo\combobox.html" />
+    <Content Include="Lib\jquery-easyui\demo\combogrid.html" />
+    <Content Include="Lib\jquery-easyui\demo\combotree.html" />
+    <Content Include="Lib\jquery-easyui\demo\datagrid.html" />
+    <Content Include="Lib\jquery-easyui\demo\datagrid2.html" />
+    <Content Include="Lib\jquery-easyui\demo\datagrid3.html" />
+    <Content Include="Lib\jquery-easyui\demo\datagrid4.html" />
+    <Content Include="Lib\jquery-easyui\demo\datagrid5.html" />
+    <Content Include="Lib\jquery-easyui\demo\datebox.html" />
+    <Content Include="Lib\jquery-easyui\demo\datetimebox.html" />
+    <Content Include="Lib\jquery-easyui\demo\demo.css" />
+    <Content Include="Lib\jquery-easyui\demo\dialog.html" />
+    <Content Include="Lib\jquery-easyui\demo\draggable.html" />
+    <Content Include="Lib\jquery-easyui\demo\droppable.html" />
+    <Content Include="Lib\jquery-easyui\demo\droppable1.html" />
+    <Content Include="Lib\jquery-easyui\demo\droppable2.html" />
+    <Content Include="Lib\jquery-easyui\demo\easyloader.html" />
+    <Content Include="Lib\jquery-easyui\demo\form.html" />
+    <Content Include="Lib\jquery-easyui\demo\layout.html" />
+    <Content Include="Lib\jquery-easyui\demo\layout1.html" />
+    <Content Include="Lib\jquery-easyui\demo\layout2.html" />
+    <Content Include="Lib\jquery-easyui\demo\linkbutton.html" />
+    <Content Include="Lib\jquery-easyui\demo\menu.html" />
+    <Content Include="Lib\jquery-easyui\demo\menubutton.html" />
+    <Content Include="Lib\jquery-easyui\demo\messager.html" />
+    <Content Include="Lib\jquery-easyui\demo\numberbox.html" />
+    <Content Include="Lib\jquery-easyui\demo\numberbox2.html" />
+    <Content Include="Lib\jquery-easyui\demo\numberspinner.html" />
+    <Content Include="Lib\jquery-easyui\demo\pagination.html" />
+    <Content Include="Lib\jquery-easyui\demo\panel.html" />
+    <Content Include="Lib\jquery-easyui\demo\panel2.html" />
+    <Content Include="Lib\jquery-easyui\demo\progressbar.html" />
+    <Content Include="Lib\jquery-easyui\demo\propertygrid.html" />
+    <Content Include="Lib\jquery-easyui\demo\resizable.html" />
+    <Content Include="Lib\jquery-easyui\demo\searchbox.html" />
+    <Content Include="Lib\jquery-easyui\demo\slider.html" />
+    <Content Include="Lib\jquery-easyui\demo\splitbutton.html" />
+    <Content Include="Lib\jquery-easyui\demo\tabs.html" />
+    <Content Include="Lib\jquery-easyui\demo\tabs_href_test.html" />
+    <Content Include="Lib\jquery-easyui\demo\timespinner.html" />
+    <Content Include="Lib\jquery-easyui\demo\tree.html" />
+    <Content Include="Lib\jquery-easyui\demo\tree2.html" />
+    <Content Include="Lib\jquery-easyui\demo\treegrid.html" />
+    <Content Include="Lib\jquery-easyui\demo\treegrid2.html" />
+    <Content Include="Lib\jquery-easyui\demo\treegrid3.html" />
+    <Content Include="Lib\jquery-easyui\demo\validatebox.html" />
+    <Content Include="Lib\jquery-easyui\demo\window.html" />
+    <Content Include="Lib\jquery-easyui\easyloader.js" />
+    <Content Include="Lib\jquery-easyui\jquery-1.8.0.min.js" />
+    <Content Include="Lib\jquery-easyui\jquery.easyui.min.js" />
+    <Content Include="Lib\jquery-easyui\licence_gpl.txt" />
+    <Content Include="Lib\jquery-easyui\license_commercial.txt" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-af.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-bg.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-ca.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-cs.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-cz.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-da.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-de.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-en.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-es.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-fr.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-it.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-nl.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-pt_BR.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-ru.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-tr.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-zh_CN.js" />
+    <Content Include="Lib\jquery-easyui\locale\easyui-lang-zh_TW.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.accordion.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.calendar.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.combo.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.combobox.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.combogrid.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.combotree.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.datagrid.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.datebox.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.datetimebox.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.dialog.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.draggable.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.droppable.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.form.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.layout.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.linkbutton.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.menu.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.menubutton.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.messager.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.numberbox.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.numberspinner.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.pagination.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.panel.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.parser.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.progressbar.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.propertygrid.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.resizable.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.searchbox.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.slider.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.spinner.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.splitbutton.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.tabs.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.timespinner.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.tree.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.treegrid.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.validatebox.js" />
+    <Content Include="Lib\jquery-easyui\plugins\jquery.window.js" />
+    <Content Include="Lib\jquery-easyui\readme.txt" />
+    <Content Include="Lib\jquery-easyui\src\easyloader.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.accordion.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.calendar.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.combobox.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.datebox.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.draggable.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.droppable.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.form.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.linkbutton.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.menu.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.parser.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.progressbar.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.propertygrid.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.resizable.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.slider.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.tabs.js" />
+    <Content Include="Lib\jquery-easyui\src\jquery.window.js" />
+    <Content Include="Lib\jquery-easyui\themes\default\accordion.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\calendar.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\combo.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\combobox.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\datagrid.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\datebox.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\dialog.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\easyui.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\accordion_collapse.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\accordion_expand.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\blank.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\button_a_bg.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\button_plain_hover.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\button_span_bg.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\calendar_nextmonth.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\calendar_nextyear.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\calendar_prevmonth.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\calendar_prevyear.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\combo_arrow.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\datagrid_header_bg.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\datagrid_row_collapse.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\datagrid_row_expand.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\datagrid_sort_asc.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\datagrid_sort_desc.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\datagrid_title_bg.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\datebox_arrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\layout_arrows.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\menu.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\menu_downarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\menu_rightarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\menu_sep.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\menu_split_downarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\messager_error.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\messager_info.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\messager_question.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\messager_warning.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\pagination_first.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\pagination_last.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\pagination_load.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\pagination_loading.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\pagination_next.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\pagination_prev.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\panel_loading.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\panel_title.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\panel_tools.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\searchbox_button.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\slider_handle.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\spinner_arrow_down.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\spinner_arrow_up.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tabs_active.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tabs_close.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tabs_enabled.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tabs_leftarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tabs_rightarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_arrows.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_checkbox_0.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_checkbox_1.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_checkbox_2.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_dnd_no.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_dnd_yes.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_elbow.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_file.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_folder.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_folder_open.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\tree_loading.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\validatebox_pointer.gif" />
+    <Content Include="Lib\jquery-easyui\themes\default\images\validatebox_warning.png" />
+    <Content Include="Lib\jquery-easyui\themes\default\layout.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\linkbutton.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\menu.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\menubutton.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\messager.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\pagination.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\panel.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\progressbar.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\propertygrid.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\searchbox.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\slider.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\spinner.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\splitbutton.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\tabs.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\tree.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\validatebox.css" />
+    <Content Include="Lib\jquery-easyui\themes\default\window.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\accordion.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\calendar.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\combo.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\combobox.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\datagrid.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\datebox.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\dialog.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\easyui.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\accordion_collapse.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\accordion_expand.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\blank.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\button_a_bg.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\button_plain_hover.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\button_span_bg.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\calendar_nextmonth.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\calendar_nextyear.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\calendar_prevmonth.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\calendar_prevyear.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\combo_arrow.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\datagrid_header_bg.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\datagrid_row_collapse.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\datagrid_row_expand.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\datagrid_sort_asc.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\datagrid_sort_desc.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\datagrid_title_bg.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\layout_arrows.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\menu.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\menu_downarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\menu_rightarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\menu_sep.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\menu_split_downarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\messager_error.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\messager_info.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\messager_question.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\messager_warning.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\pagination_first.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\pagination_last.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\pagination_load.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\pagination_loading.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\pagination_next.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\pagination_prev.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\panel_loading.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\panel_title.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\panel_tools.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\searchbox_button.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\slider_handle.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\spinner_arrow_down.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\spinner_arrow_up.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tabs_close.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tabs_enabled.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tabs_leftarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tabs_rightarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_arrows.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_checkbox_0.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_checkbox_1.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_checkbox_2.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_dnd_no.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_dnd_yes.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_elbow.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_file.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_folder.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_folder_open.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\tree_loading.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\validatebox_pointer.gif" />
+    <Content Include="Lib\jquery-easyui\themes\gray\images\validatebox_warning.png" />
+    <Content Include="Lib\jquery-easyui\themes\gray\layout.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\linkbutton.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\menu.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\menubutton.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\messager.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\pagination.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\panel.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\progressbar.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\propertygrid.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\searchbox.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\slider.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\spinner.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\splitbutton.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\tabs.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\tree.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\validatebox.css" />
+    <Content Include="Lib\jquery-easyui\themes\gray\window.css" />
+    <Content Include="Lib\jquery-easyui\themes\icon.css" />
+    <Content Include="Lib\jquery-easyui\themes\icons\back.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\blank.gif" />
+    <Content Include="Lib\jquery-easyui\themes\icons\cancel.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\cut.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\edit_add.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\edit_remove.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\filesave.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\help.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\mini_add.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\mini_edit.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\mini_refresh.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\no.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\ok.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\pencil.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\print.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\redo.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\reload.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\search.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\sum.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\tip.png" />
+    <Content Include="Lib\jquery-easyui\themes\icons\undo.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\accordion.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\calendar.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\combo.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\combobox.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\datagrid.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\datebox.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\dialog.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\easyui.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\accordion_collapse.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\accordion_expand.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\blank.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\calendar_nextmonth.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\calendar_nextyear.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\calendar_prevmonth.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\calendar_prevyear.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\combo_arrow.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\datagrid_row_collapse.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\datagrid_row_expand.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\datagrid_sort_asc.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\datagrid_sort_desc.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\datebox_arrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\layout_arrows.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\menu_downarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\menu_rightarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\menu_sep.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\menu_split_downarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\messager_error.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\messager_info.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\messager_question.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\messager_warning.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\pagination_first.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\pagination_last.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\pagination_load.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\pagination_loading.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\pagination_next.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\pagination_prev.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\panel_loading.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\panel_tools.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\searchbox_button.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\slider_handle.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tabs_close.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tabs_leftarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tabs_rightarrow.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_arrows.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_checkbox_0.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_checkbox_1.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_checkbox_2.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_dnd_no.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_dnd_yes.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_elbow.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_file.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_folder.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_folder_open.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\tree_loading.gif" />
+    <Content Include="Lib\jquery-easyui\themes\metro\images\validatebox_warning.png" />
+    <Content Include="Lib\jquery-easyui\themes\metro\layout.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\linkbutton.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\menu.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\menubutton.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\messager.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\pagination.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\panel.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\progressbar.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\propertygrid.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\searchbox.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\slider.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\splitbutton.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\tabs.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\tree.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\validatebox.css" />
+    <Content Include="Lib\jquery-easyui\themes\metro\window.css" />
+    <Content Include="Lib\jquery\jquery-1.3.2.min.js" />
+    <Content Include="Lib\jquery\jquery-1.4.4.min.js" />
+    <Content Include="Lib\jquery\jquery-1.5.2.min.js" />
+    <Content Include="Lib\jquery\jquery-1.7.1.js" />
+    <Content Include="Lib\jquery\jquery-1.7.1.min.js" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\bin\LitJSON.dll" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\demo.aspx" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\README.txt" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\demo.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\file_manager_json.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\JSON_2.0.4.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\UpLoad_Class.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\upload_json.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20130504\20130504145025_1072.jpg" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20130504\20130504145224_4452.jpg" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20130504\20130504145611_9900.jpg" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20141224\20141224104823_5747.jpg" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\colorpicker.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\custom-plugin.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\custom-theme.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\default.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\dialog.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\dynamic-load.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\file-dialog.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\file-manager.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\filter-mode.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\image-dialog.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\index.css" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\index.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\jquery.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\mootools.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\multi-language.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\newline.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\node.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\paste-type.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\readonly.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\simple.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\total.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\uploadbutton.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\url-type.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\word-count.html" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\lib\commons-fileupload-1.2.1.jar" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\lib\commons-io-1.4.jar" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\lib\json_simple-1.1.jar" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\README.txt" />
+    <Content Include="Lib\kindeditor-4.0.5\kindeditor-min.js" />
+    <Content Include="Lib\kindeditor-4.0.5\kindeditor.js" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\ar.js" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\en.js" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\zh_CN.js" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\zh_TW.js" />
+    <Content Include="Lib\kindeditor-4.0.5\license.txt" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\anchor\anchor.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\clearhtml\clearhtml.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\code\code.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\code\prettify.css" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\code\prettify.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\emoticons.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\0.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\1.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\10.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\100.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\101.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\102.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\103.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\104.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\105.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\106.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\107.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\108.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\109.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\11.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\110.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\111.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\112.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\113.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\114.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\115.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\116.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\117.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\118.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\119.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\12.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\120.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\121.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\122.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\123.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\124.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\125.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\126.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\127.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\128.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\129.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\13.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\130.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\131.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\132.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\133.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\134.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\14.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\15.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\16.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\17.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\18.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\19.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\2.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\20.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\21.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\22.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\23.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\24.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\25.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\26.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\27.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\28.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\29.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\3.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\30.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\31.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\32.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\33.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\34.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\35.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\36.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\37.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\38.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\39.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\4.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\40.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\41.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\42.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\43.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\44.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\45.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\46.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\47.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\48.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\49.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\5.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\50.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\51.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\52.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\53.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\54.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\55.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\56.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\57.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\58.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\59.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\6.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\60.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\61.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\62.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\63.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\64.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\65.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\66.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\67.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\68.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\69.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\7.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\70.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\71.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\72.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\73.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\74.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\75.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\76.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\77.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\78.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\79.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\8.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\80.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\81.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\82.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\83.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\84.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\85.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\86.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\87.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\88.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\89.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\9.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\90.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\91.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\92.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\93.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\94.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\95.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\96.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\97.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\98.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\99.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\static.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\filemanager.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\file-16.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\file-64.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\go-up.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\flash\flash.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\image.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\align_left.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\align_right.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\align_top.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\refresh.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\insertfile\insertfile.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\lineheight\lineheight.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\link\link.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\map\map.html" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\map\map.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\media\media.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\pagebreak\pagebreak.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\plainpaste\plainpaste.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\preview\preview.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\quickformat\quickformat.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\table\table.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\html\1.html" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\html\2.html" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\html\3.html" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\template.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\wordpaste\wordpaste.js" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\anchor.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\blank.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\flash.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\loading.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\media.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\rm.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\default\bg.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\default\default.css" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\default\default.png" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\simple\simple.css" />
+    <Content Include="Lib\ligerUI1\images\3DSMAX.png" />
+    <Content Include="Lib\ligerUI1\images\7_7.jpg" />
+    <Content Include="Lib\ligerUI1\images\Alien Folder.png" />
+    <Content Include="Lib\ligerUI1\images\applebg.jpg" />
+    <Content Include="Lib\ligerUI1\images\Program Files Folder.png" />
+    <Content Include="Lib\ligerUI1\images\Xp-G5 006.png" />
+    <Content Include="Lib\ligerUI1\js\core\base.js" />
+    <Content Include="Lib\ligerUI1\js\ligerui.all.js" />
+    <Content Include="Lib\ligerUI1\js\ligerui.min.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerAccordion.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerButton.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerCheckBox.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerComboBox.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerDateEditor.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerDialog.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerDrag.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerEasyTab.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerFilter.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerForm.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerGrid.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerLayout.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerMenu.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerMenuBar.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerMessageBox.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerRadio.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerResizable.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerSpinner.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerTab.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerTextBox.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerTip.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerToolBar.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerTree.js" />
+    <Content Include="Lib\ligerUI1\js\plugins\ligerWindow.js" />
+    <Content Include="Lib\ligerUI1\skins\Aqua\css\ligerui-all.css" />
+    <Content Include="Lib\ligerUI1\skins\Aqua\css\ligerui-common.css" />
+    <Content Include="Lib\ligerUI1\skins\Aqua\css\ligerui-dialog.css" />
+    <Content Include="Lib\ligerUI1\skins\Aqua\css\ligerui-form.css" />
+    <Content Include="Lib\ligerUI1\skins\Aqua\css\ligerui-grid.css" />
+    <Content Include="Lib\ligerUI1\skins\Aqua\css\ligerui-layout.css" />
+    <Content Include="Lib\ligerUI1\skins\Aqua\css\ligerui-menu.css" />
+    <Content Include="Lib\ligerUI1\skins\Aqua\css\ligerui-tab.css" />
+    <Content Include="Lib\ligerUI1\skins\Aqua\css\ligerui-tree.css" />
+    <Content Include="Lib\ligerUI1\skins\Gray\css\all.css" />
+    <Content Include="Lib\ligerUI1\skins\Gray\css\common.css" />
+    <Content Include="Lib\ligerUI1\skins\Gray\css\dialog.css" />
+    <Content Include="Lib\ligerUI1\skins\Gray\css\form.css" />
+    <Content Include="Lib\ligerUI1\skins\Gray\css\grid.css" />
+    <Content Include="Lib\ligerUI1\skins\Gray\css\layout.css" />
+    <Content Include="Lib\ligerUI1\skins\Gray\css\tab.css" />
+    <Content Include="Lib\ligerUI1\skins\icons\add.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\archives.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\attibutes.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\back.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\bluebook.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\bookpen.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\busy.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\calendar.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\candle.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\coffee.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\comment.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\communication.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\config.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\customers.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\cut.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\database.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\delete.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\discuss.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\edit.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\graywarn.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\greenwarn.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\help.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\home.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\lock.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\logout.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\mailbox.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\memeber.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\modify.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\msn.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\myaccount.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\ok.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\outbox.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\pager.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\photograph.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\plus.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\prev.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\print.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\process.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\qq.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\refresh.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\right.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\role.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\save-disabled.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\save.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\search.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\search2.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\settings.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\true.gif" />
+    <Content Include="Lib\ligerUI1\skins\icons\up.gif" />
+    <Content Include="Lib\ligerUI1\skins\ligerui-icons.css" />
+    <Content Include="Lib\ligerUI1\skins\Silvery\css\form.css" />
+    <Content Include="Lib\ligerUI1\skins\Silvery\css\grid.css" />
+    <Content Include="Lib\ligerUI1\skins\Silvery\css\layout.css" />
+    <Content Include="Lib\ligerUI1\skins\Silvery\css\style.css" />
+    <Content Include="Lib\ligerUI\images\3DSMAX.png" />
+    <Content Include="Lib\ligerUI\images\7_7.jpg" />
+    <Content Include="Lib\ligerUI\images\Alien Folder.png" />
+    <Content Include="Lib\ligerUI\images\applebg.jpg" />
+    <Content Include="Lib\ligerUI\images\big.png" />
+    <Content Include="Lib\ligerUI\images\Program Files Folder.png" />
+    <Content Include="Lib\ligerUI\images\Xp-G5 006.png" />
+    <Content Include="Lib\ligerUI\js\core\base.js" />
+    <Content Include="Lib\ligerUI\js\ligerui.all.js" />
+    <Content Include="Lib\ligerUI\js\ligerui.min.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerAccordion.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerButton.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerCheckBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerComboBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerDateEditor.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerDialog.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerDrag.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerEasyTab.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerFilter.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerForm.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerGrid.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerLayout.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerMenu.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerMenuBar.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerMessageBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerRadio.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerResizable.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerSpinner.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerTab.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerTextBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerTip.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerToolBar.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerTree.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerWindow.js" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-all.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-common.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-dialog.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-form.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-grid.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-layout.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-menu.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-tab.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-tree.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\bigloading.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\drop-icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\exclamation.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\invalid-line.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\table.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-panel-title-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-panel-title-pressed.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-panel-title.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-tab-title-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-tab-title-pressed.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-tab-title.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-text.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-trigger-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-trigger-pressed.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-trigger.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\btn-l.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\btn-r.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\button-bg-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\button-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\checkbox.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\dateeditor-bar-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\dateeditor-header-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\radio.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\icon-first.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\icon-last.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\icon-next.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\icon-prev.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\form\verify-corner.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-checkbox-checked.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-checkbox.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-detail-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-detail-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-tree-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-tree-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\header-bg-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\header-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\header2-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\popup-line.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\popup-row-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\bar-button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\checkbox-checked.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\checkbox.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\cross.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-close-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-drop.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-edited.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-first.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-last.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-line.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-load.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-next.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-prev.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-sort-asc.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-sort-desc.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\accordion-content.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\accordion-header-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\accordion-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\layout-header-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\layout-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\layout-sidebar-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\mini-bottom.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\mini-left.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\mini-right.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\mini-top.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\panel-content.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\panel-header-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\panel-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-item-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-item-over-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-tools.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\togglebar.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-arrow.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-over-l.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-over-m.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-over-r.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-line-x.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-line-y.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\bar-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\header-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\header-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\header2-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-btn-l.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-btn-r.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-menu-item-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-menu.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-toolbar.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-tools.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\folder-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\folder.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-leaf.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-level.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-noline.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-status-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-status-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-status.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\box-icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\box.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog-bc.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog-icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog-tc.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog-winbtns.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\taskbar-task.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\taskbar.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\taskbar.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\taskicon.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\all.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\common.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\dialog.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\form.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\grid.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\layout.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\tab.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\accordion-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\icon-close-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\icon-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\layout-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-left-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-right-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\togglebar.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button1.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\dateeditor-bar.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\dateeditor-btn-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\dateeditor-btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\dateeditor-thead.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\grid-detail-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\grid-detail-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\gridalt.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\gridbar.jpg" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\grideditor.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\input.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\inputdisabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\loading2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\trigger.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\win\dialog-winbtns.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\win\dialogbtn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\win\dialogicon.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\add.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\archives.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\attibutes.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\back.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\bluebook.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\bookpen.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\busy.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\calendar.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\candle.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\coffee.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\comment.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\communication.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\config.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\customers.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\cut.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\database.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\delete.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\discuss.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\edit.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\graywarn.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\greenwarn.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\help.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\home.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\lock.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\logout.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\mailbox.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\memeber.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\modify.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\msn.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\myaccount.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\ok.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\outbox.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\pager.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\photograph.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\plus.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\prev.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\print.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\process.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\qq.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\refresh.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\right.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\role.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\save-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\save.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\search.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\search2.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\settings.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\true.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\up.gif" />
+    <Content Include="Lib\ligerUI\skins\ligerui-icons.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\css\form.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\css\grid.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\css\layout.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\css\style.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\checkboxradio.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\icon-down-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\icon-up-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\invalid_line.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-date-icon.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-down-icon.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-focus.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-l-focus.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-l-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-l.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-r-focus.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-r-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-r.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\grid\gridheaderbg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\accordion-header-over.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\accordion-header.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\layout-header-over.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\layout-header.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-item-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-item-over-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-tools.gif" />
+    <Content Include="Lib\LitJSON.dll" />
+    <Content Include="Lib\Scripts\datapattern.js" />
+    <Content Include="Lib\jquery\vssver2.scc" />
+    <Content Include="Lib\Other\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\win\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\vssver2.scc" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\win\vssver2.scc" />
+    <None Include="Lib\Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Lib\Scripts\jquery-1.7.1.js" />
+    <Content Include="Lib\Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Lib\Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Lib\Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Lib\Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Lib\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Lib\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Lib\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Lib\Scripts\jquery.validate.js" />
+    <Content Include="Lib\Scripts\jquery.validate.min.js" />
+    <Content Include="Lib\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Lib\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Lib\Scripts\login1.6.1.min.js" />
+    <Content Include="Lib\Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Lib\Scripts\MicrosoftAjax.js" />
+    <Content Include="Lib\Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Lib\Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Lib\Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Lib\Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Lib\Scripts\modernizr-2.5.3.js" />
+    <Content Include="Lib\Scripts\MyAjaxForm.js" />
+    <Content Include="Lib\Scripts\passport.2013v1.js" />
+    <Content Include="Lib\Scripts\thickbox.js" />
+    <Content Include="Lib\ZTree\js\jquery-1.4.2.js" />
+    <Content Include="Lib\ZTree\js\jquery.ztree-2.6.js" />
+    <Content Include="Lib\ZTree\js\jquery.ztree-2.6.min.js" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\checkbox.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\edit.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\10.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\1_close.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\1_open.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\2.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\3.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\4.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\5.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\6.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\7.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\8.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\9.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\folder_Close.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\folder_Open.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\line_bottom.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\line_center.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\line_top.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\loading.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_bottom.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_center.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_noLine.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_root.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_top.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\moveArrow.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\page.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_bottom.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_center.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_noLine.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_root.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_top.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\radio.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\remove.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\10.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\1_close.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\1_open.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\2.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\3.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\4.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\5.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\6.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\7.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\8.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\9.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\zTreeIcons.css" />
+    <Content Include="Lib\ZTree\zTreeStyle\zTreeStyle.css" />
+    <Content Include="LitJSON.dll" />
+    <Content Include="Scripts\ControllerViewScript\ActionDistribute.js" />
+    <Content Include="Scripts\ControllerViewScript\ActionInfo.js" />
+    <Content Include="Scripts\ControllerViewScript\Control.js" />
+    <Content Include="Scripts\ControllerViewScript\Department.js" />
+    <Content Include="Scripts\ControllerViewScript\DepartmentUserinfo.js" />
+    <Content Include="Scripts\ControllerViewScript\Module.js" />
+    <Content Include="Scripts\ControllerViewScript\RealTimeCurve.js" />
+    <Content Include="Scripts\ControllerViewScript\RoleDistribute.js" />
+    <Content Include="Scripts\ControllerViewScript\RoleInfo.js" />
+    <Content Include="Scripts\ControllerViewScript\UserGroup.js" />
+    <Content Include="Scripts\ControllerViewScript\UserInfo.js" />
+    <EmbeddedResource Include="Services.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Services.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Scripts\ControllerViewScript\Home.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Services.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Services.xml</LastGenOutput>
+    </Content>
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\UserGroup\Index.cshtml" />
+    <Content Include="Views\UserInfo\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\EnterprisePlatform.pubxml" />
+    <Content Include="Views\Module\Index.cshtml" />
+    <Content Include="Views\Control\Index.cshtml" />
+    <Content Include="Views\ActionInfo\Index.cshtml" />
+    <Content Include="Views\DepartmentUserinfo\Index.cshtml" />
+    <Content Include="Views\RoleDistribute\Index.cshtml" />
+    <Content Include="Views\ActionDistribute\Index.cshtml" />
+    <Content Include="Views\Master\Index.cshtml" />
+    <Content Include="Views\UserInfo\SetAction.cshtml" />
+    <Content Include="Views\R_User_ActionInfo\Index.cshtml" />
+    <Content Include="Views\MenuInfo\Index.cshtml" />
+    <Content Include="Views\EditPass\Index.cshtml" />
+    <Content Include="Views\DocumentInfo\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SS.Platform.Common\SS.Platform.Common.csproj">
+      <Project>{98f46772-6b74-433c-af8e-0217ba688525}</Project>
+      <Name>SS.Platform.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.AdoNetDal\SS.Platform.OA.AdoNetDal.csproj">
+      <Project>{dd99d12c-4d47-4de4-b70a-1565a2ecdab1}</Project>
+      <Name>SS.Platform.OA.AdoNetDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.BLL\SS.Platform.OA.BLL.csproj">
+      <Project>{6b7319dd-0f0d-4a22-9dd9-3505262d4b39}</Project>
+      <Name>SS.Platform.OA.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.DalFactory\SS.Platform.OA.DalFactory.csproj">
+      <Project>{cc99297b-f428-4a7a-a5c6-84616ec6dc72}</Project>
+      <Name>SS.Platform.OA.DalFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.Dal\SS.Platform.OA.Dal.csproj">
+      <Project>{68205fcd-d043-41e1-a0b2-e3ccf9a55c32}</Project>
+      <Name>SS.Platform.OA.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.IBLL\SS.Platform.OA.IBLL.csproj">
+      <Project>{d8f33798-1420-4245-b6df-0d7ff990ca6f}</Project>
+      <Name>SS.Platform.OA.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.IDal\SS.Platform.OA.IDal.csproj">
+      <Project>{4f5c9866-3629-4213-9fb9-633c20c0adc2}</Project>
+      <Name>SS.Platform.OA.IDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.Model\SS.Platform.OA.Model.csproj">
+      <Project>{e4bae940-ae2e-459f-af5f-4f111faaa261}</Project>
+      <Name>SS.Platform.OA.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17289/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

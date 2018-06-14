@@ -1,0 +1,17 @@
+D:\SS.Platform\T4Demo\bin\Debug\T4Demo.exe
+D:\SS.Platform\T4Demo\bin\Debug\T4Demo.pdb
+E:\SS.Platform\T4Demo\bin\Debug\T4Demo.exe
+E:\SS.Platform\T4Demo\bin\Debug\T4Demo.pdb
+E:\SS.Platform\T4Demo\obj\Debug\T4Demo.exe
+E:\SS.Platform\T4Demo\obj\Debug\T4Demo.pdb
+E:\SS.Platform\Library\T4Demo.exe
+E:\SS.Platform\Library\T4Demo.pdb
+D:\SS.Platform\Library\T4Demo.exe
+D:\SS.Platform\Library\T4Demo.pdb
+D:\SS.Platform\T4Demo\obj\Debug\T4Demo.exe
+D:\SS.Platform\T4Demo\obj\Debug\T4Demo.pdb
+D:\SS.Platform\T4Demo\obj\Debug\T4Demo.csprojResolveAssemblyReference.cache
+F:\SS.Platform\Library\T4Demo.exe
+F:\SS.Platform\Library\T4Demo.pdb
+F:\SS.Platform\T4Demo\obj\Debug\T4Demo.exe
+F:\SS.Platform\T4Demo\obj\Debug\T4Demo.pdb

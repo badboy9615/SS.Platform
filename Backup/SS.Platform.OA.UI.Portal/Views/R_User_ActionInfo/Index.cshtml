@@ -1,0 +1,227 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>用户特殊权限</title>
+    <link href="../../Lib/jquery-easyui/themes/default/easyui.css" rel="stylesheet" />
+    <link href="../../Lib/jquery-easyui/themes/icon.css" rel="stylesheet" />
+    <link href="../../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+    <link href="../../lib/ligerUI/skins/ligerui-icons.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/ControllerViewStyle/ActionDistribute.css" rel="stylesheet" />
+
+    <script src="../../Lib/jquery/jquery-1.8.0.min.js"></script>  
+    
+    <script src="../../Lib/jquery-easyui/jquery.easyui.min.js"></script>
+    <script src="../../Lib/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+
+    <script src="../../lib/ligerUI/js/core/base.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerLayout.js" type="text/javascript"></script> 
+    
+    <script src="../../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerToolBar.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerCheckBox.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerDrag.js" type="text/javascript"></script> 
+    <script src="../../lib/ligerUI/js/plugins/ligerDialog.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerButton.js" type="text/javascript"></script>
+    <script src="../../lib/ligerUI/js/plugins/ligerListBox.js" type="text/javascript"></script>
+
+    <script src="../../Lib/Ajax/jquery.unobtrusive-ajax.js"></script>
+    <script src="../../Lib/Other/datapattern.js"></script>
+    <script src="../../Scripts/CommonTools.js"></script>
+    
+    <script src="../../lib/ligerUI/js/core/inject.js" type="text/javascript"></script>
+    
+    <script src="../../Scripts/ControllerViewScript/R_User_ActionInfo.js"></script>
+</head>
+<body style="padding: 10px">
+
+    <div id="layout1">
+        <!---------------------------左边栏开始-------------------------------->
+        <!---------------------------用户列表开始-------------------------------->
+        <div position="left" id="leftTitle" title="用户列表">
+            <div style="width: 400px; height: auto; margin: 10px; float: left; border: 1px solid #ccc; overflow: auto;">
+                <div id="userList">
+                    用户名：<input id="keyName" type="text" />
+                    <input id="btnSearch" type="button" value="查找" onclick="roleSearch()" />
+                    <div id="usergrid"></div>
+                </div>
+            </div>
+        </div>
+        <div style="display: none">
+        </div>
+        <!---------------------------角色列表结束-------------------------------->
+        <!---------------------------左边栏结束-------------------------------->
+
+        <!---------------------------中间区域开始开始-------------------------------->
+        <div position="center" title="权限列表">
+            <!----------------------------表格部分------开始---------------------->
+            <div>
+                <div id="maingrid"></div>
+            </div>
+            <!----------------------------表格部分-----结束----------------------->
+        </div>
+        <!---------------------------中间区域结束-------------------------------->
+    </div>
+
+    <div style="display: none;">
+    </div>
+    <!----------------------------添加部分------开始---------------------->
+        <div id="addDiv">
+            @{
+                using (Ajax.BeginForm("Add", "R_User_ActionInfo", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "afterAdd" }))
+                {
+                    <table>
+                        <tr>
+                            <td>&nbsp;&nbsp;模块：</td>
+                            <td>
+                                <input type="text" id="Module" tabindex="1"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <input type="image" width="15" height="15" id="SModule" src="../../Lib/jquery-easyui/themes/icons/search.png"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="ModuleID" name="ModuleID"/>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>&nbsp;&nbsp;控制器：</td>
+                            <td>
+                                <input type="text" id="ControlName" tabindex="2"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <input type="image" width="15" height="15" id="SControl" src="../../Lib/jquery-easyui/themes/icons/search.png"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="ControlID" name="ControlID"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>&nbsp;&nbsp;权限：</td>
+                            <td>
+                                <input type="text" name="ActionName" id="ActionName" tabindex="1"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <input type="image" width="15" height="15" id="SAction" src="../../Lib/jquery-easyui/themes/icons/search.png"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="ActionInfoID" name="ActionInfoID"/>
+                                <input type="hidden" id="ActionInfoCode" name="ActionInfoCode"/>
+                                <input type="hidden" id="UserInfoID" name="UserInfoID"/>
+                            </td>
+                          
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;编码：</td><td><input type="text" id="Code" name="Code" value="自动生成" disabled="disabled" onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <font color="red" size="2">*</font></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;名称：</td><td><input type="text" id="Name" name="Name" value="自动生成" disabled="disabled" onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <font color="red" size="2">*</font></td>
+                        </tr>
+                        <tr>
+                            @*<td>&nbsp;&nbsp;是否允许：</td><td><input type="text" id="IsPass" name="IsPass" tabindex="4"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/></td>*@  
+                            <td>&nbsp;&nbsp;是否允许：</td><td><input type="checkbox" name="IsPass" id="IsPass" /></td>
+                        </tr> 
+                    </table>
+                }
+            }
+        </div>
+        <!----------------------------添加部分------结束---------------------->
+    <!----------------------------修改部分------开始---------------------->
+        <div id="editDiv">
+            @{
+                using (Ajax.BeginForm("EditSave", "R_User_ActionInfo", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "afterEdit" }))
+                {
+                    <table>
+                        <tr>
+                            <td>&nbsp;&nbsp;模块：</td>
+                            <td>
+                                <input type="text" id="EdModule"  disabled="disabled" tabindex="1"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <input type="image" width="15" height="15" id="SEdModule"  disabled="disabled" src="../../Lib/jquery-easyui/themes/icons/search.png"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="EdModuleID" name="EdModuleID"/>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>&nbsp;&nbsp;控制器：</td>
+                            <td>
+                                <input type="text" id="EdControl"  disabled="disabled" tabindex="2"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <input type="image" width="15" height="15" id="SEdControl"  disabled="disabled" src="../../Lib/jquery-easyui/themes/icons/search.png"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="EdControlID" name="ControlID"/>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>&nbsp;&nbsp;权限：</td>
+                            <td>
+                                <input type="text" name="ActionName" id="EdActionName"  disabled="disabled" tabindex="1"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <input type="image" width="15" height="15" id="SEdAction"  disabled="disabled" src="../../Lib/jquery-easyui/themes/icons/search.png"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="EdActionInfoID" name="ActionInfoID"/>
+                                <input type="hidden" id="EdActionInfoCode" name="ActionInfoCode"/>
+                                <input type="hidden" id="EdUserInfoID" name="UserInfoID"/>
+                            </td>
+                          
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;编码：</td><td><input type="text" id="EdCode" name="Code" disabled="disabled" onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <font color="red" size="2">*</font></td>                            
+                                <input type="hidden" name="ID" id="EdID"/>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;名称：</td><td><input type="text" id="EdName" name="Name" disabled="disabled" onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <font color="red" size="2">*</font></td>
+                        </tr>
+                        <tr>
+                            @*<td>&nbsp;&nbsp;是否允许：</td><td><input type="text" id="IsPass" name="IsPass" tabindex="4"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/></td>*@  
+                            <td>&nbsp;&nbsp;是否允许：</td><td><input type="checkbox" name="IsPass" id="EdIsPass" /></td>
+                        </tr> 
+                    </table>
+                }
+            }
+        </div>
+        <!----------------------------修改部分------结束---------------------->
+    <!----------------------------添加部分------开始---------------------->
+        <div id="addaction" style="display:none;"></div>
+        <!----------------------------添加部分------结束---------------------->
+        <!----------------------------删除部分------开始---------------------->
+        <div id="delaction" style="display:none;"></div>
+        <!----------------------------删除部分------结束---------------------->
+   
+        <!----------------------------选择模块部分------开始---------------------->
+    <div id="setModuleDiv">
+         <div>
+            名称：<input type="text" name="searchModuleName" id="searchModuleName" style="width: 160px" />&nbsp;
+                <a id="linkSearchModule" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'"></a>
+            <hr/>
+        </div>
+        <table id="tbModule" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
+        </table>
+    </div>
+        <!----------------------------选择模块部分------结束---------------------->
+   
+        <!----------------------------选择控制器部分------开始---------------------->
+    <div id="setControlDiv">
+         <div>
+            名称：<input type="text" name="searchControlName" id="searchControlName" style="width: 160px" />&nbsp;
+                <a id="linkSearchControl" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'"></a>
+            <hr/>
+        </div>
+        <table id="tbControl" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
+        </table>
+    </div>
+        <!----------------------------选择控制器部分------结束---------------------->
+   
+        <!----------------------------选择权限部分------开始---------------------->
+    <div id="setActionDiv">
+         <div>
+            名称：<input type="text" name="searchActionName" id="searchActionName" style="width: 160px" />&nbsp;
+                <a id="linkSearchAction" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'"></a>
+            <hr/>
+        </div>
+        <table id="tbAction" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
+        </table>
+    </div>
+        <!----------------------------选择权限部分------结束---------------------->
+</body>
+</html>

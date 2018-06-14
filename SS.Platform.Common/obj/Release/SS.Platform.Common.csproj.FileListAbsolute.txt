@@ -1,0 +1,17 @@
+D:\SS.Platform\SS.Platform.Common\bin\Release\SS.Platform.Common.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\SS.Platform.Common.pdb
+D:\SS.Platform\SS.Platform.Common\bin\Release\ChineseConverter.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\ChnCharInfo.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\Commons.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\Ionic.Zip.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\log4net.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\Memcached.ClientLibrary.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\NPOI.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\NVelocity.dll
+D:\SS.Platform\SS.Platform.Common\bin\Release\ChineseConverter.xml
+D:\SS.Platform\SS.Platform.Common\bin\Release\ChnCharInfo.xml
+D:\SS.Platform\SS.Platform.Common\bin\Release\Memcached.ClientLibrary.pdb
+D:\SS.Platform\SS.Platform.Common\obj\Release\SS.Platform.Common.csprojResolveAssemblyReference.cache
+D:\SS.Platform\SS.Platform.Common\obj\Release\SS.Platform.Common.dll
+D:\SS.Platform\SS.Platform.Common\obj\Release\SS.Platform.Common.pdb

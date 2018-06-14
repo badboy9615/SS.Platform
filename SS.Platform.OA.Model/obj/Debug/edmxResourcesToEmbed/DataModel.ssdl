@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DataModelStoreContainer">
+    <EntitySet Name="UserInfo" EntityType="DataModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseEntity" EntityType="DataModel.Store.BaseEntity" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee" EntityType="DataModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Family" EntityType="DataModel.Store.Family" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Train" EntityType="DataModel.Store.Train" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Experience" EntityType="DataModel.Store.Experience" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Module" EntityType="DataModel.Store.Module" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Control" EntityType="DataModel.Store.Control" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ActionInfo" EntityType="DataModel.Store.ActionInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MenuInfo" EntityType="DataModel.Store.MenuInfo" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="EmployeeFamily" Association="DataModel.Store.EmployeeFamily">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Family" EntitySet="Family" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeTrain" Association="DataModel.Store.EmployeeTrain">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Train" EntitySet="Train" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeExperience" Association="DataModel.Store.EmployeeExperience">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Experience" EntitySet="Experience" />
+    </AssociationSet>
+    <AssociationSet Name="ModuleControl" Association="DataModel.Store.ModuleControl">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="Control" EntitySet="Control" />
+    </AssociationSet>
+    <AssociationSet Name="ControlActionInfo" Association="DataModel.Store.ControlActionInfo">
+      <End Role="Control" EntitySet="Control" />
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="ActionInfoMenuInfo" Association="DataModel.Store.ActionInfoMenuInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="MenuInfo" EntitySet="MenuInfo" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Pwd" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Mail" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="QQNum" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="TakeEffect" Type="bit" Nullable="false" />
+    <Property Name="TakeEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="LoseEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="BaseEntity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="TakeEffect" Type="bit" Nullable="false" />
+    <Property Name="TakeEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="LoseEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="TakeEffect" Type="bit" Nullable="false" />
+    <Property Name="TakeEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="LoseEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="xyd" Type="int" Nullable="false" />
+    <Property Name="dj" Type="int" Nullable="true" />
+    <Property Name="xb" Type="int" Nullable="false" />
+    <Property Name="wh" Type="int" Nullable="true" />
+    <Property Name="zzmm" Type="int" Nullable="true" />
+    <Property Name="zp" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="nl" Type="int" Nullable="false" />
+    <Property Name="sx" Type="int" Nullable="true" />
+    <Property Name="csrq" Type="datetime" Nullable="true" />
+    <Property Name="hyzk" Type="int" Nullable="true" />
+    <Property Name="sg" Type="int" Nullable="true" />
+    <Property Name="qwgz" Type="int" Nullable="true" />
+    <Property Name="grxy" Type="int" Nullable="true" />
+    <Property Name="jkzk" Type="int" Nullable="true" />
+    <Property Name="tz" Type="int" Nullable="true" />
+    <Property Name="sfzj" Type="bit" Nullable="true" />
+    <Property Name="xm" Type="int" Nullable="true" />
+    <Property Name="yx" Type="int" Nullable="true" />
+    <Property Name="zzqy" Type="int" Nullable="true" />
+    <Property Name="zxsj" Type="int" Nullable="true" />
+    <Property Name="gzfw" Type="int" Nullable="true" />
+    <Property Name="gznx" Type="int" Nullable="true" />
+    <Property Name="sfzh" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="sfzt" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="xxly" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="sjhm" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="jtzz" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="wxh" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="xzzz" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="bz" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="jkzs" Type="bit" Nullable="false" />
+    <Property Name="yxqz" Type="datetime" Nullable="true" />
+    <Property Name="myhlz" Type="bit" Nullable="false" />
+    <Property Name="yyszgz" Type="bit" Nullable="false" />
+    <Property Name="lrsj" Type="datetime" Nullable="false" />
+    <Property Name="gzzt" Type="int" Nullable="true" />
+    <Property Name="jbkh" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="qwjob" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Family">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="TakeEffect" Type="bit" Nullable="false" />
+    <Property Name="TakeEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="LoseEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Relation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Train">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Pxsj" Type="datetime" Nullable="false" />
+    <Property Name="Pxqx" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Pxlx" Type="int" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Experience">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="TakeEffect" Type="bit" Nullable="false" />
+    <Property Name="TakeEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="LoseEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Qssj" Type="datetime" Nullable="false" />
+    <Property Name="Jssj" Type="datetime" Nullable="false" />
+    <Property Name="Khxm" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="Gzdd" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="Gzpd" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="TakeEffect" Type="bit" Nullable="false" />
+    <Property Name="TakeEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="LoseEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Url" Type="nvarchar" Nullable="true" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="Control">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="TakeEffect" Type="bit" Nullable="false" />
+    <Property Name="TakeEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="LoseEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="ModuleID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActionInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="TakeEffect" Type="bit" Nullable="false" />
+    <Property Name="TakeEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="LoseEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Url" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="HttpMethod" Type="varchar" Nullable="true" MaxLength="32" />
+    <Property Name="ActionMethod" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="ControlID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubBy" Type="int" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedTIme" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" />
+    <Property Name="TakeEffect" Type="bit" Nullable="false" />
+    <Property Name="TakeEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="LoseEffectTime" Type="datetime" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Sort" Type="int" Nullable="true" />
+    <Property Name="IsVisable" Type="bit" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="true" />
+    <Property Name="Width" Type="int" Nullable="true" />
+    <Property Name="IconUrl" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="ActionInfo_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="EmployeeFamily">
+    <End Role="Employee" Type="DataModel.Store.Employee" Multiplicity="1" />
+    <End Role="Family" Type="DataModel.Store.Family" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Family">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeTrain">
+    <End Role="Employee" Type="DataModel.Store.Employee" Multiplicity="1" />
+    <End Role="Train" Type="DataModel.Store.Train" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Train">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeExperience">
+    <End Role="Employee" Type="DataModel.Store.Employee" Multiplicity="1" />
+    <End Role="Experience" Type="DataModel.Store.Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Experience">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ModuleControl">
+    <End Role="Module" Type="DataModel.Store.Module" Multiplicity="1" />
+    <End Role="Control" Type="DataModel.Store.Control" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Control">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ControlActionInfo">
+    <End Role="Control" Type="DataModel.Store.Control" Multiplicity="1" />
+    <End Role="ActionInfo" Type="DataModel.Store.ActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Control">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActionInfo">
+        <PropertyRef Name="ControlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ActionInfoMenuInfo">
+    <End Role="ActionInfo" Type="DataModel.Store.ActionInfo" Multiplicity="1" />
+    <End Role="MenuInfo" Type="DataModel.Store.MenuInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MenuInfo">
+        <PropertyRef Name="ActionInfo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

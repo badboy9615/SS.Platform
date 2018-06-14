@@ -1,0 +1,20 @@
+﻿body {
+    padding: 10px;
+    margin: 0;
+}
+
+#layout1 {
+    width: 100%;
+    margin: 40px;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+}
+
+#accordion1 {
+    height: 270px;
+}
+
+h4 {
+    margin: 20px;
+}

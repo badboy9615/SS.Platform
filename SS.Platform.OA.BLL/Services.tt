@@ -1,0 +1,93 @@
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#><#@
+ output extension=".cs"#>
+ 
+<#
+
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+
+string inputFile = @"..\\SS.Platform.OA.Model\\DataModel.edmx";
+
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+string namespaceName = code.VsNamespaceSuggestion();
+
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+#>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using SS.Platform.OA.Model;
+
+namespace SS.Platform.OA.BLL
+{
+   
+<#
+// Emit Entity Types
+
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+    //fileManager.StartNewFile(entity.Name + "RepositoryExt.cs");
+    //BeginNamespace(namespaceName, code);    
+#>	
+	public partial class <#=entity.Name#>Service : BaseService<<#=entity.Name#>>, IBLL.I<#=entity.Name#>Service
+    {
+        public override void SetCurrentDal()
+        {
+            CurrentDal = DbSession.<#=entity.Name#>Dal;
+        }
+
+        #region 批量删除
+        /// <summary>
+        /// add a method to delete by ids
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public int DeleteIds(params int[] ids)
+        {
+            foreach (var id in ids)
+            {
+                var entity = DbSession.<#=entity.Name#>Dal.LoadEntities(u => u.ID == id).FirstOrDefault();
+                entity.DelFlag = (short)SS.Platform.OA.Model.Enum.DelFlagEnum.Deleted;
+            }
+            return DbSession.SaveChanges();
+        }
+
+
+        #endregion
+
+        #region 搜索查询
+        public IQueryable<<#=entity.Name#>> LoadSearchData(BaseQueryParam param)
+        {
+            short delNoarml = (short)SS.Platform.OA.Model.Enum.DelFlagEnum.Normal;
+            //过滤删除的
+            var temp = DbSession.<#=entity.Name#>Dal.LoadEntities(u => u.DelFlag == delNoarml);			
+			//根据编码查询
+            if (!string.IsNullOrEmpty(param.SCode))
+            {
+                temp = temp.Where(u => u.Code.Contains(param.SCode));
+            }
+            
+			//根据名称查询
+            if (!string.IsNullOrEmpty(param.SName))
+            {
+                temp = temp.Where(u => u.Name.Contains(param.SName));
+            }
+
+            //设置总条数
+            param.Total = temp.Count();
+
+            //分页的处理
+            return temp.OrderBy(u => u.ID).Skip(param.PageSize * (param.PageIndex - 1)).Take(param.PageSize).AsQueryable();
+        }
+        #endregion
+    }
+
+<#}#>
+	
+}

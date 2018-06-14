@@ -1,0 +1,164 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>部门维护</title>
+    <link href="../../Lib/jquery-easyui/themes/default/easyui.css" rel="stylesheet" />
+    <link href="../../Lib/jquery-easyui/themes/icon.css" rel="stylesheet" />
+    <link href="../../Lib/Content/themes/Site.css" rel="stylesheet" />
+    <link href="../../Lib/ZTree/zTreeStyle/zTreeIcons.css" rel="stylesheet" />
+    <link href="../../Lib/ZTree/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+
+    <script src="../../Lib/jquery/jquery-1.8.0.min.js"></script>
+    <script src="../../Lib/jquery-easyui/jquery.easyui.min.js"></script>
+    <script src="../../Lib/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script src="../../Lib/Other/datapattern.js"></script>
+    <script src="../../Lib/Ajax/jquery.unobtrusive-ajax.js"></script>
+    <script src="../../Lib/ZTree/js/jquery.ztree-2.6.js"></script>
+    <script src="../../Scripts/ControllerViewScript/Department.js" type="text/javascript"></script>
+</head>
+<body>
+    <!----------------------------搜索部分------开始---------------------->
+        <div>
+            名称：<input type="text" name="searchName" id="searchName"/>  &nbsp;
+            &nbsp;
+            &nbsp;
+            上级部门：<input type="text" name="searchDepMaster" id="searchDepMaster"/> &nbsp;&nbsp;
+            &nbsp;
+            
+            <a id="linkSearch" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">搜索</a>
+            <hr/>
+        </div>
+        <!----------------------------搜索部分------结束---------------------->
+        <!----------------------------表格部分------开始---------------------->
+        <div>
+            <table id="tt" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
+            </table>
+        </div>
+        <!----------------------------表格部分-----结束----------------------->
+        
+        <!----------------------------添加部分------开始---------------------->
+        <div id="addDiv">
+            @{
+                using (Ajax.BeginForm("Add", "Department", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "afterAdd" }))
+                {
+                    <table>
+                        <tr>
+                            <td>&nbsp;&nbsp;上级部门：</td>
+                            <td>
+                                <input type="text" name="ParDeptName" id="ParDeptName"  value="--请选择上级部门--" tabindex="4"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="ParDept" name="ParDept"/>
+                            </td>
+                            <td>&nbsp;&nbsp;生效：</td><td><input type="checkbox" name="TakeEffect" id="TakeEffect" /></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;编码：</td><td><input type="text" id="Code" name="Code" value="自动生成" disabled="disabled" tabindex="1"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/><font color="red" size="2">*</font></td>
+                            <td>&nbsp;&nbsp;生效日期：</td><td><input name="TakeEffectTime" id="TakeEffectTime" class="easyui-datebox"/></td>
+                        </tr>
+                        <tr>
+                            
+                            <td>&nbsp;&nbsp;名称：</td><td><input type="text" id="Name" name="Name" tabindex="2"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/><font color="red" size="2">*</font></td>
+                            <td>&nbsp;&nbsp;失效日期：</td><td><input name="LoseEffectTime" id="LoseEffectTime"  class="easyui-datebox"/></td>
+                        </tr>
+                        @*<tr>
+                            <td>&nbsp;&nbsp;负责人：</td>
+                            <td>
+                                <input type="hidden" name="MasterName" id="MasterName" tabindex="3"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <input type="image" width="15" height="15" id="SDepMaster" src="../../Lib/jquery-easyui/themes/icons/search.png"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="Master" name="Master"/>
+                            </td>
+                            <td colspan="2" rowspan="3"><font color="red">&nbsp;顶级部门只允许1个，且编码为“1”！”</font></td>
+                        </tr> *@
+                        <tr>
+                            <td rowspan="3">&nbsp;&nbsp;备注：</td>
+                            <td rowspan="4">
+                                <textarea id="Remark" name="Remark" cols="12" rows="4" class="l-textarea" style="width:150px" tabindex="7"></textarea>
+                            </td>
+                            <td colspan="2" rowspan="3"><font color="red">&nbsp;顶级部门只允许1个，且编码为“1”！”</font></td>
+                        </tr>
+                    </table>
+                }
+            }
+        </div>
+        <!----------------------------添加部分------结束---------------------->
+        
+        <!----------------------------修改部分------开始---------------------->
+        <div id="editDiv">
+            @{
+                using (Ajax.BeginForm("EditSave", "Department", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "afterEdit" }))
+                {
+                    <table>
+                        <tr>
+                            <td>&nbsp;&nbsp;上级部门：</td>
+                            <td>
+                                <input type="text" name="ParDeptName" id="EdParDeptName"  value="--请选择上级部门--" disabled="disabled" tabindex="4"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="EdParDept" name="ParDept"/>
+                            </td>
+                            <td>&nbsp;&nbsp;生效：</td><td><input type="checkbox" name="TakeEffect" id="EdTakeEffect" /></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>&nbsp;&nbsp;编码：</td><td><input type="text" id="EdCode" name="Code" value="自动生成" disabled="disabled" tabindex="1"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/><font color="red" size="2">*</font></td>
+                            <td>&nbsp;&nbsp;生效日期：</td><td><input name="TakeEffectTime" id="EdTakeEffectTime" class="easyui-datebox"/></td>
+                        </tr>
+                        <tr>
+                            
+                            <td>&nbsp;&nbsp;名称：</td><td><input type="text" id="EdName" name="Name" tabindex="2"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/><font color="red" size="2">*</font></td>
+                            <td>&nbsp;&nbsp;失效日期：</td><td><input name="LoseEffectTime" id="EdLoseEffectTime"  class="easyui-datebox"/></td>
+                        </tr>
+                        @*<tr>
+                            <td>&nbsp;&nbsp;负责人：</td>
+                            <td>
+                                <input type="text" name="MasterName" id="EdMasterName" tabindex="3"  onkeypress="if(event.keyCode==13){event.keyCode=0;return false;}"/>
+                                <input type="image" width="15" height="15" id="SEdDepMaster" src="../../Lib/jquery-easyui/themes/icons/search.png"/>
+                                <font color="red" size="2">*</font>
+                                <input type="hidden" id="EdMaster" name="Master"/>
+                            </td>
+                        </tr> *@
+                        <tr>
+                            <td rowspan="3">&nbsp;&nbsp;备注：</td><td rowspan="4"><textarea id="EdRemark" name="Remark" cols="12" rows="4" class="l-textarea" style="width:150px" tabindex="7"></textarea></td>
+                            <input type="hidden" id="EdDepLevel" name="DepLevel"/>
+                            <input type="hidden" id="EdID" name="ID"/>
+                            <input type="hidden" id="EdIn_Id" name="In_Id"/>
+                            <input type="hidden" id="EdSubBy" name="SubBy"/>
+                            <input type="hidden" id="EdSubTime" name="SubTime"/>
+                        </tr>
+                    </table>
+                }
+            }
+        </div>
+        <!----------------------------修改部分------结束---------------------->
+   
+         <!---------------------------选择上级部门部分-----开始---------------------->
+    <div id="treeParentDepartment">
+        <input type="button" value="展开全部" onclick="zTree.expandAll(true)"/>
+        <input type="button" value="折叠全部" onclick="zTree.expandAll(false)"/>
+        <hr/>
+
+        <ul id="tree" class="tree" style="width:300px; overflow:auto;"></ul>
+    </div>
+     <!---------------------------选择上级部门部分-----结束---------------------->
+   
+        <!----------------------------选择负责人部分------开始---------------------->
+    <div id="setDepMasterDiv">
+         <div>
+            显示名称：<input type="text" name="searchDepMasterName" id="searchDepMasterName" style="width: 160px" />&nbsp;
+                <a id="linkSearchDepMaster" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'"></a>
+              <input type="hidden" id="AddOrEdit" name="AddOrEdit"/>
+            <hr/>
+        </div>
+        <table id="tbDepMaster" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
+        </table>
+    </div>
+        <!----------------------------选择负责人部分------结束---------------------->
+</body>
+</html>
+

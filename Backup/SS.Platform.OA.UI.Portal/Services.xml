@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"> 
+	<object id="ActionInfoService" type="SS.Platform.OA.BLL.ActionInfoService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="BaseEntityService" type="SS.Platform.OA.BLL.BaseEntityService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="ControlService" type="SS.Platform.OA.BLL.ControlService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="DepartmentService" type="SS.Platform.OA.BLL.DepartmentService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="DocumentInfoService" type="SS.Platform.OA.BLL.DocumentInfoService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="MasterService" type="SS.Platform.OA.BLL.MasterService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="MenuInfoService" type="SS.Platform.OA.BLL.MenuInfoService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="ModuleService" type="SS.Platform.OA.BLL.ModuleService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="R_Document_UserService" type="SS.Platform.OA.BLL.R_Document_UserService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="R_User_ActionInfoService" type="SS.Platform.OA.BLL.R_User_ActionInfoService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="RoleService" type="SS.Platform.OA.BLL.RoleService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="UserGroupService" type="SS.Platform.OA.BLL.UserGroupService, SS.Platform.OA.BLL" >
+
+  </object>
+	<object id="UserInfoService" type="SS.Platform.OA.BLL.UserInfoService, SS.Platform.OA.BLL" >
+
+  </object>
+  
+</objects>

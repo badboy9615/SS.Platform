@@ -1,0 +1,1683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3152858-B88D-4E22-BE5E-A9378E5525EF}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.Platform.OA.UI.Portal</RootNamespace>
+    <AssemblyName>SS.Platform.OA.UI.Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\Library\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Log4Net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\Library\Spring\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web">
+      <HintPath>..\Library\Spring\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web.Extensions">
+      <HintPath>..\Library\Spring\Spring.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web.Mvc3">
+      <HintPath>..\Library\Spring\Spring.Web.Mvc3.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.20105.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BaseEntityController.cs" />
+    <Compile Include="Controllers\ControlController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ModuleController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyExceptionFilterAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\Controllers.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="12.ico" />
+    <Content Include="Controllers.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Controllers.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="css\ControllerViewCss\UserInfo_Add.css" />
+    <Content Include="css\ControllerViewCss\UserInfo_Edit.css" />
+    <Content Include="css\custom-theme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="css\custom-theme\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="css\custom-theme\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\custom-theme\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="css\custom-theme\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="css\custom-theme\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="css\custom-theme\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="css\custom-theme\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_454545_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_888888_256x240.png" />
+    <Content Include="css\custom-theme\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\custom-theme\jquery-ui-1.9.2.custom.css" />
+    <Content Include="css\custom-theme\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="css\jquery.dialog.css" />
+    <Content Include="css\jquery.grid.css" />
+    <Content Include="css\skin_\base.css" />
+    <Content Include="css\skin_\content.css" />
+    <Content Include="css\skin_\form.css" />
+    <Content Include="css\skin_\index.css" />
+    <Content Include="css\skin_\login.css" />
+    <Content Include="css\skin_\main.css" />
+    <Content Include="css\skin_\main._bak.css" />
+    <Content Include="css\skin_\nav.css" />
+    <Content Include="css\skin_\table.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\WdatePicker.css" />
+    <Content Include="css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="css\zTreeStyle\img\diy\2.png" />
+    <Content Include="css\zTreeStyle\img\diy\3.png" />
+    <Content Include="css\zTreeStyle\img\diy\4.png" />
+    <Content Include="css\zTreeStyle\img\diy\5.png" />
+    <Content Include="css\zTreeStyle\img\diy\6.png" />
+    <Content Include="css\zTreeStyle\img\diy\7.png" />
+    <Content Include="css\zTreeStyle\img\diy\8.png" />
+    <Content Include="css\zTreeStyle\img\diy\9.png" />
+    <Content Include="css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="css\zTreeStyle\img\loading.gif" />
+    <Content Include="css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="Error.html" />
+    <Content Include="Global.asax" />
+    <Content Include="js\CommonTools.js" />
+    <Content Include="js\ControllerViewScript\Home.js" />
+    <Content Include="js\ControllerViewScript\Login.js" />
+    <Content Include="js\ControllerViewScript\main.js" />
+    <Content Include="js\ControllerViewScript\nav.js" />
+    <Content Include="js\ControllerViewScript\RealTimeCurve.js" />
+    <Content Include="js\ControllerViewScript\UserInfo.js" />
+    <Content Include="js\ControllerViewScript\UserInfo_Add.js" />
+    <Content Include="js\ControllerViewScript\UserInfo_Edit.js" />
+    <Content Include="js\ControllerViewScript\Module.js" />
+    <Content Include="js\ControllerViewScript\Module_Add.js" />
+    <Content Include="js\ControllerViewScript\Module_Edit.js" />
+    <Content Include="js\ControllerViewScript\Control.js" />
+    <Content Include="js\ControllerViewScript\Control_Add.js" />
+    <Content Include="Lib\Content\Site.css" />
+    <Content Include="Controllers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Controllers.xml</LastGenOutput>
+    </Content>
+    <Content Include="img\skin_\close.png" />
+    <Content Include="img\skin_\close1.png" />
+    <Content Include="img\skin_\close2.png" />
+    <Content Include="img\skin_\close3.png" />
+    <Content Include="img\skin_\close4.png" />
+    <Content Include="img\skin_\date.png" />
+    <Content Include="img\skin_\dialogbg.png" />
+    <Content Include="img\skin_\dialogbtn.png" />
+    <Content Include="img\skin_\dialog\centerleft.png" />
+    <Content Include="img\skin_\dialog\centerright.png" />
+    <Content Include="img\skin_\dialog\downcenter.png" />
+    <Content Include="img\skin_\dialog\downleft.png" />
+    <Content Include="img\skin_\dialog\dright.png" />
+    <Content Include="img\skin_\dialog\lefttop.png" />
+    <Content Include="img\skin_\dialog\righttop.png" />
+    <Content Include="img\skin_\dialog\topcenter.png" />
+    <Content Include="img\skin_\dialog_bottom.png" />
+    <Content Include="img\skin_\dialog_left.png" />
+    <Content Include="img\skin_\dialog_right.png" />
+    <Content Include="img\skin_\filebg.png" />
+    <Content Include="img\skin_\footerbg.png" />
+    <Content Include="img\skin_\footerright.png" />
+    <Content Include="img\skin_\formbtnbg.png" />
+    <Content Include="img\skin_\gdt.png" />
+    <Content Include="img\skin_\home.png" />
+    <Content Include="img\skin_\hoverclose.png" />
+    <Content Include="img\skin_\i.png" />
+    <Content Include="img\skin_\ico01.png" />
+    <Content Include="img\skin_\ico01_1.png" />
+    <Content Include="img\skin_\ico02.png" />
+    <Content Include="img\skin_\ico02_1.png" />
+    <Content Include="img\skin_\ico03.png" />
+    <Content Include="img\skin_\ico03_1.png" />
+    <Content Include="img\skin_\ico04.png" />
+    <Content Include="img\skin_\ico04_1.png" />
+    <Content Include="img\skin_\icon1.png" />
+    <Content Include="img\skin_\icon2.png" />
+    <Content Include="img\skin_\inputbg.png" />
+    <Content Include="img\skin_\inputxl.png" />
+    <Content Include="img\skin_\lastnavbg.png" />
+    <Content Include="img\skin_\leftbg.png" />
+    <Content Include="img\skin_\lefticon.png" />
+    <Content Include="img\skin_\leftlist.png" />
+    <Content Include="img\skin_\leftmenu.png" />
+    <Content Include="img\skin_\leftmenu1.png" />
+    <Content Include="img\skin_\leftmenubg.png" />
+    <Content Include="img\skin_\leftmenubg1.png" />
+    <Content Include="img\skin_\leftright.png" />
+    <Content Include="img\skin_\leftyy.png" />
+    <Content Include="img\skin_\leftyy1.png" />
+    <Content Include="img\skin_\left_tree.png" />
+    <Content Include="img\skin_\loginbox.png" />
+    <Content Include="img\skin_\loginbtn.png" />
+    <Content Include="img\skin_\loginbtn_active.png" />
+    <Content Include="img\skin_\loginlight.png" />
+    <Content Include="img\skin_\loginlogo.png" />
+    <Content Include="img\skin_\loginname.png" />
+    <Content Include="img\skin_\loginstyleinput.png" />
+    <Content Include="img\skin_\loginstylexl.png" />
+    <Content Include="img\skin_\mbbg.png" />
+    <Content Include="img\skin_\msg.png" />
+    <Content Include="img\skin_\new.png" />
+    <Content Include="img\skin_\opt\cleft.png" />
+    <Content Include="img\skin_\opt\cright.png" />
+    <Content Include="img\skin_\opt\dcenter.png" />
+    <Content Include="img\skin_\opt\dleft.png" />
+    <Content Include="img\skin_\opt\dright.png" />
+    <Content Include="img\skin_\opt\tcenter.png" />
+    <Content Include="img\skin_\opt\tleft.png" />
+    <Content Include="img\skin_\opt\tright.png" />
+    <Content Include="img\skin_\opt\xljt.png" />
+    <Content Include="img\skin_\p01.png" />
+    <Content Include="img\skin_\p02.png" />
+    <Content Include="img\skin_\p03.png" />
+    <Content Include="img\skin_\p04.png" />
+    <Content Include="img\skin_\pagebg.png" />
+    <Content Include="img\skin_\pageleftright.png" />
+    <Content Include="img\skin_\passwordinput.png" />
+    <Content Include="img\skin_\pic1.png" />
+    <Content Include="img\skin_\pic2.png" />
+    <Content Include="img\skin_\plist.png" />
+    <Content Include="img\skin_\px.png" />
+    <Content Include="img\skin_\quit.png" />
+    <Content Include="img\skin_\radio.png" />
+    <Content Include="img\skin_\radiochecked.png" />
+    <Content Include="img\skin_\right.png" />
+    <Content Include="img\skin_\searchbg.png" />
+    <Content Include="img\skin_\select_hover.png" />
+    <Content Include="img\skin_\select_normal.png" />
+    <Content Include="img\skin_\skin-bg.png" />
+    <Content Include="img\skin_\skinicon.png" />
+    <Content Include="img\skin_\skinxl.png" />
+    <Content Include="img\skin_\switch-system\closed.png" />
+    <Content Include="img\skin_\switch-system\h.png" />
+    <Content Include="img\skin_\switch-system\sdown.png" />
+    <Content Include="img\skin_\switch-system\sleft.png" />
+    <Content Include="img\skin_\switch-system\sright.png" />
+    <Content Include="img\skin_\switch-system\tabright.png" />
+    <Content Include="img\skin_\switch-system\tabrighthover.png" />
+    <Content Include="img\skin_\switch-system\toplist.png" />
+    <Content Include="img\skin_\switch-system\yj.png" />
+    <Content Include="img\skin_\switch-system\yjl.png" />
+    <Content Include="img\skin_\systemlogo.png" />
+    <Content Include="img\skin_\t01.png" />
+    <Content Include="img\skin_\t02.png" />
+    <Content Include="img\skin_\t03.png" />
+    <Content Include="img\skin_\t04.png" />
+    <Content Include="img\skin_\t05.png" />
+    <Content Include="img\skin_\t06.png" />
+    <Content Include="img\skin_\t07.png" />
+    <Content Include="img\skin_\t08.png" />
+    <Content Include="img\skin_\t09.png" />
+    <Content Include="img\skin_\t10.png" />
+    <Content Include="img\skin_\tab1.png" />
+    <Content Include="img\skin_\tab2.png" />
+    <Content Include="img\skin_\thbg.png" />
+    <Content Include="img\skin_\thbtm.png" />
+    <Content Include="img\skin_\toleft.png" />
+    <Content Include="img\skin_\toolbarbg.png" />
+    <Content Include="img\skin_\topbg.png" />
+    <Content Include="img\skin_\topxl.png" />
+    <Content Include="img\skin_\toright.png" />
+    <Content Include="img\skin_\uew_icon12.png" />
+    <Content Include="img\skin_\uew_icon2.png" />
+    <Content Include="img\skin_\userface.png" />
+    <Content Include="img\skin_\userfacebg.png" />
+    <Content Include="img\skin_\userinput.png" />
+    <Content Include="img\skin_\userxl.png" />
+    <Content Include="img\skin_\yzminput.png" />
+    <Content Include="js\calendar.js" />
+    <Content Include="js\core.js" />
+    <Content Include="js\editor_api%28冲突时的文件备份2014-04-30 19-06-40%29.js" />
+    <Content Include="js\editor_api.js" />
+    <Content Include="js\global.js" />
+    <Content Include="js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="js\jquery.dialog.js" />
+    <Content Include="js\jquery.form.js" />
+    <Content Include="js\jquery.grid.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.pagination.js" />
+    <Content Include="js\jquery.pagination1.js" />
+    <Content Include="js\jquery.select.js" />
+    <Content Include="js\jquery.ztree.core-3.5.js" />
+    <Content Include="js\jquery.ztree.core-3.5.min.js" />
+    <Content Include="js\lang\en.js" />
+    <Content Include="js\lang\zh-cn.js" />
+    <Content Include="js\lang\zh-tw.js" />
+    <Content Include="js\login.js" />
+    <Content Include="js\Menu.js" />
+    <Content Include="js\nav.js" />
+    <Content Include="js\skin\datePicker.gif" />
+    <Content Include="js\skin\default\datepicker.css" />
+    <Content Include="js\skin\default\img.gif" />
+    <Content Include="js\skin\WdatePicker.css" />
+    <Content Include="js\skin\whyGreen\bg.jpg" />
+    <Content Include="js\skin\whyGreen\datepicker.css" />
+    <Content Include="js\skin\whyGreen\img.gif" />
+    <Content Include="js\umeditor.config.js" />
+    <Content Include="js\WdatePicker.js" />
+    <Content Include="lang\en\en.js" />
+    <Content Include="lang\en\images\addimage.png" />
+    <Content Include="lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="lang\en\images\alldeletebtnupskin%28冲突时的文件备份2014-04-30 19-06-37%29.png" />
+    <Content Include="lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="lang\en\images\background.png" />
+    <Content Include="lang\en\images\button.png" />
+    <Content Include="lang\en\images\copy%28冲突时的文件备份2014-04-30 19-06-38%29.png" />
+    <Content Include="lang\en\images\copy.png" />
+    <Content Include="lang\en\images\deletedisable.png" />
+    <Content Include="lang\en\images\deleteenable.png" />
+    <Content Include="lang\en\images\imglabel.png" />
+    <Content Include="lang\en\images\listbackground.png" />
+    <Content Include="lang\en\images\localimage%28冲突时的文件备份2014-04-30 19-06-41%29.png" />
+    <Content Include="lang\en\images\localimage.png" />
+    <Content Include="lang\en\images\music.png" />
+    <Content Include="lang\en\images\rotateleftdisable.png" />
+    <Content Include="lang\en\images\rotateleftenable%28冲突时的文件备份2014-04-30 19-06-38%29.png" />
+    <Content Include="lang\en\images\rotateleftenable.png" />
+    <Content Include="lang\en\images\rotaterightdisable%28冲突时的文件备份2014-04-30 19-06-37%29.png" />
+    <Content Include="lang\en\images\rotaterightdisable.png" />
+    <Content Include="lang\en\images\rotaterightenable%28冲突时的文件备份2014-04-30 19-06-38%29.png" />
+    <Content Include="lang\en\images\rotaterightenable.png" />
+    <Content Include="lang\en\images\upload.png" />
+    <Content Include="lang\zh-cn\images\copy.png" />
+    <Content Include="lang\zh-cn\images\imglabel%28冲突时的文件备份2014-04-30 19-06-41%29.png" />
+    <Content Include="lang\zh-cn\images\imglabel.png" />
+    <Content Include="lang\zh-cn\images\localimage.png" />
+    <Content Include="lang\zh-cn\images\music.png" />
+    <Content Include="lang\zh-cn\images\upload.png" />
+    <Content Include="lang\zh-cn\zh-cn.js" />
+    <Content Include="Lib\Ajax\jquery.unobtrusive-ajax.js" />
+    <Content Include="Lib\Ajax\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Lib\Ajax\MicrosoftAjax.debug.js" />
+    <Content Include="Lib\Ajax\MicrosoftAjax.js" />
+    <Content Include="Lib\Ajax\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Lib\Ajax\MicrosoftMvcAjax.js" />
+    <Content Include="Lib\Ajax\MyAjaxForm.js" />
+    <Content Include="Lib\Content\images\vssver2.scc" />
+    <Content Include="Lib\Content\themes\base\images\vssver2.scc" />
+    <Content Include="Lib\Content\themes\base\minified\images\vssver2.scc" />
+    <Content Include="Lib\Content\themes\base\minified\vssver2.scc" />
+    <Content Include="Lib\Content\themes\base\vssver2.scc" />
+    <Content Include="Lib\Content\themes\vssver2.scc" />
+    <Content Include="Lib\CustomersData.js" />
+    <Content Include="Lib\DepartmentData.js" />
+    <Content Include="Lib\EmployeeData.js" />
+    <Content Include="Lib\images\loading.gif" />
+    <Content Include="Lib\images\top.jpg" />
+    <Content Include="Lib\images\topicon.gif" />
+    <Content Include="Lib\Ajax\vssver2.scc" />
+    <Content Include="js\ControllerViewScript\vssver2.scc" />
+    <None Include="Lib\jquery\jquery-1.7.1.intellisense.js" />
+    <Content Include="Lib\jquery-validation\jquery.metadata.js" />
+    <Content Include="Lib\jquery-validation\jquery.validate.min.js" />
+    <Content Include="Lib\jquery-validation\messages_cn.js" />
+    <Content Include="Lib\jquery-validation\version.txt" />
+    <Content Include="Lib\jquery.form.js" />
+    <Content Include="Lib\jquery\jquery-1.8.0.min.js" />
+    <Content Include="Lib\jquery\jquery-1.9.0.min.js" />
+    <Content Include="Lib\jquery\jquery-ui-1.8.20.js" />
+    <Content Include="Lib\jquery\jquery-ui-1.8.20.min.js" />
+    <None Include="Lib\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Lib\jquery\jquery.validate.js" />
+    <Content Include="Lib\jquery\jquery.validate.min.js" />
+    <Content Include="Lib\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Lib\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Lib\json2.js" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\bin\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\file_manager_json.ashx" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\upload_json.ashx" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20130504\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\demo.jsp" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\file_manager_json.jsp" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\lib\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\upload_json.jsp" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\php\demo.php" />
+    <Content Include="Lib\kindeditor-4.0.5\php\file_manager_json.php" />
+    <Content Include="Lib\kindeditor-4.0.5\php\JSON.php" />
+    <Content Include="Lib\kindeditor-4.0.5\php\upload_json.php" />
+    <Content Include="Lib\kindeditor-4.0.5\php\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\anchor\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\clearhtml\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\code\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\flash\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\insertfile\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\lineheight\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\link\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\map\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\media\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\pagebreak\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\plainpaste\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\preview\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\quickformat\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\table\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\html\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\wordpaste\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\default\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\simple\vssver2.scc" />
+    <Content Include="Lib\kindeditor-4.0.5\vssver2.scc" />
+    <Content Include="Lib\ligerUI\js\core\base.js" />
+    <Content Include="Lib\ligerUI\js\core\inject.js" />
+    <Content Include="Lib\ligerUI\js\ligerui.all.js" />
+    <Content Include="Lib\ligerUI\js\ligerui.min.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerAccordion.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerButton.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerCheckBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerCheckBoxList.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerComboBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerDateEditor.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerDialog.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerDrag.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerEasyTab.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerFilter.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerForm.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerGrid.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerLayout.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerListBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerMenu.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerMenuBar.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerMessageBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerPanel.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerPopupEdit.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerPortal.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerRadio.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerRadioList.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerResizable.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerSpinner.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerTab.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerTextBox.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerTip.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerToolBar.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerTree.js" />
+    <Content Include="Lib\ligerUI\js\plugins\ligerWindow.js" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-all.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-common.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-dialog.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-form.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-grid.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-layout.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-menu.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-tab.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\css\ligerui-tree.css" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\bigloading.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\button-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\button.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\drop-icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\exclamation.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\invalid-line.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\table.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\common\toggle.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-panel-title-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-panel-title-pressed.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-panel-title.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-tab-title-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-tab-title-pressed.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-tab-title.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-text.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-trigger-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-trigger-pressed.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\bg-trigger.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\btn-l.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\btn-r.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\button-bg-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\button-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\checkbox.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\dateeditor-bar-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\dateeditor-header-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\controls\radio.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\date.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\icon-first.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\icon-last.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\icon-next.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\dateeditor\icon-prev.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\form\verify-corner.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-checkbox-checked.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-checkbox.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-detail-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-detail-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-tree-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\grid-tree-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\header-bg-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\header-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\header2-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\popup-line.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\grid\popup-row-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\bar-button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\checkbox-checked.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\checkbox.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\cross.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-close-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-drop.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-edited.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-first.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-last.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-line.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-load.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-next.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-prev.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-select.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-sort-asc.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-sort-desc.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-unselect.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\icon\spr_icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\accordion-content.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\accordion-header-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\accordion-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\closeAll.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\layout-header-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\layout-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\layout-sidebar-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\mini-bottom.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\mini-left.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\mini-right.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\mini-top.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\panel-content.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\panel-header-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\panel-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\panel-header2.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-item-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-item-over-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\tabs-tools.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\layout\togglebar.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-arrow.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-over-l.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-over-m.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-item-over-r.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-line-x.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\menu\menu-line-y.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\bar-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\header-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\header-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\header2-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-btn-l.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-btn-r.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-menu-item-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-menu.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-toolbar.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\panel\panel-tools.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\folder-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\folder.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\nodeloading.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\nodeloading2.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\nodeloading3.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\nodeloading4.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-leaf.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-level.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-noline.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-status-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-status-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree-status.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\tree\tree.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\ui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\ui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\ui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\ui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\ui\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\ui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\box-icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\box.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog-bc.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog-icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog-tc.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog-winbtns.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialog.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\dialogbtn.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\taskbar-task.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\taskbar.gif" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\taskbar.png" />
+    <Content Include="Lib\ligerUI\skins\Aqua\images\win\taskicon.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\all.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\common.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\dialog.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\form.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\grid.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\layout.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\css\tab.css" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\bigloading.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\gridheader.png" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\accordion-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\icon-close-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\icon-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\layout-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-left-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-right-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabs-item-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\tabswitch.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\layout\togglebar.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\tab_arrow_spr.png" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\tab_close.png" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button1.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\button2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\date.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\dateeditor-bar.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\dateeditor-btn-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\dateeditor-btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\dateeditor-thead.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\grid-detail-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\grid-detail-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\gridalt.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\gridbar.jpg" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\grideditor.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-select.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-select2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-unselect.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\input.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\inputdisabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loading2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loading3.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loading4.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\loadingl.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\panel-btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\spr_icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\ui\trigger.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\win\dialog-winbtns.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\win\dialogbtn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray2014\images\win\dialogicon.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\all.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\common.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\dialog.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\form.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\grid.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\layout.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\css\tab.css" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\accordion-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\icon-close-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\icon-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\layout-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-left-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-right-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\tabs-item-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\layout\togglebar.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button1.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\button2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\dateeditor-bar.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\dateeditor-btn-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\dateeditor-btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\dateeditor-thead.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\grid-detail-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\grid-detail-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\gridalt.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\gridbar.jpg" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\grideditor.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\icon-select.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\icon-unselect.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\input.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\inputdisabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\loading2.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\loading3.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\loading4.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\ui\trigger.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\win\dialog-winbtns.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\win\dialogbtn.gif" />
+    <Content Include="Lib\ligerUI\skins\Gray\images\win\dialogicon.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\add.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\archives.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\attibutes.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\back.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\bluebook.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\bookpen.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\busy.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\calendar.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\candle.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\coffee.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\comment.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\communication.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\config.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\customers.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\cut.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\database.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\delete.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\discuss.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\down.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\edit.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\graywarn.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\greenwarn.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\help.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\home.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\lock.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\logout.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\mailbox.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\memeber.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\modify.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\msn.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\myaccount.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\ok.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\outbox.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\pager.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\photograph.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\plus.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\prev.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\print.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\process.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\qq.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\refresh.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\right.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\role.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\save-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\save.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\search.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\search2.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\settings.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\true.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\up.gif" />
+    <Content Include="Lib\ligerUI\skins\icons\view.gif" />
+    <Content Include="Lib\ligerUI\skins\ligerui-icons.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\css\form.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\css\grid.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\css\layout.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\css\style.css" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\checkboxradio.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\icon-down-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\icon-up-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\invalid_line.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-date-icon.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-down-icon.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-focus.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-l-focus.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-l-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-l.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-r-focus.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-r-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text-r.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\form\text.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\grid\gridheaderbg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\accordion-header-over.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\accordion-header.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\layout-header-over.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\layout-header.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-item-bg.jpg" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-item-over-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Silvery\images\layout\tabs-tools.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\all.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\dialog.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\form.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\grid.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\css\tab.css" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\gridheader.png" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\accordion-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\icon-close-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\icon-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\layout-header.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-left-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-right-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\tabs-item-selected.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\layout\togglebar.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\tab_arrow_spr.png" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\tab_close.png" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button-disabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button1.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\button2.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\date.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\dateeditor-bar.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\dateeditor-btn-over.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\dateeditor-btn.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\dateeditor-thead.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\grid-detail-close.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\grid-detail-open.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\gridalt.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\gridbar.jpg" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\grideditor.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-down.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-select.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-select2.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-unselect.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\icon-up.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\input.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\inputdisabled.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loading.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loading2.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loading3.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loading4.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\loadingl.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\spr_icons.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\ui\trigger.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\win\dialog-winbtns.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\win\dialogbtn.gif" />
+    <Content Include="Lib\ligerUI\skins\Tab\images\win\dialogicon.gif" />
+    <Content Include="Lib\Other\datapattern.js" />
+    <Content Include="Lib\Other\login1.6.1.min.js" />
+    <Content Include="Lib\Other\modernizr-2.5.3.js" />
+    <Content Include="Lib\Other\passport.2013v1.js" />
+    <Content Include="Lib\Other\thickbox.js" />
+    <Content Include="Lib\Scripts\vssver2.scc" />
+    <Content Include="Lib\vssver2.scc" />
+    <Content Include="Lib\ZTree\js\vssver2.scc" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\vssver2.scc" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\vssver2.scc" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\vssver2.scc" />
+    <Content Include="Lib\ZTree\zTreeStyle\vssver2.scc" />
+    <Content Include="Lib\Content1\images\android.jpg" />
+    <Content Include="Lib\Content1\images\apple.jpg" />
+    <Content Include="Lib\Content1\images\bg_bg.jpg" />
+    <Content Include="Lib\Content1\images\btn_submit.jpg" />
+    <Content Include="Lib\Content1\images\index_bg.jpg" />
+    <Content Include="Lib\Content1\images\login_title.png" />
+    <Content Include="Lib\Content1\images\logo.jpg" />
+    <Content Include="Lib\Content1\images\logo11.jpg" />
+    <Content Include="Lib\Content1\images\messager.jpg" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\jquery-ui.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.all.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.base.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.button.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.core.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.slider.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Lib\Content1\themes\base\jquery.ui.theme.css" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Lib\Content1\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Lib\Content1\themes\Site.css" />
+    <Content Include="Lib\Content1\themes\thickbox.css" />
+    <Content Include="Lib\Content\images\3DSMAX.png" />
+    <Content Include="Lib\Content\images\7_7.jpg" />
+    <Content Include="Lib\Content\images\Alien Folder.png" />
+    <Content Include="Lib\Content\images\android.jpg" />
+    <Content Include="Lib\Content\images\apple.jpg" />
+    <Content Include="Lib\Content\images\applebg.jpg" />
+    <Content Include="Lib\Content\images\bg.png" />
+    <Content Include="Lib\Content\images\bg3.png" />
+    <Content Include="Lib\Content\images\bg_bg.jpg" />
+    <Content Include="Lib\Content\images\big.png" />
+    <Content Include="Lib\Content\images\blue_glow.jpg" />
+    <Content Include="Lib\Content\images\btn_submit.jpg" />
+    <Content Include="Lib\Content\images\index_bg.jpg" />
+    <Content Include="Lib\Content\images\lg.jpg" />
+    <Content Include="Lib\Content\images\login_title.png" />
+    <Content Include="Lib\Content\images\logo.gif" />
+    <Content Include="Lib\Content\images\logo.jpg" />
+    <Content Include="Lib\Content\images\logo11.gif" />
+    <Content Include="Lib\Content\images\messager.jpg" />
+    <Content Include="Lib\Content\images\Program Files Folder.png" />
+    <Content Include="Lib\Content\images\Xp-G5 006.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Lib\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Lib\Content\themes\base\jquery-ui.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Lib\Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Lib\Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Lib\Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Lib\Content\themes\Site.css" />
+    <Content Include="Lib\Content\themes\thickbox.css" />
+    <Content Include="Lib\jquery\jquery-1.3.2.min.js" />
+    <Content Include="Lib\jquery\jquery-1.4.4.min.js" />
+    <Content Include="Lib\jquery\jquery-1.5.2.min.js" />
+    <Content Include="Lib\jquery\jquery-1.7.1.js" />
+    <Content Include="Lib\jquery\jquery-1.7.1.min.js" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\bin\LitJSON.dll" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\demo.aspx" />
+    <Content Include="Lib\kindeditor-4.0.5\asp.net\README.txt" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\demo.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\file_manager_json.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\JSON_2.0.4.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\UpLoad_Class.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\asp\upload_json.asp" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20130504\20130504145025_1072.jpg" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20130504\20130504145224_4452.jpg" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20130504\20130504145611_9900.jpg" />
+    <Content Include="Lib\kindeditor-4.0.5\attached\image\20141224\20141224104823_5747.jpg" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\colorpicker.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\custom-plugin.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\custom-theme.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\default.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\dialog.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\dynamic-load.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\file-dialog.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\file-manager.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\filter-mode.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\image-dialog.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\index.css" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\index.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\jquery.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\mootools.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\multi-language.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\newline.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\node.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\paste-type.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\readonly.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\simple.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\total.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\uploadbutton.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\url-type.html" />
+    <Content Include="Lib\kindeditor-4.0.5\examples\word-count.html" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\lib\commons-fileupload-1.2.1.jar" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\lib\commons-io-1.4.jar" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\lib\json_simple-1.1.jar" />
+    <Content Include="Lib\kindeditor-4.0.5\jsp\README.txt" />
+    <Content Include="Lib\kindeditor-4.0.5\kindeditor-min.js" />
+    <Content Include="Lib\kindeditor-4.0.5\kindeditor.js" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\ar.js" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\en.js" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\zh_CN.js" />
+    <Content Include="Lib\kindeditor-4.0.5\lang\zh_TW.js" />
+    <Content Include="Lib\kindeditor-4.0.5\license.txt" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\anchor\anchor.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\clearhtml\clearhtml.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\code\code.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\code\prettify.css" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\code\prettify.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\emoticons.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\0.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\1.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\10.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\100.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\101.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\102.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\103.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\104.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\105.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\106.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\107.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\108.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\109.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\11.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\110.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\111.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\112.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\113.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\114.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\115.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\116.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\117.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\118.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\119.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\12.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\120.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\121.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\122.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\123.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\124.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\125.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\126.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\127.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\128.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\129.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\13.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\130.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\131.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\132.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\133.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\134.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\14.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\15.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\16.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\17.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\18.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\19.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\2.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\20.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\21.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\22.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\23.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\24.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\25.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\26.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\27.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\28.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\29.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\3.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\30.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\31.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\32.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\33.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\34.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\35.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\36.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\37.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\38.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\39.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\4.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\40.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\41.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\42.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\43.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\44.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\45.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\46.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\47.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\48.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\49.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\5.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\50.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\51.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\52.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\53.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\54.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\55.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\56.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\57.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\58.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\59.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\6.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\60.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\61.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\62.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\63.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\64.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\65.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\66.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\67.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\68.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\69.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\7.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\70.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\71.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\72.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\73.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\74.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\75.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\76.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\77.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\78.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\79.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\8.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\80.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\81.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\82.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\83.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\84.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\85.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\86.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\87.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\88.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\89.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\9.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\90.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\91.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\92.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\93.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\94.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\95.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\96.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\97.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\98.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\99.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\emoticons\images\static.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\filemanager.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\file-16.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\file-64.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\filemanager\images\go-up.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\flash\flash.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\image.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\align_left.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\align_right.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\align_top.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\image\images\refresh.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\insertfile\insertfile.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\lineheight\lineheight.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\link\link.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\map\map.html" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\map\map.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\media\media.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\pagebreak\pagebreak.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\plainpaste\plainpaste.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\preview\preview.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\quickformat\quickformat.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\table\table.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\html\1.html" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\html\2.html" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\html\3.html" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\template\template.js" />
+    <Content Include="Lib\kindeditor-4.0.5\plugins\wordpaste\wordpaste.js" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\anchor.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\blank.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\flash.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\loading.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\media.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\common\rm.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\default\bg.gif" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\default\default.css" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\default\default.png" />
+    <Content Include="Lib\kindeditor-4.0.5\themes\simple\simple.css" />
+    <Content Include="Lib\LitJSON.dll" />
+    <Content Include="Lib\Scripts\datapattern.js" />
+    <Content Include="Lib\jquery\vssver2.scc" />
+    <Content Include="Lib\Other\vssver2.scc" />
+    <None Include="Lib\Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Lib\Scripts\jquery-1.7.1.js" />
+    <Content Include="Lib\Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Lib\Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Lib\Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Lib\Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Lib\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Lib\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Lib\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Lib\Scripts\jquery.validate.js" />
+    <Content Include="Lib\Scripts\jquery.validate.min.js" />
+    <Content Include="Lib\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Lib\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Lib\Scripts\login1.6.1.min.js" />
+    <Content Include="Lib\Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Lib\Scripts\MicrosoftAjax.js" />
+    <Content Include="Lib\Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Lib\Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Lib\Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Lib\Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Lib\Scripts\modernizr-2.5.3.js" />
+    <Content Include="Lib\Scripts\MyAjaxForm.js" />
+    <Content Include="Lib\Scripts\passport.2013v1.js" />
+    <Content Include="Lib\Scripts\thickbox.js" />
+    <Content Include="Lib\ZTree\js\jquery-1.4.2.js" />
+    <Content Include="Lib\ZTree\js\jquery.ztree-2.6.js" />
+    <Content Include="Lib\ZTree\js\jquery.ztree-2.6.min.js" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\checkbox.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\edit.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\10.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\1_close.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\1_open.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\2.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\3.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\4.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\5.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\6.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\7.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\8.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\flag\9.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\folder_Close.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\folder_Open.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\line_bottom.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\line_center.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\line_top.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\loading.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_bottom.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_center.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_noLine.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_root.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\minus_top.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\moveArrow.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\page.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_bottom.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_center.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_noLine.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_root.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\plus_top.gif" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\radio.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\remove.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\10.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\1_close.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\1_open.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\2.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\3.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\4.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\5.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\6.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\7.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\8.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\img\sim\9.png" />
+    <Content Include="Lib\ZTree\zTreeStyle\zTreeIcons.css" />
+    <Content Include="Lib\ZTree\zTreeStyle\zTreeStyle.css" />
+    <Content Include="LitJSON.dll" />
+    <Content Include="Services.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Services.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="umeditor\dialogs\emotion\emotion%28冲突时的文件备份2014-04-30 19-06-40%29.css" />
+    <Content Include="umeditor\dialogs\emotion\emotion.css" />
+    <Content Include="umeditor\dialogs\emotion\emotion.js" />
+    <Content Include="umeditor\dialogs\emotion\images\0.gif" />
+    <Content Include="umeditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="umeditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="umeditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="umeditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="umeditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="umeditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="umeditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="umeditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="umeditor\dialogs\formula\formula%28冲突时的文件备份2014-04-30 19-06-37%29.css" />
+    <Content Include="umeditor\dialogs\formula\formula.css" />
+    <Content Include="umeditor\dialogs\formula\formula.html" />
+    <Content Include="umeditor\dialogs\formula\formula.js" />
+    <Content Include="umeditor\dialogs\formula\images\formula.png" />
+    <Content Include="umeditor\dialogs\image\image%28冲突时的文件备份2014-04-30 19-06-41%29.css" />
+    <Content Include="umeditor\dialogs\image\image.css" />
+    <Content Include="umeditor\dialogs\image\image.js" />
+    <Content Include="umeditor\dialogs\image\images\close%28冲突时的文件备份2014-04-30 19-06-38%29.png" />
+    <Content Include="umeditor\dialogs\image\images\close.png" />
+    <Content Include="umeditor\dialogs\image\images\upload1%28冲突时的文件备份2014-04-30 19-06-37%29.png" />
+    <Content Include="umeditor\dialogs\image\images\upload1.png" />
+    <Content Include="umeditor\dialogs\image\images\upload2%28冲突时的文件备份2014-04-30 19-06-39%29.png" />
+    <Content Include="umeditor\dialogs\image\images\upload2.png" />
+    <Content Include="umeditor\dialogs\link\link%28冲突时的文件备份2014-04-30 19-06-41%29.js" />
+    <Content Include="umeditor\dialogs\link\link.js" />
+    <Content Include="umeditor\dialogs\map\map.html" />
+    <Content Include="umeditor\dialogs\map\map.js" />
+    <Content Include="umeditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="umeditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="umeditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="umeditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="umeditor\dialogs\video\video%28冲突时的文件备份2014-04-30 19-06-40%29.css" />
+    <Content Include="umeditor\dialogs\video\video.css" />
+    <Content Include="umeditor\dialogs\video\video.js" />
+    <Content Include="umeditor\lang\en\en.js" />
+    <Content Include="umeditor\lang\en\images\addimage.png" />
+    <Content Include="umeditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="umeditor\lang\en\images\alldeletebtnupskin%28冲突时的文件备份2014-04-30 19-06-37%29.png" />
+    <Content Include="umeditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="umeditor\lang\en\images\background.png" />
+    <Content Include="umeditor\lang\en\images\button.png" />
+    <Content Include="umeditor\lang\en\images\copy%28冲突时的文件备份2014-04-30 19-06-39%29.png" />
+    <Content Include="umeditor\lang\en\images\copy.png" />
+    <Content Include="umeditor\lang\en\images\deletedisable.png" />
+    <Content Include="umeditor\lang\en\images\deleteenable.png" />
+    <Content Include="umeditor\lang\en\images\imglabel.png" />
+    <Content Include="umeditor\lang\en\images\listbackground.png" />
+    <Content Include="umeditor\lang\en\images\localimage%28冲突时的文件备份2014-04-30 19-06-41%29.png" />
+    <Content Include="umeditor\lang\en\images\localimage.png" />
+    <Content Include="umeditor\lang\en\images\music.png" />
+    <Content Include="umeditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="umeditor\lang\en\images\rotateleftenable%28冲突时的文件备份2014-04-30 19-06-38%29.png" />
+    <Content Include="umeditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="umeditor\lang\en\images\rotaterightdisable%28冲突时的文件备份2014-04-30 19-06-37%29.png" />
+    <Content Include="umeditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="umeditor\lang\en\images\rotaterightenable%28冲突时的文件备份2014-04-30 19-06-38%29.png" />
+    <Content Include="umeditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="umeditor\lang\en\images\upload.png" />
+    <Content Include="umeditor\lang\zh-cn\images\copy.png" />
+    <Content Include="umeditor\lang\zh-cn\images\imglabel.png" />
+    <Content Include="umeditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="umeditor\lang\zh-cn\images\music.png" />
+    <Content Include="umeditor\lang\zh-cn\images\upload.png" />
+    <Content Include="umeditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="umeditor\themes\default\images\caret.png" />
+    <Content Include="umeditor\themes\default\images\close.png" />
+    <Content Include="umeditor\themes\default\images\icons.gif" />
+    <Content Include="umeditor\themes\default\images\icons.png" />
+    <Content Include="umeditor\themes\default\images\ok%28冲突时的文件备份2014-04-30 19-06-37%29.gif" />
+    <Content Include="umeditor\themes\default\images\ok.gif" />
+    <Content Include="umeditor\themes\default\images\pop-bg%28冲突时的文件备份2014-04-30 19-06-38%29.png" />
+    <Content Include="umeditor\themes\default\images\pop-bg.png" />
+    <Content Include="umeditor\themes\default\images\spacer.gif" />
+    <Content Include="umeditor\themes\default\images\videologo%28冲突时的文件备份2014-04-30 19-06-39%29.gif" />
+    <Content Include="umeditor\themes\default\images\videologo.gif" />
+    <Content Include="umeditor\themes\default\_css\button%28冲突时的文件备份2014-04-30 19-06-37%29.css" />
+    <Content Include="umeditor\themes\default\_css\button.css" />
+    <Content Include="umeditor\themes\default\_css\buttonicon.css" />
+    <Content Include="umeditor\themes\default\_css\colorpicker%28冲突时的文件备份2014-04-30 19-06-38%29.css" />
+    <Content Include="umeditor\themes\default\_css\colorpicker.css" />
+    <Content Include="umeditor\themes\default\_css\combobox%28冲突时的文件备份2014-04-30 19-06-39%29.css" />
+    <Content Include="umeditor\themes\default\_css\combobox.css" />
+    <Content Include="umeditor\themes\default\_css\comboboxmenu.css" />
+    <Content Include="umeditor\themes\default\_css\dialog%28冲突时的文件备份2014-04-30 19-06-39%29.css" />
+    <Content Include="umeditor\themes\default\_css\dialog.css" />
+    <Content Include="umeditor\themes\default\_css\dialogsize.css" />
+    <Content Include="umeditor\themes\default\_css\editor%28冲突时的文件备份2014-04-30 19-06-38%29.css" />
+    <Content Include="umeditor\themes\default\_css\editor.css" />
+    <Content Include="umeditor\themes\default\_css\popup.css" />
+    <Content Include="umeditor\themes\default\_css\separator.css" />
+    <Content Include="umeditor\themes\default\_css\splitbutton%28冲突时的文件备份2014-04-30 19-06-37%29.css" />
+    <Content Include="umeditor\themes\default\_css\splitbutton.css" />
+    <Content Include="umeditor\themes\default\_css\tab%28冲突时的文件备份2014-04-30 19-06-38%29.css" />
+    <Content Include="umeditor\themes\default\_css\tab.css" />
+    <Content Include="umeditor\themes\default\_css\tooltip%28冲突时的文件备份2014-04-30 19-06-37%29.css" />
+    <Content Include="umeditor\themes\default\_css\tooltip.css" />
+    <Content Include="umeditor\themes\default\_css\umeditor.css" />
+    <Content Include="umeditor\_src\adapter\adapter.js" />
+    <Content Include="umeditor\_src\adapter\autofloat.js" />
+    <Content Include="umeditor\_src\adapter\button%28冲突时的文件备份2014-04-30 19-06-37%29.js" />
+    <Content Include="umeditor\_src\adapter\button.js" />
+    <Content Include="umeditor\_src\adapter\combobox.js" />
+    <Content Include="umeditor\_src\adapter\dialog.js" />
+    <Content Include="umeditor\_src\adapter\fullscreen.js" />
+    <Content Include="umeditor\_src\adapter\imagescale%28冲突时的文件备份2014-04-30 19-06-42%29.js" />
+    <Content Include="umeditor\_src\adapter\imagescale.js" />
+    <Content Include="umeditor\_src\adapter\popup%28冲突时的文件备份2014-04-30 19-06-39%29.js" />
+    <Content Include="umeditor\_src\adapter\popup.js" />
+    <Content Include="umeditor\_src\adapter\source.js" />
+    <Content Include="umeditor\_src\core\browser.js" />
+    <Content Include="umeditor\_src\core\domUtils.js" />
+    <Content Include="umeditor\_src\core\dtd.js" />
+    <Content Include="umeditor\_src\core\Editor.js" />
+    <Content Include="umeditor\_src\core\EventBase.js" />
+    <Content Include="umeditor\_src\core\filternode.js" />
+    <Content Include="umeditor\_src\core\filterword.js" />
+    <Content Include="umeditor\_src\core\htmlparser.js" />
+    <Content Include="umeditor\_src\core\node.js" />
+    <Content Include="umeditor\_src\core\Range.js" />
+    <Content Include="umeditor\_src\core\Selection.js" />
+    <Content Include="umeditor\_src\core\utils.js" />
+    <Content Include="umeditor\_src\editor.js" />
+    <Content Include="umeditor\_src\plugins\autosave.js" />
+    <Content Include="umeditor\_src\plugins\autoupload%28冲突时的文件备份2014-04-30 19-06-41%29.js" />
+    <Content Include="umeditor\_src\plugins\autoupload.js" />
+    <Content Include="umeditor\_src\plugins\basestyle.js" />
+    <Content Include="umeditor\_src\plugins\cleardoc.js" />
+    <Content Include="umeditor\_src\plugins\enterkey.js" />
+    <Content Include="umeditor\_src\plugins\font.js" />
+    <Content Include="umeditor\_src\plugins\formula%28冲突时的文件备份2014-04-30 19-06-40%29.js" />
+    <Content Include="umeditor\_src\plugins\formula.js" />
+    <Content Include="umeditor\_src\plugins\horizontal%28冲突时的文件备份2014-04-30 19-06-39%29.js" />
+    <Content Include="umeditor\_src\plugins\horizontal.js" />
+    <Content Include="umeditor\_src\plugins\image%28冲突时的文件备份2014-04-30 19-06-43%29.js" />
+    <Content Include="umeditor\_src\plugins\image.js" />
+    <Content Include="umeditor\_src\plugins\inserthtml.js" />
+    <Content Include="umeditor\_src\plugins\justify%28冲突时的文件备份2014-04-30 19-06-38%29.js" />
+    <Content Include="umeditor\_src\plugins\justify.js" />
+    <Content Include="umeditor\_src\plugins\keystrokes.js" />
+    <Content Include="umeditor\_src\plugins\link.js" />
+    <Content Include="umeditor\_src\plugins\list.js" />
+    <Content Include="umeditor\_src\plugins\paragraph%28冲突时的文件备份2014-04-30 19-06-37%29.js" />
+    <Content Include="umeditor\_src\plugins\paragraph.js" />
+    <Content Include="umeditor\_src\plugins\paste.js" />
+    <Content Include="umeditor\_src\plugins\preview%28冲突时的文件备份2014-04-30 19-06-38%29.js" />
+    <Content Include="umeditor\_src\plugins\preview.js" />
+    <Content Include="umeditor\_src\plugins\print%28冲突时的文件备份2014-04-30 19-06-39%29.js" />
+    <Content Include="umeditor\_src\plugins\print.js" />
+    <Content Include="umeditor\_src\plugins\removeformat.js" />
+    <Content Include="umeditor\_src\plugins\selectall%28冲突时的文件备份2014-04-30 19-06-38%29.js" />
+    <Content Include="umeditor\_src\plugins\selectall.js" />
+    <Content Include="umeditor\_src\plugins\source.js" />
+    <Content Include="umeditor\_src\plugins\undo.js" />
+    <Content Include="umeditor\_src\plugins\video%28冲突时的文件备份2014-04-30 19-06-41%29.js" />
+    <Content Include="umeditor\_src\plugins\video.js" />
+    <Content Include="umeditor\_src\ui\button%28冲突时的文件备份2014-04-30 19-06-40%29.js" />
+    <Content Include="umeditor\_src\ui\button.js" />
+    <Content Include="umeditor\_src\ui\buttoncombobox%28冲突时的文件备份2014-04-30 19-06-39%29.js" />
+    <Content Include="umeditor\_src\ui\buttoncombobox.js" />
+    <Content Include="umeditor\_src\ui\colorpicker%28冲突时的文件备份2014-04-30 19-06-39%29.js" />
+    <Content Include="umeditor\_src\ui\colorpicker.js" />
+    <Content Include="umeditor\_src\ui\colorsplitbutton%28冲突时的文件备份2014-04-30 19-06-38%29.js" />
+    <Content Include="umeditor\_src\ui\colorsplitbutton.js" />
+    <Content Include="umeditor\_src\ui\combobox.js" />
+    <Content Include="umeditor\_src\ui\dropmenu%28冲突时的文件备份2014-04-30 19-06-42%29.js" />
+    <Content Include="umeditor\_src\ui\dropmenu.js" />
+    <Content Include="umeditor\_src\ui\menu%28冲突时的文件备份2014-04-30 19-06-39%29.js" />
+    <Content Include="umeditor\_src\ui\menu.js" />
+    <Content Include="umeditor\_src\ui\modal.js" />
+    <Content Include="umeditor\_src\ui\popup%28冲突时的文件备份2014-04-30 19-06-39%29.js" />
+    <Content Include="umeditor\_src\ui\popup.js" />
+    <Content Include="umeditor\_src\ui\scale.js" />
+    <Content Include="umeditor\_src\ui\separator.js" />
+    <Content Include="umeditor\_src\ui\splitbutton%28冲突时的文件备份2014-04-30 19-06-40%29.js" />
+    <Content Include="umeditor\_src\ui\splitbutton.js" />
+    <Content Include="umeditor\_src\ui\tab%28冲突时的文件备份2014-04-30 19-06-39%29.js" />
+    <Content Include="umeditor\_src\ui\tab.js" />
+    <Content Include="umeditor\_src\ui\toolbar.js" />
+    <Content Include="umeditor\_src\ui\tooltip%28冲突时的文件备份2014-04-30 19-06-39%29.js" />
+    <Content Include="umeditor\_src\ui\tooltip.js" />
+    <Content Include="umeditor\_src\ui\widget.js" />
+    <Content Include="Upload\img\user.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Services.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Services.xml</LastGenOutput>
+    </Content>
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\EnterprisePlatform.pubxml" />
+    <Content Include="Views\Home\LoadMenu.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\Add.cshtml" />
+    <Content Include="Views\Employee\test.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\UserInfo\Index.cshtml" />
+    <Content Include="Views\UserInfo\Add.cshtml" />
+    <Content Include="Views\UserInfo\Edit.cshtml" />
+    <Content Include="Views\Module\Index.cshtml" />
+    <Content Include="Views\Module\Add.cshtml" />
+    <Content Include="Views\Module\Edit.cshtml" />
+    <Content Include="Views\Control\Index.cshtml" />
+    <Content Include="Views\Control\Add.cshtml" />
+    <Content Include="Views\Control\test.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SS.Platform.Common\SS.Platform.Common.csproj">
+      <Project>{98f46772-6b74-433c-af8e-0217ba688525}</Project>
+      <Name>SS.Platform.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.BLL\SS.Platform.OA.BLL.csproj">
+      <Project>{6b7319dd-0f0d-4a22-9dd9-3505262d4b39}</Project>
+      <Name>SS.Platform.OA.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.DalFactory\SS.Platform.OA.DalFactory.csproj">
+      <Project>{cc99297b-f428-4a7a-a5c6-84616ec6dc72}</Project>
+      <Name>SS.Platform.OA.DalFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.Dal\SS.Platform.OA.Dal.csproj">
+      <Project>{68205fcd-d043-41e1-a0b2-e3ccf9a55c32}</Project>
+      <Name>SS.Platform.OA.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.IBLL\SS.Platform.OA.IBLL.csproj">
+      <Project>{d8f33798-1420-4245-b6df-0d7ff990ca6f}</Project>
+      <Name>SS.Platform.OA.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.IDal\SS.Platform.OA.IDal.csproj">
+      <Project>{4f5c9866-3629-4213-9fb9-633c20c0adc2}</Project>
+      <Name>SS.Platform.OA.IDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Platform.OA.Model\SS.Platform.OA.Model.csproj">
+      <Project>{e4bae940-ae2e-459f-af5f-4f111faaa261}</Project>
+      <Name>SS.Platform.OA.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>12.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8888</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17289/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
